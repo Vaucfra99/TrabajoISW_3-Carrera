@@ -8,5 +8,7 @@ namespace UPVTube.Persistence.Entities
 {
     public partial class Visualization
     {
+        public int Id { get; set; }
+        public DateTime VisualizationDate { get; set; }
     }
 }
