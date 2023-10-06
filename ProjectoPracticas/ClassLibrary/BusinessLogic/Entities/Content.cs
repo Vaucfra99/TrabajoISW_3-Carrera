@@ -10,9 +10,7 @@ namespace UPVTube.BusinessLogic.Entities
     {
         
      public Content() { }
-     //public Content ()
+     
 
-
-
-    }
+        }
 }
