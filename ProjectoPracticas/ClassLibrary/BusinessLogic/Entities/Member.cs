@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.BusinessLogic.Entities
+namespace UPVTube.BusinessLogic.Entities
 {
-    internal class Member
+    public partial class Member
     {
     }
 }
