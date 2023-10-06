@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{460F133E-2881-4F0C-BB69-A2843A3F7DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{8ABF76A8-2820-45AF-BA16-3DABD58664CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpvTubeLib", "ClassLibrary\UpvTubeLib.csproj", "{8ABF76A8-2820-45AF-BA16-3DABD58664CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{1961AD95-A82D-4BD1-AB4B-496683CEFDC8}"
 	ProjectSection(SolutionItems) = preProject
