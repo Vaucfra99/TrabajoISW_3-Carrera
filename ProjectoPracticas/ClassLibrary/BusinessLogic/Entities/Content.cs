@@ -8,5 +8,11 @@ namespace UPVTube.BusinessLogic.Entities
 {
     public partial class Content
     {
+        
+     public Content() { }
+     //public Content ()
+
+
+
     }
 }
