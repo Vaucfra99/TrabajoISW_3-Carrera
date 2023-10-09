@@ -11,33 +11,15 @@ namespace UPVTube.BusinessLogic.Entities
 {
     public partial class Member
     {
-        public Member() 
-        { 
-            List<String> StudentDomains = new List<String>();
-
-            List<String> TeacherDomains = new List<String>();
-        }
-
-        public Member(String email, String fullName, DateTime lastAccessData, String nick, String password, 
-                      List<String> studentDomains, List<String> teacherDomains, Member member, Content owner, 
-                      Comment writer):this() 
-        {
-            this.Email = email;
-            this.Fullname = fullName;
-            this.LastAccessData = lastAccessData;
-            this.Nick = nick;
-            this.Password = password;
-            this.StudentDomains = studentDomains;
-            this.TeacherDomains = teacherDomains;
-            this.member = member;
-            this.Owner = owner;
-            this.Writer = writer;
-        
-        }
-        
-
-        private Boolean isStudent() { return false; }
-        private  Boolean isTeacher() { return false; }
-        }
+        public String Email { get; set; }   
+        public String FullName { get; set; }
+        public DateTime LastAccessData { get; set; }
+        public String Nick { get; set; }
+        public String Password { get; set; }
+        public List<String> StudentDomains { get; set; }
+        public List<String> TeacherDomains { get; set; }
+        public virtual Member member { get; set; }
+        public virtual Content Owner { get; set; }
+        public virtual Comment Writer { get; set; }
     }
 }
