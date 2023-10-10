@@ -5,9 +5,9 @@ using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using UPVTube.Persistence.Entities;
+using UPVTube.Entities;
 
-namespace UPVTube.BusinessLogic.Entities
+namespace UPVTube.Entities
 {
     public partial class Member
     {

@@ -47,7 +47,7 @@
     <Compile Include="BusinessLogic\Entities\Subject.cs" />
     <Compile Include="BusinessLogic\Entities\Content.cs" />
     <Compile Include="BusinessLogic\Entities\Visualization.cs" />
-    <Compile Include="Persistence\Entities\Authorised.cs" />
+    <Compile Include="Persistence\Entities\Authorized.cs" />
     <Compile Include="Persistence\Entities\Comment.cs" />
     <Compile Include="Persistence\Entities\Content.cs" />
     <Compile Include="Persistence\Entities\Evaluation.cs" />
