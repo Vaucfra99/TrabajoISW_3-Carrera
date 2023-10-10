@@ -15,10 +15,12 @@ namespace UPVTube.Entities
         public bool IsPublic { get; set; }
         public string Title { get; set; }
         public DateTime UploadDate { get; set; }
-        public virtual Member owner { get; set; }
-
-         //Añadir el Evaluation con virtual
-         //ICollection
+        public Authorized Authorized { get; set; }
+        public virtual Member Owner { get; set; }
+        public virtual Evaluation Evaluation { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
+        public ICollection<Visualization> Visualizations { get; set; }
 
     }
 }

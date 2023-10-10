@@ -8,18 +8,26 @@ namespace UPVTube.Entities
 {
     public partial class Content
     {
-        public Content() { 
-        // Inicializar new List<xxx>();
-        //
+        public Content() {
+
+            this.Comments = new List<Comment>();
+
+            this.Subjects = new List<Subject>();
+
+            this.Visualizations = new List<Visualization>();
+
         }
-        public Content( string ContentUri , string Description,   bool sPublic, string Title ,DateTime UploadDate,Member owner ):this()
+        public Content( string contentUri, string description, bool isPublic, string title,DateTime uploadDate, Member owner ):this()
         {
-             //Inicializar todos los miembros
-             //this.Authorized=Authorized.Yes
-             //if Authorizedf.Pending
+            this.ContentUri = contentUri;
+            this.Description = description; 
+            this.IsPublic = isPublic;
+            this.Title = title;
+            this.UploadDate = uploadDate;
+            this.Owner = owner;
+            this.Authorized = Authorized.Yes;
+            if (this.Owner.isStudent()){ this.Authorized = Authorized.Pending;}
+
         }
-
-
-
     }
 }

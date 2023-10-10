@@ -1,40 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using UPVTube.Entities;
 
 namespace UPVTube.Entities
 {
     public partial class Member
     {
-        public Member()
-        {
-            List<String> StudentDomains = new List<String>();
-
-            List<String> TeacherDomains = new List<String>();
-        }
-
-        public Member(String email, String fullName, DateTime lastAccessData, String nick, String password,
-                      List<String> studentDomains, List<String> teacherDomains, Member member, Content owner,
-                      Comment writer) : this()
-        {
-            this.Email = email;
-            this.FullName = fullName;
-            this.LastAccessData = lastAccessData;
-            this.Nick = nick;
-            this.Password = password;
-            this.StudentDomains = studentDomains;
-            this.TeacherDomains = teacherDomains;
-            this.member = member;
-            this.Owner = owner;
-            this.Writer = writer;
-
-        }
-
-
-        public Boolean isStudent() { return false; }
-        public Boolean isTeacher() { return false; }
+        public String Email { get; set; }   
+        public String FullName { get; set; }
+        public DateTime LastAccessData { get; set; }
+        public String Nick { get; set; }
+        public String Password { get; set; }
+        public List<String> StudentDomains { get; set; }
+        public List<String> TeacherDomains { get; set; }
+        public ICollection<Visualization> Visualizations { get; set; }
+        public ICollection<Content> Contents { get; set; }
+        public ICollection<Evaluation> Evaluations { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
-
