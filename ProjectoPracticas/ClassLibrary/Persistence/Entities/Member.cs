@@ -20,7 +20,7 @@ namespace UPVTube.Entities
                       Comment writer) : this()
         {
             this.Email = email;
-            this.Fullname = fullName;
+            this.FullName = fullName;
             this.LastAccessData = lastAccessData;
             this.Nick = nick;
             this.Password = password;
@@ -33,8 +33,8 @@ namespace UPVTube.Entities
         }
 
 
-        private Boolean isStudent() { return false; }
-        private Boolean isTeacher() { return false; }
+        public Boolean isStudent() { return false; }
+        public Boolean isTeacher() { return false; }
     }
 }
-}
+
