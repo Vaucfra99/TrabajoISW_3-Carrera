@@ -10,5 +10,6 @@ namespace UPVTube.Entities
     {
         public int Id { get; set; }
         public DateTime VisualizationDate { get; set; }
+        public virtual Member Member { get; set; }
     }
 }
