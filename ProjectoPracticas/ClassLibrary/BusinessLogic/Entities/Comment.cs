@@ -8,5 +8,17 @@ namespace UPVTube.Entities
 {
     public partial class Comment
     {
+        public Comment()
+        { 
+        }
+
+        public Comment(int id, string Text, DateTime WritingDate, Content Content, Member Writer)
+        {
+            this.Id = id;
+            this.Text = Text;
+            this.WritingDate = WritingDate;
+            this.Content = Content;
+            this.Writer = Writer;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace UPVTube.Entities
     public partial class Comment
     {
         public int Id { get; set; }
-        public String Title { get; set; }
+        public String Text { get; set; }
         public DateTime WritingDate { get; set; }
         public virtual Content Content { get; set; }
         public virtual Member Writer { get; set; }
