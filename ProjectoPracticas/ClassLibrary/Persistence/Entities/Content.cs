@@ -18,9 +18,9 @@ namespace UPVTube.Entities
         public Authorized Authorized { get; set; }
         public virtual Member Owner { get; set; }
         public virtual Evaluation Evaluation { get; set; }
-        public ICollection<Comment> Comments { get; set; }
-        public ICollection<Subject> Subjects { get; set; }
-        public ICollection<Visualization> Visualizations { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<Visualization> Visualizations { get; set; }
 
     }
 }
