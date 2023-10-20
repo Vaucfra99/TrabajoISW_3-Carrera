@@ -22,5 +22,7 @@ namespace UPVTube.Entities
         public virtual ICollection<Content> Contents { get; set; }
         public virtual ICollection<Evaluation> Evaluations { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Member> Subscriptors { get; set; }
+        public virtual ICollection<Member> SubscribedTo { get; set; }
     }
 }

@@ -17,6 +17,9 @@ namespace UPVTube.Entities
             this.Evaluations = new List<Evaluation>();
 
             this.Comments = new List<Comment>();
+            this.Subscriptors = new List<Member>();
+            this.SubscribedTo = new List<Member>();
+
         }
 
         public Member(String email, String fullName, DateTime lastAccessDate, String nick, String password) : this()
