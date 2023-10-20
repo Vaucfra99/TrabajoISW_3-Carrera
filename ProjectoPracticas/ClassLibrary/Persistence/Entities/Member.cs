@@ -18,9 +18,9 @@ namespace UPVTube.Entities
         public String Password { get; set; }
         public List<String> StudentDomains { get; set; }
         public List<String> TeacherDomains { get; set; }
-        public ICollection<Visualization> Visualizations { get; set; }
-        public ICollection<Content> Contents { get; set; }
-        public ICollection<Evaluation> Evaluations { get; set; }
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Visualization> Visualizations { get; set; }
+        public virtual ICollection<Content> Contents { get; set; }
+        public virtual ICollection<Evaluation> Evaluations { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

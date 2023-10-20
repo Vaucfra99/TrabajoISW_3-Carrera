@@ -17,22 +17,15 @@ namespace UPVTube.Entities
             this.Evaluations = new List<Evaluation>();
 
             this.Comments = new List<Comment>();
-
-            List<String> StudentDomains = new List<String>();
-
-            List<String> TeacherDomains = new List<String>();
         }
 
-        public Member(String email, String fullName, DateTime lastAccessData, String nick, String password,
-                      List<String> studentDomains, List<String> teacherDomains) : this()
+        public Member(String email, String fullName, DateTime lastAccessData, String nick, String password) : this()
         {
             this.Email = email;
             this.FullName = fullName;
             this.LastAccessData = lastAccessData;
             this.Nick = nick;
             this.Password = password;
-            this.StudentDomains = studentDomains;
-            this.TeacherDomains = teacherDomains;
         }
 
         public Boolean isStudent() { return false; }
