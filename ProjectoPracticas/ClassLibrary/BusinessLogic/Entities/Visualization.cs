@@ -11,11 +11,12 @@ namespace UPVTube.Entities
         public Visualization()
         {
         }
-        public Visualization(int id, DateTime visualizationDate, Member member)
+        public Visualization(int id, DateTime visualizationDate, Member member, Content content)
         {
             this.Id = id;
             this.VisualizationDate = visualizationDate;
             this.Member = member;
+            this.Content = content;
         }
     }
 }

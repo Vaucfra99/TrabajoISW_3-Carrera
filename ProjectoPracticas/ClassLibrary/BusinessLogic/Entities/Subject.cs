@@ -10,8 +10,9 @@ namespace UPVTube.Entities
     {
         public Subject()
         {
+            this.Contents = new List<Content>();
         }
-        public Subject(int code, string fullName, string name)
+        public Subject(int code, string fullName, string name):this()
         {
             this.Code = code;
             this.FullName = fullName;
