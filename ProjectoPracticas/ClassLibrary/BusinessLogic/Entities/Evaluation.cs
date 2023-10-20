@@ -10,13 +10,13 @@ namespace UPVTube.Entities
     {
         public Evaluation() { }
 
-        public Evaluation(int Id, String RejectionReason, DateTime EvaluationDate, Content Content, Member Censor) 
+        public Evaluation (int Id, String RejectionReason, DateTime EvaluationDate, Member censor, Content content) 
         {
             this.Id = Id;
             this.EvaluationDate = EvaluationDate;
-            this.Content = Content;
+            this.Content = content;
             this.RejectionReason = RejectionReason;
-            this.Censor = Censor;
+            this.Censor = censor;
         
         }
     }

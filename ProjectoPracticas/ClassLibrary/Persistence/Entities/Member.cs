@@ -13,7 +13,7 @@ namespace UPVTube.Entities
     {
         public String Email { get; set; }   
         public String FullName { get; set; }
-        public DateTime LastAccessData { get; set; }
+        public DateTime LastAccessDate { get; set; }
         public String Nick { get; set; }
         public String Password { get; set; }
         public List<String> StudentDomains { get; set; }

@@ -19,11 +19,11 @@ namespace UPVTube.Entities
             this.Comments = new List<Comment>();
         }
 
-        public Member(String email, String fullName, DateTime lastAccessData, String nick, String password) : this()
+        public Member(String email, String fullName, DateTime lastAccessDate, String nick, String password) : this()
         {
             this.Email = email;
             this.FullName = fullName;
-            this.LastAccessData = lastAccessData;
+            this.LastAccessDate = lastAccessDate;
             this.Nick = nick;
             this.Password = password;
         }
