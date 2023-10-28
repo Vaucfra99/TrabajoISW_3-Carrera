@@ -66,10 +66,6 @@
       <Project>{8abf76a8-2820-45af-ba16-3dabd58664ca}</Project>
       <Name>UpvTubeLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UPVTubePersistenceTests\UPVTubePersistenceTests.csproj">
-      <Project>{2f43f354-5d3c-48ba-a632-00d79d6607ee}</Project>
-      <Name>UPVTubePersistenceTests</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
