@@ -94,6 +94,23 @@ namespace DBTest
 
             // Populate here the rest of the database with data
 
+            Console.WriteLine("\n// CREACIÓN DE UN COMENTARIO");
+
+            Comment cm1 = new Comment("Comentario genérico nº1", DateTime.Now, c1, a1);
+            dal.Insert<Comment>(cm1);
+            dal.Commit();
+
+            Console.WriteLine("\n// CREACIÓN DE UNA EVALUACION");
+
+            Evaluation e1 = new Evaluation(DateTime.Now, "Rechazado porque si", a1, c1);
+            dal.Insert<Evaluation>(e1);
+            dal.Commit();
+
+            Console.WriteLine("\n// CREACIÓN DE UN SUJETO");
+
+            Subject s1 = new Subject(7, "Bart Simpson", "Bart");
+            dal.Insert<Subject>(s1);
+            dal.Commit();
 
         }
 
