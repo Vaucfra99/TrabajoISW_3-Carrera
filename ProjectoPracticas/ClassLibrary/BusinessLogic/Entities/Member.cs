@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace UPVTube.Entities
@@ -33,6 +35,10 @@ namespace UPVTube.Entities
 
         public Boolean isStudent() { return false; }
         public Boolean isTeacher() { return false; }
+
+        public void AddContent(Content c) {
+            Contents.Add(c);
     }
+}
 }
 
