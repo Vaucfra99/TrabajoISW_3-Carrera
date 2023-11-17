@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\Entities\Comment.cs" />
     <Compile Include="BusinessLogic\Entities\Evaluation.cs" />
+    <Compile Include="BusinessLogic\Services\IUPVTubeService.cs" />
+    <Compile Include="BusinessLogic\Services\ServiceException-1.cs" />
+    <Compile Include="BusinessLogic\Services\UPVTubeService.cs" />
     <Compile Include="Persistence\Entities\Member.cs" />
     <Compile Include="BusinessLogic\Entities\Subject.cs" />
     <Compile Include="BusinessLogic\Entities\Content.cs" />
