@@ -94,5 +94,14 @@ namespace UPVTube.Services
             else if (password == user.Password) { Logged = user; }
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
+
+        public void LogOut() {
+
+            if (Logged = null) { throw new ServiceException("No ha iniciado sesión"); }
+            else { Logged = null;
+            DateTime now = DateTime.Now;
+            dal.Commit();
+            }
+        }
     }
 }
