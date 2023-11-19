@@ -13,6 +13,7 @@ namespace UPVTube.Services
     {
         private readonly IDAL dal;
         private Member Logged;
+        private DateTime now;
 
         public UPVTubeService(IDAL dal)
         {
@@ -103,9 +104,9 @@ namespace UPVTube.Services
 
         public void LogOut() {
 
-            if (Logged = null) { throw new ServiceException("No ha iniciado sesión"); }
+            if (Logged == null) { throw new ServiceException("No ha iniciado sesión"); }
             else { Logged = null;
-            DateTime now = DateTime.Now;
+            now = DateTime.Now;
             dal.Commit();
             }
         }
