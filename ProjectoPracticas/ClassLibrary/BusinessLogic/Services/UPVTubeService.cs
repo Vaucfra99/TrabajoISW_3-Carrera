@@ -12,6 +12,7 @@ namespace UPVTube.Services
     public class UPVTubeService: IUPVTubeService
     {
         private readonly IDAL dal;
+        private Member Logged;
 
         public UPVTubeService(IDAL dal)
         {
@@ -75,5 +76,23 @@ namespace UPVTube.Services
 
         // A partir de aquí los métodos para implementar los CU
 
+        public void Register(String email, String nick, String password)
+        {
+            Member user = dal.GetById<Member>(nick);
+            if (user != null) { throw new ServiceException("El nick ya existe"); }
+            else if (user.Email != null) { throw new ServiceException("Ya existe un nick con ese email"); }
+            else
+            {
+                dal.Insert(user);
+                dal.Commit();
+            }
+        }
+        public void LogIn(string nick, String password)
+        {
+            Member user = dal.GetById<Member>(nick);
+            if (user == null) { throw new ServiceException("El nick no existe"); }
+            else if (password == user.Password) { Logged = user; }
+            else { throw new ServiceException("La contraseña es incorrecta"); }
+        }
     }
 }
