@@ -83,6 +83,8 @@ namespace UPVTube.Services
             else if (user.Email != null) { throw new ServiceException("Ya existe un nick con ese email"); }
             else
             {
+                user.Email = email;
+                user.Password = password;
                 dal.Insert(user);
                 dal.Commit();
             }
@@ -91,7 +93,11 @@ namespace UPVTube.Services
         {
             Member user = dal.GetById<Member>(nick);
             if (user == null) { throw new ServiceException("El nick no existe"); }
-            else if (password == user.Password) { Logged = user; }
+            else if (password == user.Password)
+            {
+                Logged = user;
+                dal.Commit();
+            }
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
 
