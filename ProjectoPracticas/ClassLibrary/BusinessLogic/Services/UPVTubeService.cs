@@ -110,5 +110,23 @@ namespace UPVTube.Services
             dal.Commit();
             }
         }
+
+        public List<Content> Search(String keywords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
+        {
+            //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
+            earliest ??= new DateTime(1990, 0, 0, 0, 0, 0);
+            //Si no hay fecha final se pone por defecto la actual
+            latest ??= DateTime.Now;
+
+            cList = dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).Any();
+            cList = cList.Where<Content>(c => c.Nick == creatorNick);
+            return;
+        }
+
+        public void Watch(Content content)
+        {
+            //Mostrar URI por pantalla
+            content.ContentURI;
+        }
     }
 }
