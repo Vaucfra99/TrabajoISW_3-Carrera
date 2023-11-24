@@ -122,7 +122,7 @@ namespace UPVTube.Services
             cList = cList.Where<Content>(c => c.Nick == creatorNick);
             return;
         }
-
+       
         public void Watch(Content content)
         {
             //Mostrar URI por pantalla
