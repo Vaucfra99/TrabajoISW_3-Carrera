@@ -119,9 +119,13 @@ namespace UPVTube.Services
             earliest ??= new DateTime(1990, 0, 0, 0, 0, 0);
             //Si no hay fecha final se pone por defecto la actual
             latest ??= DateTime.Now;
-            cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
+            List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
-            if (!(cretorNick == null || cretorNick == ""))
+            if (!(Logged.isStudent || Logged.isTeacher))
+            {
+                cList = cList.Where<Content>(c => c.isPublic);
+            }
+            if (!(creatorNick == null || creatorNick == ""))
             {
                 cList = cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
@@ -136,9 +140,9 @@ namespace UPVTube.Services
             return cList;
         }
 
-        public ContentURI Watch(Content content)
+        public Content Watch(int id)
         {
-            return content.ContentURI;
+            return dal.GetWhere<Content>(c => c.ContentURI == id).Any();
         }
     }
 }
