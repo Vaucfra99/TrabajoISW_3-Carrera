@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace UPVTube.Services
 {
-    public class UPVTubeService: IUPVTubeService
+    public class UPVTubeService : IUPVTubeService
     {
         private readonly IDAL dal;
         private Member Logged;
@@ -50,7 +50,7 @@ namespace UPVTube.Services
 
             // Añadir los 4 contenidos
 
- 
+
 
 
 
@@ -102,19 +102,22 @@ namespace UPVTube.Services
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
 
-        public void LogOut() {
+        public void LogOut()
+        {
 
             if (Logged == null) { throw new ServiceException("No ha iniciado sesión"); }
-            else { Logged = null;
-            now = DateTime.Now;
-            dal.Commit();
+            else
+            {
+                Logged = null;
+                now = DateTime.Now;
+                dal.Commit();
             }
         }
 
         public List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
             cList = dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).Any();
-            
+
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
             earliest ??= new DateTime(1990, 0, 0, 0, 0, 0);
             //Si no hay fecha final se pone por defecto la actual
@@ -144,5 +147,20 @@ namespace UPVTube.Services
         {
             return dal.GetById<Content>(id);
         }
+
+        public void EvaluateContent()
+        {
+            //El profesor ha iniciado sesion en el sistema
+            if (Logged == null || !(Logged.isTeacher))
+            {
+                throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
+            }
+
+            //Busca contenidos pendientes de evaluacion
+            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
+                .OrderBy(c => c.UploadDate) //ordenado por fecha de subida
+                .ToList();
+        }
     }
+
 }
