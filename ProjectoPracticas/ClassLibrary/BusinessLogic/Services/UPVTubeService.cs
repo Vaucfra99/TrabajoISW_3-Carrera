@@ -142,7 +142,7 @@ namespace UPVTube.Services
 
         public Content Watch(int id)
         {
-            return dal.GetWhere<Content>(c => c.ContentURI == id).Any();
+            return dal.GetById<Content>(id);
         }
     }
 }
