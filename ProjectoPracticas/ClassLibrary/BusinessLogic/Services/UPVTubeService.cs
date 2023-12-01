@@ -114,6 +114,7 @@ namespace UPVTube.Services
             }
         }
 
+
         public List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
             cList = dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).Any();
