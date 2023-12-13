@@ -1,5 +1,6 @@
 ﻿    using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
@@ -14,6 +15,7 @@ namespace UPVTube.Entities
         public String Email { get; set; }   
         public String FullName { get; set; }
         public DateTime LastAccessDate { get; set; }
+        [Key]
         public String Nick { get; set; }
         public String Password { get; set; }
         public List<String> StudentDomains { get; set; }

@@ -29,6 +29,12 @@ namespace UPVTube.Persistence
 
         // DbSets for persistent classes in your case study
         // To Do
+        public IDbSet<Member> Members { get; set; }
+        public IDbSet<Comment> Comments { get; set; }
+        public IDbSet<Content> Contents { get; set; }
+        public IDbSet<Evaluation> Evaluations { get; set; }
+        public IDbSet<Subject> Subjects { get; set; }
+        public IDbSet<Visualization> Visualizations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -13,7 +13,7 @@ namespace UPVTube.Services
     {
         private readonly IDAL dal;
         private Member Logged;
-        private DateTime now;
+        
 
         public UPVTubeService(IDAL dal)
         {
@@ -76,16 +76,21 @@ namespace UPVTube.Services
         }
 
         // A partir de aquí los métodos para implementar los CU
-
-        public void Register(String email, String nick, String password)
+        
+        /////////////////////////////////////// Falta el FullName del Member como parámetro
+        
+        public void Register(String email, String fullName,String nick, String password)
         {
             Member user = dal.GetById<Member>(nick);
             if (user != null) { throw new ServiceException("El nick ya existe"); }
-            else if (user.Email != null) { throw new ServiceException("Ya existe un nick con ese email"); }
+            // Para verificar que hay un member con ese email 
+            // se tiene que hacer una nueva consulta al dal con GetWhere
+            else
+            if (dal.GetWhere<Member>(m => m.Email == email).Any()) throw new ServiceException("Ya existe un nick con ese email");
+            
             else
             {
-                user.Email = email;
-                user.Password = password;
+                user=new Member(email,fullName,DateTime.Now,nick, password);
                 dal.Insert(user);
                 dal.Commit();
             }
@@ -97,7 +102,7 @@ namespace UPVTube.Services
             else if (password == user.Password)
             {
                 Logged = user;
-                dal.Commit();
+                
             }
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
@@ -108,9 +113,12 @@ namespace UPVTube.Services
             if (Logged == null) { throw new ServiceException("No ha iniciado sesión"); }
             else
             {
-                Logged = null;
-                now = DateTime.Now;
+                Logged.LastAccessDate = DateTime.Now;
                 dal.Commit();
+
+                Logged = null;
+                
+                
             }
         }
 
