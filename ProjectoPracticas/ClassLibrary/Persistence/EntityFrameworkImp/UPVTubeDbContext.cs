@@ -44,7 +44,7 @@ namespace UPVTube.Persistence
         // Generic method to clear all the data (except some relations if needed)
          public override void RemoveAllData()
         {
-            clearSomeRelationships();
+            ClearSomeRelationships();
 
             base.RemoveAllData(); 
         }
