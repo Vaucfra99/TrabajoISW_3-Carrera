@@ -50,7 +50,7 @@ namespace UPVTube.Persistence
         }
 
         // Sometimes it is needed to clear some relationships explicitly 
-        private void clearSomeRelationships()
+        private void ClearSomeRelationships()
         {
             //TODO Para que no de problemas en el borrado en cascada de los miembros por la relación SubscribedTo hay que eliminar la relación (poner a null) antes de borrar todos los miembros relacionados
             foreach (Member m in Members)
