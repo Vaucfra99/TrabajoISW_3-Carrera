@@ -125,9 +125,9 @@ namespace UPVTube.Services
             latest ??= DateTime.Now;
             List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
-            if (!(Logged.isStudent || Logged.isTeacher))
+            if (!(Logged.isStudent() || Logged.isTeacher()))
             {
-                cList = cList.Where<Content>(c => c.isPublic);
+                cList = cList.Where<Content>(c => c.isPublic());
             }
             if (!(creatorNick == null || creatorNick == ""))
             {
@@ -152,7 +152,7 @@ namespace UPVTube.Services
         public void EvaluateContent()
         {
             //El profesor ha iniciado sesion en el sistema
-            if (Logged == null || !(Logged.isTeacher))
+            if (Logged == null || !(Logged.isTeacher()  ))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
