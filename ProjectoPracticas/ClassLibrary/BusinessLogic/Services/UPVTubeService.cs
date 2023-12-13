@@ -76,9 +76,7 @@ namespace UPVTube.Services
         }
 
         // A partir de aquí los métodos para implementar los CU
-        
-        /////////////////////////////////////// Falta el FullName del Member como parámetro
-        
+       //FullName del Member como parámetro
         public void Register(String email, String fullName,String nick, String password)
         {
             Member user = dal.GetById<Member>(nick);
@@ -102,7 +100,6 @@ namespace UPVTube.Services
             else if (password == user.Password)
             {
                 Logged = user;
-                
             }
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
@@ -115,10 +112,7 @@ namespace UPVTube.Services
             {
                 Logged.LastAccessDate = DateTime.Now;
                 dal.Commit();
-
-                Logged = null;
-                
-                
+                Logged = null; 
             }
         }
 
