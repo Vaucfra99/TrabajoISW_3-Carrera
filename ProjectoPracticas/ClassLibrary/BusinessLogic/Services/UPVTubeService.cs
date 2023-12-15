@@ -147,23 +147,23 @@ namespace UPVTube.Services
             {
                 latest = DateTime.Now;
             }
-            List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
+            cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
             if (!(Logged.isStudent() || Logged.isTeacher()))
             {
-                cList = cList.Where<Content>(c => c.isPublic());
+                cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true);
             }
             if (!(creatorNick == null || creatorNick == ""))
             {
-                cList = cList.Where<Content>(c => c.Owner.Nick == creatorNick);
+                cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
             if (subject != null)
             {
-                cList = cList.Where<Content>(c => c.Subject == subject);
+                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s == subject).Any() == true);
             }
             if (!(keyWords == null || keyWords == ""))
             {
-                cList = cList.Where<Content>(c => c.Title.Contains(keyWords));
+                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(keyWords));
             }
             return cList;
         }
