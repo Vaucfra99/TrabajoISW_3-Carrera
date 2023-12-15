@@ -13,7 +13,7 @@ namespace UPVTube.Services
     {
         private readonly IDAL dal;
         private Member Logged;
-        
+
 
         public UPVTubeService(IDAL dal)
         {
@@ -44,7 +44,7 @@ namespace UPVTube.Services
             AddSubject(s4);
 
             // Añadir los 3 miembros
-           
+
 
 
 
@@ -76,8 +76,8 @@ namespace UPVTube.Services
         }
 
         // A partir de aquí los métodos para implementar los CU
-       //FullName del Member como parámetro
-        public void Register(String email, String fullName,String nick, String password)
+        //FullName del Member como parámetro
+        public void Register(String email, String fullName, String nick, String password)
         {
             Member user = dal.GetById<Member>(nick);
             if (user != null) { throw new ServiceException("El nick ya existe"); }
@@ -85,10 +85,10 @@ namespace UPVTube.Services
             // se tiene que hacer una nueva consulta al dal con GetWhere
             else
             if (dal.GetWhere<Member>(m => m.Email == email).Any()) throw new ServiceException("Ya existe un nick con ese email");
-            
+
             else
             {
-                user=new Member(email,fullName,DateTime.Now,nick, password);
+                user = new Member(email, fullName, DateTime.Now, nick, password);
                 dal.Insert(user);
                 dal.Commit();
             }
@@ -112,11 +112,12 @@ namespace UPVTube.Services
             {
                 Logged.LastAccessDate = DateTime.Now;
                 dal.Commit();
-                Logged = null; 
+                Logged = null;
             }
         }
 
-        public void Upload(String title, String description, String contentUri, boolean isPublic) {
+        public void Upload(String title, String description, String contentUri, boolean isPublic)
+        {
             if (true) { throw new ServiceException(""); }
             else
             {
@@ -128,16 +129,17 @@ namespace UPVTube.Services
 
         public List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
-            cList = dal.GetWhere<Content>(c  
+            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
+
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
-            if(earliest == null)
+            if (earliest == null)
             {
-                ealiest = new DateTime(1990, 0, 0, 0, 0, 0);
+                earliest = new DateTime(1990, 0, 0, 0, 0, 0); 
             }
             //Si no hay fecha final se pone por defecto la actual
             if (latest == null)
             {
-                    latest = new DateTime.Now();
+                latest = DateTime.Now;
             }
             List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
@@ -149,7 +151,7 @@ namespace UPVTube.Services
             {
                 cList = cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
-            if (Subject != null)
+            if (subject != null)
             {
                 cList = cList.Where<Content>(c => c.Subject == subject);
             }
@@ -168,7 +170,7 @@ namespace UPVTube.Services
         public void EvaluateContent()
         {
             //El profesor ha iniciado sesion en el sistema
-            if (Logged == null || !(Logged.isTeacher()  ))
+            if (Logged == null || !(Logged.isTeacher()))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
