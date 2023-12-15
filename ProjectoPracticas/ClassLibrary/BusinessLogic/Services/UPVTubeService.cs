@@ -117,7 +117,7 @@ namespace UPVTube.Services
         }
 
         public void Upload(String title, String description, String contentUri, Boolean isPublic) {
-            if () { throw new ServiceException("No ha iniciado sesión"); }
+            if () { throw new ServiceException(""); }
             else
             {
                 Content content = new Content (string contentUri, string description, bool isPublic, string title)
