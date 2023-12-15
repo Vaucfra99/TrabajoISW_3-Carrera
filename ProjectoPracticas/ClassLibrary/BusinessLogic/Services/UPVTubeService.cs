@@ -116,12 +116,13 @@ namespace UPVTube.Services
             }
         }
 
-        public void Upload(String title, String description, String contentUri, Boolean isPublic) {
-            if () { throw new ServiceException(""); }
+        public void Upload(String title, String description, String contentUri, boolean isPublic) {
+            if (true) { throw new ServiceException(""); }
             else
             {
-                Content content = new Content (string contentUri, string description, bool isPublic, string title)
-                dal.Commit()
+                Content content = new Content(contentUri, description, isPublic, title);
+                dal.Commit();
+            }
         }
 
 
@@ -130,9 +131,15 @@ namespace UPVTube.Services
             cList = dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).Any();
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
-            earliest ??= new DateTime(1990, 0, 0, 0, 0, 0);
+            if(earliest == null)
+            {
+                ealiest = new DateTime(1990, 0, 0, 0, 0, 0);
+            }
             //Si no hay fecha final se pone por defecto la actual
-            latest ??= DateTime.Now;
+            if (latest == null)
+            {
+                    latest = new DateTime.Now();
+            }
             List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
             if (!(Logged.isStudent() || Logged.isTeacher()))
