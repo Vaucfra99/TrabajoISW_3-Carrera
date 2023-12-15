@@ -29,6 +29,12 @@ namespace UPVTube.Persistence
 
         // DbSets for persistent classes in your case study
         // To Do
+        public IDbSet<Member> Members { get; set; }
+        public IDbSet<Comment> Comments { get; set; }
+        public IDbSet<Content> Contents { get; set; }
+        public IDbSet<Evaluation> Evaluations { get; set; }
+        public IDbSet<Subject> Subjects { get; set; }
+        public IDbSet<Visualization> Visualizations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,13 +50,13 @@ namespace UPVTube.Persistence
         // Generic method to clear all the data (except some relations if needed)
          public override void RemoveAllData()
         {
-            clearSomeRelationships();
+            ClearSomeRelationships();
 
             base.RemoveAllData(); 
         }
 
         // Sometimes it is needed to clear some relationships explicitly 
-        private void clearSomeRelationships()
+        private void ClearSomeRelationships()
         {
             //TODO Para que no de problemas en el borrado en cascada de los miembros por la relación SubscribedTo hay que eliminar la relación (poner a null) antes de borrar todos los miembros relacionados
             foreach (Member m in Members)

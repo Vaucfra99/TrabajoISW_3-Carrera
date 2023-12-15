@@ -13,7 +13,7 @@ namespace UPVTube.Services
     {
         private readonly IDAL dal;
         private Member Logged;
-        private DateTime now;
+
 
         public UPVTubeService(IDAL dal)
         {
@@ -76,16 +76,19 @@ namespace UPVTube.Services
         }
 
         // A partir de aquí los métodos para implementar los CU
-
-        public void Register(String email, String nick, String password)
+        //FullName del Member como parámetro
+        public void Register(String email, String fullName, String nick, String password)
         {
             Member user = dal.GetById<Member>(nick);
             if (user != null) { throw new ServiceException("El nick ya existe"); }
-            else if (user.Email != null) { throw new ServiceException("Ya existe un nick con ese email"); }
+            // Para verificar que hay un member con ese email 
+            // se tiene que hacer una nueva consulta al dal con GetWhere
+            else
+            if (dal.GetWhere<Member>(m => m.Email == email).Any()) throw new ServiceException("Ya existe un nick con ese email");
+
             else
             {
-                user.Email = email;
-                user.Password = password;
+                user = new Member(email, fullName, DateTime.Now, nick, password);
                 dal.Insert(user);
                 dal.Commit();
             }
@@ -97,7 +100,6 @@ namespace UPVTube.Services
             else if (password == user.Password)
             {
                 Logged = user;
-                dal.Commit();
             }
             else { throw new ServiceException("La contraseña es incorrecta"); }
         }
@@ -107,31 +109,48 @@ namespace UPVTube.Services
             if (Logged == null) { throw new ServiceException("No ha iniciado sesión"); }
             else
             {
+                Logged.LastAccessDate = DateTime.Now;
+                dal.Commit();
                 Logged = null;
-                now = DateTime.Now;
+            }
+        }
+
+        public void Upload(String title, String description, String contentUri, boolean isPublic)
+        {
+            if (true) { throw new ServiceException(""); }
+            else
+            {
+                Content content = new Content(contentUri, description, isPublic, title);
                 dal.Commit();
             }
         }
 
+
         public List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
-            cList = dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).Any();
+            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
-            earliest ??= new DateTime(1990, 0, 0, 0, 0, 0);
+            if (earliest == null)
+            {
+                earliest = new DateTime(1990, 0, 0, 0, 0, 0); 
+            }
             //Si no hay fecha final se pone por defecto la actual
-            latest ??= DateTime.Now;
+            if (latest == null)
+            {
+                latest = DateTime.Now;
+            }
             List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
-            if (!(Logged.isStudent || Logged.isTeacher))
+            if (!(Logged.isStudent() || Logged.isTeacher()))
             {
-                cList = cList.Where<Content>(c => c.isPublic);
+                cList = cList.Where<Content>(c => c.isPublic());
             }
             if (!(creatorNick == null || creatorNick == ""))
             {
                 cList = cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
-            if (Subject != null)
+            if (subject != null)
             {
                 cList = cList.Where<Content>(c => c.Subject == subject);
             }
@@ -150,7 +169,7 @@ namespace UPVTube.Services
         public void EvaluateContent()
         {
             //El profesor ha iniciado sesion en el sistema
-            if (Logged == null || !(Logged.isTeacher))
+            if (Logged == null || !(Logged.isTeacher()))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
