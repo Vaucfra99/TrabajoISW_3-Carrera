@@ -116,12 +116,18 @@ namespace UPVTube.Services
             }
         }
 
-        public void Upload(String title, String description, String contentUri, boolean isPublic)
+        public void Upload(String title, String description, String contentUri, Boolean isPublic)
         {
-            if (true) { throw new ServiceException(""); }
+            if (Logged == null) { throw new ServiceException("El usuario no ha iniciado sesión"); }
             else
             {
-                Content content = new Content(contentUri, description, isPublic, title);
+                if (Logged.isStudent()) { }
+                else
+                {
+                    //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
+                }
+                DateTime uploadTime = DateTime.Now;
+                Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
                 dal.Commit();
             }
         }
