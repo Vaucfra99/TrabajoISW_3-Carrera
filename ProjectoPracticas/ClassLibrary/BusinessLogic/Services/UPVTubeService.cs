@@ -104,7 +104,6 @@ namespace UPVTube.Services
 
         public void LogOut()
         {
-
             if (Logged == null) { throw new ServiceException("No ha iniciado sesión"); }
             else
             {
@@ -162,5 +161,4 @@ namespace UPVTube.Services
                 .ToList();
         }
     }
-
 }
