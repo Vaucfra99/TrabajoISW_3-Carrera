@@ -21,5 +21,6 @@ namespace UPVTube.Services
         // A partir de aquí los necesarios para los CU solicitados
         //
 
+        void EvaluateContent();
     }
 }
