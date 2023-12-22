@@ -20,7 +20,12 @@ namespace UPVTube.Services
         //
         // A partir de aquí los necesarios para los CU solicitados
         //
-
+        void Register(String email, String fullName, String nick, String password);
+        void LogIn(string nick, String password);
+        void LogOut();
+        void Upload(String title, String description, String contentUri, Boolean isPublic);
+        List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest);
+        Content Watch(int id);
         void EvaluateContent();
     }
 }
