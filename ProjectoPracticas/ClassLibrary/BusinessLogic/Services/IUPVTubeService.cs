@@ -26,5 +26,6 @@ namespace UPVTube.Services
         void Upload(String title, String description, String contentUri, Boolean isPublic);
         List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest);
         Content Watch(int id);
+        void EvaluateContent();
     }
 }
