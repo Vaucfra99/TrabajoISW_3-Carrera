@@ -115,12 +115,18 @@ namespace UPVTube.Services
             }
         }
 
-        public void Upload(String title, String description, String contentUri, boolean isPublic)
+        public void Upload(String title, String description, String contentUri, Boolean isPublic)
         {
-            if (true) { throw new ServiceException(""); }
+            if (Logged == null) { throw new ServiceException("El usuario no ha iniciado sesión"); }
             else
             {
-                Content content = new Content(contentUri, description, isPublic, title);
+                if (Logged.isStudent()) { }
+                else
+                {
+                    //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
+                }
+                DateTime uploadTime = DateTime.Now;
+                Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
                 dal.Commit();
             }
         }
@@ -140,23 +146,23 @@ namespace UPVTube.Services
             {
                 latest = DateTime.Now;
             }
-            List<Content> cList = cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
+            cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
             if (!(Logged.isStudent() || Logged.isTeacher()))
             {
-                cList = cList.Where<Content>(c => c.isPublic());
+                cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true);
             }
             if (!(creatorNick == null || creatorNick == ""))
             {
-                cList = cList.Where<Content>(c => c.Owner.Nick == creatorNick);
+                cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
             if (subject != null)
             {
-                cList = cList.Where<Content>(c => c.Subject == subject);
+                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s == subject).Any() == true);
             }
             if (!(keyWords == null || keyWords == ""))
             {
-                cList = cList.Where<Content>(c => c.Title.Contains(keyWords));
+                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(keyWords));
             }
             return cList;
         }
