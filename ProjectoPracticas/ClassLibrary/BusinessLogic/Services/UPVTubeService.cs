@@ -128,8 +128,12 @@ namespace UPVTube.Services
                 {
                     dal.Commit();
                 }
-                else { throw new ServiceException("Esperando permisos para subir contenido"); }
-                //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos    
+               //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
+                
+               
+               
+               
+               
             }
         }
 
@@ -183,7 +187,7 @@ namespace UPVTube.Services
             }
 
             //Busca contenidos pendientes de evaluacion
-            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
+            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.authorized == Authorized.Pending)
                 .OrderBy(c => c.UploadDate) //ordenado por fecha de subida
                 .ToList();
         }

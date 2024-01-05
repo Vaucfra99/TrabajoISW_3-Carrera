@@ -18,6 +18,7 @@ namespace UPVTube.Entities
 
         }
         public Content( string contentUri, string description, bool isPublic, string title,DateTime uploadDate, Member owner ):this()
+
         {
             this.ContentURI = contentUri;
             this.Description = description; 
