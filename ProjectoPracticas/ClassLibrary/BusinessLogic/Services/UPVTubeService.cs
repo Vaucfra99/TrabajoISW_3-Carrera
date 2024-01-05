@@ -120,17 +120,14 @@ namespace UPVTube.Services
             if (Logged == null) { throw new ServiceException("El usuario no ha iniciado sesión"); }
             else
             {
-                if (Logged.isStudent()) { throw new ServiceException("Necesitas permisos para poder subir contenido"); }
-                else if (Logged.isTeacher())
+                DateTime uploadTime = DateTime.Now;
+                Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
+                if (Logged.isTeacher())
                 {
-                    DateTime uploadTime = DateTime.Now;
-                    Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
-                    dal.Insert(content);
                     dal.Commit();
                 }
-               //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
-                
-               
+                else { throw new ServiceException("Esperando permisos para subir contenido"); }
+                //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos    
             }
         }
 

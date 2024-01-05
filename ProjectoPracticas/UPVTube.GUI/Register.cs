@@ -11,16 +11,16 @@ using UPVTube.Services;
 
 namespace UPVTube.GUI
 {
-    public partial class Login : Form
+    public partial class Register : Form
     {
         private IUPVTubeService service;
-        public Login(IUPVTubeService service)
+        public Register(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void Register_Load(object sender, EventArgs e)
         {
 
         }
