@@ -93,7 +93,7 @@ namespace UPVTube.Services
                 dal.Commit();
             }
         }
-        public void LogIn(string nick, String password)
+        public void LogIn(String nick, String password)
         {
             Member user = dal.GetById<Member>(nick);
             if (user == null) { throw new ServiceException("El nick no existe"); }

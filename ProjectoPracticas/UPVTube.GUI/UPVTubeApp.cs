@@ -26,12 +26,16 @@ namespace UPVTube.GUI
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
             login.ShowDialog();
+            this.Close();
         }
 
         private void btnregister_Click(object sender, EventArgs e)
         {
+            this.Hide();
             register.ShowDialog();
+            this.Close();
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -39,9 +43,5 @@ namespace UPVTube.GUI
             Application.Exit();
         }
 
-        private void UPVTubeApp_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
