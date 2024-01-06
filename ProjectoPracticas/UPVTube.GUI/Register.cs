@@ -51,7 +51,18 @@ namespace UPVTube.GUI
 
         private void BtnAccept_Click(object sender, EventArgs e)
         {
-
+            if (TextBoxEmail.Text == string.Empty || TextBoxFullName.Text == string.Empty || TextBoxNick.Text == string.Empty || TextBoxPassword.Text == string.Empty) 
+            {
+                DialogResult error = MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TextBoxEmail.Clear();
+                TextBoxFullName.Clear();
+                TextBoxNick.Clear();
+                TextBoxPassword.Clear();
+            }
+            else {
+                comprobarDominio();
+                service.Register(email, fullname, nick, password); 
+            }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -60,6 +71,17 @@ namespace UPVTube.GUI
             TextBoxFullName.Clear();
             TextBoxNick.Clear();
             TextBoxPassword.Clear();
+        }
+
+        public void comprobarDominio(){
+            if (email.Contains("@alumno.upv.es"))
+            {
+                /* es student*/
+            }
+            else if (email.Contains("@profesor"))
+            {
+                /*es profesor*/
+            }
         }
     }
 }

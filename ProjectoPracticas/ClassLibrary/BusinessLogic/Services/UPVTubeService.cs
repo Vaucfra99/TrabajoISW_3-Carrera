@@ -79,7 +79,9 @@ namespace UPVTube.Services
         //FullName del Member como parámetro
         public void Register(String email, String fullName, String nick, String password)
         {
-            Member user = dal.GetById<Member>(nick);
+            IComparable a = nick;
+
+            Member user = dal.GetById<Member>(a);
             if (user != null) { throw new ServiceException("El nick ya existe"); }
             // Para verificar que hay un member con ese email 
             // se tiene que hacer una nueva consulta al dal con GetWhere

@@ -42,7 +42,11 @@ namespace UPVTube.GUI
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            if(TextBoxPassword.Text == string.Empty || TextBoxUser.Text == string.Empty) { Application.Exit();}
+            if(TextBoxPassword.Text == string.Empty || TextBoxUser.Text == string.Empty) {
+                DialogResult error = MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TextBoxUser.Clear();
+                TextBoxPassword.Clear();
+            }
             else { service.LogIn(nick, password); }
         }
 
@@ -50,6 +54,11 @@ namespace UPVTube.GUI
         {
             TextBoxPassword.Clear();
             TextBoxUser.Clear();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

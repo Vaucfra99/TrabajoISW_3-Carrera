@@ -40,53 +40,60 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 30);
+            this.label1.Location = new System.Drawing.Point(60, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 16);
+            this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesion";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 92);
+            this.label2.Location = new System.Drawing.Point(14, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 166);
+            this.label3.Location = new System.Drawing.Point(13, 135);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
             // TextBoxUser
             // 
             this.TextBoxUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TextBoxUser.Location = new System.Drawing.Point(118, 89);
+            this.TextBoxUser.Location = new System.Drawing.Point(88, 72);
+            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.Size = new System.Drawing.Size(99, 22);
+            this.TextBoxUser.Size = new System.Drawing.Size(75, 20);
             this.TextBoxUser.TabIndex = 3;
             this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Location = new System.Drawing.Point(118, 160);
+            this.TextBoxPassword.Location = new System.Drawing.Point(88, 130);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(101, 22);
+            this.TextBoxPassword.Size = new System.Drawing.Size(77, 20);
             this.TextBoxPassword.TabIndex = 4;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.Location = new System.Drawing.Point(177, 221);
+            this.BtnAceptar.Location = new System.Drawing.Point(133, 180);
+            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(63, 50);
+            this.BtnAceptar.Size = new System.Drawing.Size(66, 41);
             this.BtnAceptar.TabIndex = 5;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
@@ -94,9 +101,10 @@
             // 
             // BtnClear
             // 
-            this.BtnClear.Location = new System.Drawing.Point(31, 227);
+            this.BtnClear.Location = new System.Drawing.Point(23, 184);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(65, 39);
+            this.BtnClear.Size = new System.Drawing.Size(54, 32);
             this.BtnClear.TabIndex = 6;
             this.BtnClear.Text = "Borrar";
             this.BtnClear.UseVisualStyleBackColor = true;
@@ -104,9 +112,9 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 417);
+            this.ClientSize = new System.Drawing.Size(210, 250);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.TextBoxPassword);
@@ -114,6 +122,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
