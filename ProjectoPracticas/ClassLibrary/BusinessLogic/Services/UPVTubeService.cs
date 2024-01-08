@@ -177,7 +177,7 @@ namespace UPVTube.Services
             return dal.GetById<Content>(id);
         }
 
-        public List<Content> getPendingContents()
+        public List<Content> GetPendingContents()
         {
             //El profesor ha iniciado sesion en el sistema
             if (Logged == null || !(Logged.isTeacher()))
