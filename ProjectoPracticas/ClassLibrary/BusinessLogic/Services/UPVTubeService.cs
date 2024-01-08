@@ -137,7 +137,7 @@ namespace UPVTube.Services
         }
 
 
-        public List<Content> Search(String keyWords, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
+        public List<Content> Search(String keyWords, String creatorNick, String subject, DateTime earliest, DateTime latest)
         {
             List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
 
@@ -161,9 +161,9 @@ namespace UPVTube.Services
             {
                 cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick);
             }
-            if (subject != null)
+            if (!(subject == null || subject == ""))
             {
-                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s == subject).Any() == true);
+                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName == subject).Any() == true);
             }
             if (!(keyWords == null || keyWords == ""))
             {
