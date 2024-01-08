@@ -11,14 +11,14 @@ using UPVTube.Services;
 
 namespace UPVTube.GUI
 {
-    public partial class Register : Form
+    public partial class Register : Form //UPVTubeFormbase (tiene que heredar de esta)
     {
         private IUPVTubeService service;
         private String nick;
         private String password;
         private String fullname;
         private String email;
-        public Register(IUPVTubeService service)
+        public Register(IUPVTubeService service) //:base (service) 
         {
             InitializeComponent();
             this.service = service;
@@ -61,8 +61,20 @@ namespace UPVTube.GUI
             }
             else {
                 comprobarDominio();
-                service.Register(email, fullname, nick, password); 
-            }
+                try
+                {
+
+                    service.Register(email, fullname, nick, password);
+                }catch (ServiceException ex) {
+                    DialogResult answer = MessageBox.Show(this, // Owner
+                    ex.Message, // Message
+                    "Error de Servicio", // Title
+                    MessageBoxButtons.OK, // Buttons included
+                    MessageBoxIcon.Exclamation); // Icon
+                   
+                }
+
+                }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)

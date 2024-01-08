@@ -20,6 +20,7 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
+            service.DBInitialization();//siempre que se ejecute, se resetea la base de datos.
             login = new Login(service);
             register = new Register(service);
         }

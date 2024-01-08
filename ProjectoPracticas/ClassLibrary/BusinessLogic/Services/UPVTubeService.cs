@@ -53,7 +53,7 @@ namespace UPVTube.Services
 
 
 
-
+            dal.Commit();
         }
 
         public void AddSubject(Subject subject)
@@ -178,7 +178,7 @@ namespace UPVTube.Services
             return dal.GetById<Content>(id);
         }
 
-        public void EvaluateContent()
+        public List<Content> getPendingContents()
         {
             //El profesor ha iniciado sesion en el sistema
             if (Logged == null || !(Logged.isTeacher()))
@@ -186,10 +186,26 @@ namespace UPVTube.Services
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
 
-            //Busca contenidos pendientes de evaluacion
-            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
+            //Devuelve lista de pending contents
+                 return dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
                 .OrderBy(c => c.UploadDate) //ordenado por fecha de subida
                 .ToList();
+            //Lo llamará el formulario
+
+        }
+
+        public void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo) {
+           
+            if (Logged == null || !(Logged.isTeacher()))
+            {
+                throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
+            }
+            Content c = dal.GetById<Content>(contentId);
+            if (evaluacion) { c.Authorized = Authorized.Yes; }
+            else { c.Authorized = Authorized.No;}
+            Evaluation evaluation = new Evaluation(DateTime.Now, motivoRechazo, Logged, c);
+            dal.Insert(evaluation);
+            dal.Commit();
         }
     }
 }
