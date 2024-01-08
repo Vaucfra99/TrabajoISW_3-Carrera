@@ -19,10 +19,12 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private String nick;
         private String password;
+        private Menu menu;
         public Login(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            menu = new Menu(service);
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -52,25 +54,29 @@ namespace UPVTube.GUI
                 try
                 {
                     service.LogIn(nick, password);
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+
                 }
                 catch (ServiceException ex)
                 {
-                    DialogResult answer = MessageBox.Show(this, // Owner
-                    ex.Message, // Message
-                    "Error de Servicio", // Title
-                    MessageBoxButtons.OK, // Buttons included
-                    MessageBoxIcon.Exclamation); // Icon
-
+                    DialogResult answer = MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TextBoxUser.Clear();
+                    TextBoxPassword.Clear();
                 }
             }
-            
-            
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             TextBoxPassword.Clear();
             TextBoxUser.Clear();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
