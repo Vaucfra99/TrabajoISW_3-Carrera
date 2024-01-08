@@ -187,7 +187,7 @@ namespace UPVTube.Services
             }
 
             //Busca contenidos pendientes de evaluacion
-            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.authorized == Authorized.Pending)
+            IEnumerable<Content> pendingContent = dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
                 .OrderBy(c => c.UploadDate) //ordenado por fecha de subida
                 .ToList();
         }
