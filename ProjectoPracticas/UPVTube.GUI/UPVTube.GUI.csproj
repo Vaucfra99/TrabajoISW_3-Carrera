@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Searcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Searcher.Designer.cs">
+      <DependentUpon>Searcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
