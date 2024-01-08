@@ -109,6 +109,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Searcher.resx">
+      <DependentUpon>Searcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Upload.resx">
       <DependentUpon>Upload.cs</DependentUpon>
     </EmbeddedResource>
