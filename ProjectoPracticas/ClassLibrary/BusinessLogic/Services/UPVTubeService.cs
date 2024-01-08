@@ -124,10 +124,9 @@ namespace UPVTube.Services
             {
                 DateTime uploadTime = DateTime.Now;
                 Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
-                if (Logged.isTeacher())
-                {
+               
                     dal.Commit();
-                }
+    
                //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
                 
                
