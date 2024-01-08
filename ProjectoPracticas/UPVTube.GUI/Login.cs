@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using UPVTube.Services;
 using UPVTube.Entities;
 using UPVTube.GUI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace UPVTube.GUI
 {
@@ -22,7 +23,6 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
-            TextBoxUser.Visible = true;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -47,18 +47,30 @@ namespace UPVTube.GUI
                 TextBoxUser.Clear();
                 TextBoxPassword.Clear();
             }
-            else { service.LogIn(nick, password); }
+            else
+            {
+                try
+                {
+                    service.LogIn(nick, password);
+                }
+                catch (ServiceException ex)
+                {
+                    DialogResult answer = MessageBox.Show(this, // Owner
+                    ex.Message, // Message
+                    "Error de Servicio", // Title
+                    MessageBoxButtons.OK, // Buttons included
+                    MessageBoxIcon.Exclamation); // Icon
+
+                }
+            }
+            
+            
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             TextBoxPassword.Clear();
             TextBoxUser.Clear();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

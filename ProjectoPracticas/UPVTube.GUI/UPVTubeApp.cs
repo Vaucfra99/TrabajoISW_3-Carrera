@@ -44,5 +44,9 @@ namespace UPVTube.GUI
             Application.Exit();
         }
 
+        private void UPVTubeApp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

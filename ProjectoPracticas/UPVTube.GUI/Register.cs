@@ -60,7 +60,6 @@ namespace UPVTube.GUI
                 TextBoxPassword.Clear();
             }
             else {
-                comprobarDominio();
                 try
                 {
 
@@ -83,17 +82,6 @@ namespace UPVTube.GUI
             TextBoxFullName.Clear();
             TextBoxNick.Clear();
             TextBoxPassword.Clear();
-        }
-
-        public void comprobarDominio(){
-            if (email.Contains("@alumno.upv.es"))
-            {
-                /* es student*/
-            }
-            else if (email.Contains("@profesor"))
-            {
-                /*es profesor*/
-            }
         }
     }
 }

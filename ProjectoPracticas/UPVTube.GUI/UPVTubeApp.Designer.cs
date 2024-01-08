@@ -88,6 +88,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UPVTubeApp";
             this.Text = "UPVTube";
+            this.Load += new System.EventHandler(this.UPVTubeApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
