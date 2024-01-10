@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +15,48 @@ namespace UPVTube.GUI
     public partial class Menu : Form
     {
         private IUPVTubeService service;
+        private Upload upload;
+        private Searcher search;
+        private UPVTubeApp logout;
         public Menu(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            service.DBInitialization();//siempre que se ejecute, se resetea la base de datos.
+            upload = new Upload(service);
+            search = new Searcher(service);
+            logout = new UPVTubeApp(service);
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonSubir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            upload.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            search.ShowDialog();
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            logout.ShowDialog();
+            this.Close();
         }
     }
 }
