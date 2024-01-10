@@ -18,6 +18,7 @@ namespace UPVTube.GUI
         private Upload upload;
         private Searcher search;
         private Login login;
+        private UPVTubeApp upvtubeapp;
         
         public Menu(IUPVTubeService service)
         {
@@ -54,6 +55,11 @@ namespace UPVTube.GUI
 
         }
 
-        
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            upvtubeapp.ShowDialog();
+            this.Close();
+        }
     }
 }

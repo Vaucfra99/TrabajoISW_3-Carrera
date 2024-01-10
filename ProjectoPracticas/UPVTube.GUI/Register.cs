@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPVTube.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UPVTube.GUI
 {
@@ -18,10 +19,12 @@ namespace UPVTube.GUI
         private String password;
         private String fullname;
         private String email;
+        private Menu menu;
         public Register(IUPVTubeService service) //:base (service) 
         {
             InitializeComponent();
             this.service = service;
+            menu = new Menu(service);
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -62,18 +65,19 @@ namespace UPVTube.GUI
             else {
                 try
                 {
-
                     service.Register(email, fullname, nick, password);
-                }catch (ServiceException ex) {
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                catch (ServiceException ex) {
                     DialogResult answer = MessageBox.Show(this, // Owner
                     ex.Message, // Message
                     "Error de Servicio", // Title
                     MessageBoxButtons.OK, // Buttons included
                     MessageBoxIcon.Exclamation); // Icon
-                   
                 }
-
-                }
+            }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
