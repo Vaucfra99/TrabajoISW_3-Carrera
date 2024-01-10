@@ -17,7 +17,8 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private Upload upload;
         private Searcher search;
-        private UPVTubeApp logout;
+        private Login login;
+        
         public Menu(IUPVTubeService service)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace UPVTube.GUI
             service.DBInitialization();//siempre que se ejecute, se resetea la base de datos.
             upload = new Upload(service);
             search = new Searcher(service);
-            logout = new UPVTubeApp(service);
+           
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -52,11 +53,6 @@ namespace UPVTube.GUI
 
         }
 
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            logout.ShowDialog();
-            this.Close();
-        }
+        
     }
 }

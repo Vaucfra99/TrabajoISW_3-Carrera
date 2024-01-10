@@ -31,12 +31,11 @@
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonSubir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(90, 170);
+            this.buttonBuscar.Location = new System.Drawing.Point(86, 225);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(143, 54);
             this.buttonBuscar.TabIndex = 0;
@@ -46,7 +45,7 @@
             // 
             // buttonSubir
             // 
-            this.buttonSubir.Location = new System.Drawing.Point(385, 170);
+            this.buttonSubir.Location = new System.Drawing.Point(401, 225);
             this.buttonSubir.Name = "buttonSubir";
             this.buttonSubir.Size = new System.Drawing.Size(198, 54);
             this.buttonSubir.TabIndex = 1;
@@ -57,29 +56,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(271, 99);
+            this.label1.Location = new System.Drawing.Point(277, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "¡Bienvenid@!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Location = new System.Drawing.Point(500, 355);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(126, 48);
-            this.buttonLogout.TabIndex = 3;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 430);
-            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSubir);
             this.Controls.Add(this.buttonBuscar);
@@ -97,6 +85,5 @@
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonSubir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLogout;
     }
 }
