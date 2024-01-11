@@ -19,10 +19,13 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private Watcher view;
         private Menu menu;
+        private int WatchId;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            menu = new Menu(service);
+            view = new Watcher(service, WatchId);
         }
 
         
@@ -38,10 +41,10 @@ namespace UPVTube.GUI
         private void ListBoxSearchRes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Content c = (Content)listBoxSearchRes.SelectedItem;
-            int id = c.Id;
+            WatchId = c.Id;
             
             this.Hide();
-            view.ShowDialog();//Falta pasarle de lguna forma la id
+            view.ShowDialog();
             this.Close();
         }
 

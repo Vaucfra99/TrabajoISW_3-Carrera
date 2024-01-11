@@ -11,6 +11,7 @@ using UPVTube.Services;
 using UPVTube.Entities;
 using UPVTube.GUI;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UPVTube.GUI
 {
@@ -18,9 +19,11 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Searcher search;
-        public Watcher(int id)
+        public Watcher(IUPVTubeService service, int id)
         {
             InitializeComponent();
+            this.service = service;
+            search = new Searcher(service);
             Content c = service.Watch(id);
             titleField.Text = c.Title;
             CreatorNickField.Text = c.Owner.Nick;
