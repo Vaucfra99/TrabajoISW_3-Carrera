@@ -177,7 +177,7 @@
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Watcher";
-            this.Text = "Form1";
+            this.Text = "Watcher";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
