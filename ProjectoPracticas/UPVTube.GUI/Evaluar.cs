@@ -18,14 +18,13 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private bool evaluacion;
         private Menu meenu;
-        private Evaluation evaluation;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            botonPer.Enabled = false;
+            botonRec.Enabled = false;
             meenu = new Menu(service);
-            
-            
             CargarDatosEnListView();
         }
 
@@ -35,11 +34,9 @@ namespace UPVTube.GUI
             {
                 List<Content> cList = service.GetPendingContents();
                 foreach (Content c in cList)
-                {
+                { 
 
                     listaPendientes.Items.Add(c);
-
-
                 }
 
             }
@@ -62,10 +59,18 @@ namespace UPVTube.GUI
         private void listaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Content c1 = (Content)listaPendientes.SelectedItem;
+            botonPer.Enabled = true; 
+            botonPer.Enabled = true;
+        }
 
-            this.Hide();
-            evaluation.ShowDialog();
-            this.Close();
+        private void botonPer_Click(object sender, EventArgs e)
+        {
+            DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void botonRec_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
