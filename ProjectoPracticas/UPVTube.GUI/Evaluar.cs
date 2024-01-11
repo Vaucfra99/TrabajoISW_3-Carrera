@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPVTube.Entities;
 using UPVTube.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UPVTube.GUI
 {
@@ -16,10 +17,12 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private bool evaluacion;
+        private Menu meenu;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            meenu = new Menu(service);
             ConfigurarListView();
             CargarDatosEnListView();
             Desactiva_Botones();
@@ -53,6 +56,7 @@ namespace UPVTube.GUI
         private void CargarDatosEnListView()
         {
             List<Content> contents = service.GetPendingContents();
+
 
 
             foreach (Content content in contents)
@@ -101,23 +105,19 @@ namespace UPVTube.GUI
             textBoxComentario.Text = string.Empty;
         }
 
-        private void Desactiva_Botones()
-        {
-            buttonAutorizar.Enabled = false;
-            buttonDenegar.Enabled = false;
-            textBoxComentario.Enabled = false;
-        }
-
-        private void Activa_Botones()
-        {
-            buttonAutorizar.Enabled = true;
-            buttonDenegar.Enabled = true;
-            textBoxComentario.Enabled = true;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            meenu.ShowDialog();
+            this.Close();
+        }
+
+        private void listaPendientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
 
         }
+
     }
 }

@@ -45,13 +45,26 @@ namespace UPVTube.Services
 
             // Añadir los 3 miembros
 
-
+            Member m1 = new Member("irene@alumno.com","Irene San Román Fuentes", DateTime.Now, "irene", "irene1");
+            AddMember(m1);
+            Member m2 = new Member("victor@alumno.com", "Victor Aucejo Franco", DateTime.Now, "victor", "victor2");
+            AddMember(m2);
+            Member m3 = new Member("juan@alumno.com", "Juan Candela Morant", DateTime.Now, "juan", "juan3");
+            AddMember(m3);
+            Member m4 = new Member("nacho@alumno.com", "Igancio de Lucas Gil", DateTime.Now, "nacho", "nacho4");
+            AddMember(m4);
 
 
             // Añadir los 4 contenidos
 
-
-
+            Content c1 = new Content("teoría", "Práctica 1 ISW", true, "ISW Práctica 1 Contenidos", DateTime.Now, m1);
+            AddContent(c1);
+            Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now, m2);
+            AddContent(c2);
+            Content c3 = new Content("teoría 1", "Teoría 1 ISW", false, "ISW Teoría 1 Contenidos", DateTime.Now, m3);
+            AddContent(c3);
+            Content c4 = new Content("teoría 2", "Teoría 2 ISW", false, "ISW Teoría 2 Contenidos", DateTime.Now, m4);
+            AddContent(c4);
 
             dal.Commit();
         }
@@ -77,6 +90,35 @@ namespace UPVTube.Services
 
         // A partir de aquí los métodos para implementar los CU
         //FullName del Member como parámetro
+
+        public void AddMember(Member member)
+        {
+            // Restricción: No puede haber dos asignaturas con el mismo code
+            if (!dal.GetWhere<Member>(x => x.Email == member.Email).Any())
+            {
+                // Restricción: No puede haber dos asignaturas con el mismo name
+                if (!dal.GetWhere<Member>(x => x.Nick == member.Nick).Any())
+                {
+                    // Sólo se salva si no hay Code ni email duplicado
+                    dal.Insert<Member>(member);
+                    dal.Commit();
+                }
+                else
+                    throw new ServiceException("Member with email " + member.Email + " already exists.");
+            }
+            else
+                throw new ServiceException("Member with nick " + member.Nick + " already exists.");
+        }
+
+        public void AddContent(Content content)
+        {
+                dal.Insert<Content>(content);
+                dal.Commit();
+            }
+           
+
+
+
         public void Register(String email, String fullName, String nick, String password)
         {
             IComparable a = nick;
