@@ -18,28 +18,15 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private bool evaluacion;
         private Menu meenu;
-        private Evaluacion evaluacion;
+        private Evaluation evaluation;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
             meenu = new Menu(service);
-            evaluacion = new Evaluar.evaluacion(service);
-            ConfigurarListView();
+            
+            
             CargarDatosEnListView();
-        }
-
-
-        private void ConfigurarListView()
-        {
-            listaPendientes.View = View.Details;
-            listaPendientes.Columns.Add("ID", -2);
-            listaPendientes.Columns.Add("Título", -2);
-            listaPendientes.Columns.Add("Creador", -2);
-            listaPendientes.Columns.Add("Descripción", 300);
-            listaPendientes.Columns.Add("URI", 300);
-            listaPendientes.Columns.Add("Asignaturas", -2);
-            listaPendientes.Columns.Add("Fecha de Subida", -2);
         }
 
         private void CargarDatosEnListView()
@@ -50,8 +37,9 @@ namespace UPVTube.GUI
                 foreach (Content c in cList)
                 {
 
-
                     listaPendientes.Items.Add(c);
+
+
                 }
 
             }
@@ -71,13 +59,12 @@ namespace UPVTube.GUI
             meenu.ShowDialog();
             this.Close();
         }
-
-        private void listaPendientes_SelectedIndexChanged(object sender, EventArgs e)
+        private void listaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Content c1 = (Content)listaPendientes.SelectedItem;
 
             this.Hide();
-            evaluacion.ShowDialog();
+            evaluation.ShowDialog();
             this.Close();
         }
     }

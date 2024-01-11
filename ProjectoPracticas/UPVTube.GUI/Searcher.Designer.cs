@@ -41,6 +41,8 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.listBoxSearchRes = new System.Windows.Forms.ListBox();
             this.GoBackButton = new System.Windows.Forms.Button();
+            this.upvTubeDBDataSet1 = new UPVTubePersistenceTests.UPVTubeDBDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.upvTubeDBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelKeyWords
@@ -162,6 +164,11 @@
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBack_Click);
             // 
+            // upvTubeDBDataSet1
+            // 
+            this.upvTubeDBDataSet1.DataSetName = "UPVTubeDBDataSet";
+            this.upvTubeDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,6 +191,7 @@
             this.Name = "Searcher";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Searcher_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.upvTubeDBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +212,6 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBoxSearchRes;
         private System.Windows.Forms.Button GoBackButton;
+        private UPVTubePersistenceTests.UPVTubeDBDataSet upvTubeDBDataSet1;
     }
 }
