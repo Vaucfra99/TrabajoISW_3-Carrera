@@ -62,12 +62,6 @@
     <Compile Include="Evaluar.Designer.cs">
       <DependentUpon>Evaluar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pendiente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pendiente.Designer.cs">
-      <DependentUpon>Pendiente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,9 +102,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Evaluar.resx">
       <DependentUpon>Evaluar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pendiente.resx">
-      <DependentUpon>Pendiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
