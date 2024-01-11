@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UPVTube.Services;
 
 namespace UPVTube.GUI
 {
     public partial class Evaluar : Form
     {
-        public Evaluar()
+        private IUPVTubeService service;
+        public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
+            this.service = service;
         }
     }
 }
