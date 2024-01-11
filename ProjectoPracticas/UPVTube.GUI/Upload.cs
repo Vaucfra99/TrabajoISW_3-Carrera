@@ -19,11 +19,13 @@ namespace UPVTube.GUI
         private String description;
         private String contentURI;
         private Boolean isPublic = false;
-        
+        private Menu menuu;
+
         public Upload(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            menuu = new Menu(service);
         }
 
         private void Upload_Load(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace UPVTube.GUI
                 try
                 {
                     service.Upload(tittle, description, contentURI, isPublic);
+                    DialogResult subido = MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ServiceException ex)
                 {
@@ -82,7 +85,9 @@ namespace UPVTube.GUI
 
         private void buttonAtras_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            menuu.ShowDialog();
+            this.Close();
         }
     }
 }
