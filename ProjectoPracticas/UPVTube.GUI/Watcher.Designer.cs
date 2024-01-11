@@ -104,6 +104,7 @@
             this.tableLayoutPanel1.Controls.Add(this.UploadDateField, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.DescriptionField, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
@@ -161,7 +162,8 @@
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(236, 421);
+            this.GoBackButton.Location = new System.Drawing.Point(17, 422);
+            this.GoBackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(75, 23);
             this.GoBackButton.TabIndex = 6;
@@ -176,8 +178,10 @@
             this.ClientSize = new System.Drawing.Size(509, 473);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Watcher";
             this.Text = "Watcher";
+            this.Load += new System.EventHandler(this.Watcher_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

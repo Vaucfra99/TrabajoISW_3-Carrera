@@ -31,11 +31,24 @@ namespace UPVTube.GUI
         
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            List<Content> cList = service.Search(textBoxKeyWords.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
-            foreach (Content c in cList)
+            try 
             {
-                listBoxSearchRes.Items.Add(c);
+                List<Content> cList = service.Search(textBoxKeyWords.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
+                foreach (Content c in cList)
+                {
+                    listBoxSearchRes.Items.Add(c);
+                }
             }
+            catch (ServiceException ex) 
+            {
+                DialogResult answer = MessageBox.Show(this, // Owner
+                ex.Message, // Message
+                "Error de Servicio", // Title
+                MessageBoxButtons.OK, // Buttons included
+                MessageBoxIcon.Exclamation); // Icon
+            }
+            
+            
         }
         
         private void ListBoxSearchRes_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +66,11 @@ namespace UPVTube.GUI
             this.Hide();
             menu.ShowDialog();
             this.Close();
+        }
+
+        private void Searcher_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

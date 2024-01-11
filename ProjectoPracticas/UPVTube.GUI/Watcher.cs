@@ -19,17 +19,29 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Searcher search;
+
         public Watcher(IUPVTubeService service, int id)
         {
             InitializeComponent();
             this.service = service;
             search = new Searcher(service);
-            Content c = service.Watch(id);
-            titleField.Text = c.Title;
-            CreatorNickField.Text = c.Owner.Nick;
-            ContentIdField.Text = id.ToString();
-            UploadDateField.Text = c.UploadDate.ToString();
-            DescriptionField.Text = c.Description;
+            try
+            {
+                Content c = service.Watch(id);
+                titleField.Text = c.Title;
+                CreatorNickField.Text = c.Owner.Nick;
+                ContentIdField.Text = id.ToString();
+                UploadDateField.Text = c.UploadDate.ToString();
+                DescriptionField.Text = c.Description;
+            }
+            catch (ServiceException ex)
+            {
+                DialogResult answer = MessageBox.Show(this, // Owner
+                ex.Message, // Message
+                "Error de Servicio", // Title
+                MessageBoxButtons.OK, // Buttons included
+                MessageBoxIcon.Exclamation); // Icon    
+            }
         }
 
         private void GoBack_Click(object sender, EventArgs e)
@@ -37,6 +49,11 @@ namespace UPVTube.GUI
             this.Hide();
             search.ShowDialog();
             this.Close();
+        }
+
+        private void Watcher_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
