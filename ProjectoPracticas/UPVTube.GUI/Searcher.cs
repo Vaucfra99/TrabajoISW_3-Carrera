@@ -17,6 +17,7 @@ namespace UPVTube.GUI
     public partial class Searcher : Form
     {
         private IUPVTubeService service;
+        private Pendiente view;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
@@ -37,7 +38,10 @@ namespace UPVTube.GUI
         {
             Content c = (Content)listBoxSearchRes.SelectedItem;
             int id = c.Id;
-
+            
+            this.Hide();
+            view.ShowDialog();//Falta pasarle de lguna forma la id
+            this.Close();
         }
     }
 }
