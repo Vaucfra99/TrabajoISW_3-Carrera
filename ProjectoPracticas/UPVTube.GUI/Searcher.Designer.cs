@@ -39,7 +39,7 @@
             this.dateTimePickerEarly = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.listViewSearchRes = new System.Windows.Forms.ListView();
+            this.listBoxSearchRes = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // labelKeyWords
@@ -56,9 +56,9 @@
             this.labelUplNick.AutoSize = true;
             this.labelUplNick.Location = new System.Drawing.Point(41, 93);
             this.labelUplNick.Name = "labelUplNick";
-            this.labelUplNick.Size = new System.Drawing.Size(94, 16);
+            this.labelUplNick.Size = new System.Drawing.Size(81, 16);
             this.labelUplNick.TabIndex = 1;
-            this.labelUplNick.Text = "UploaderNick:";
+            this.labelUplNick.Text = "CreatorNick:";
             // 
             // labelSubject
             // 
@@ -132,22 +132,22 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
-            // listViewSearchRes
+            // listBoxSearchRes
             // 
-            this.listViewSearchRes.HideSelection = false;
-            this.listViewSearchRes.Location = new System.Drawing.Point(453, 12);
-            this.listViewSearchRes.Name = "listViewSearchRes";
-            this.listViewSearchRes.Size = new System.Drawing.Size(426, 426);
-            this.listViewSearchRes.TabIndex = 11;
-            this.listViewSearchRes.UseCompatibleStateImageBehavior = false;
-            this.listViewSearchRes.ItemActivate += new System.EventHandler(this.ListViewSearchRes_ItemActivate);
+            this.listBoxSearchRes.FormattingEnabled = true;
+            this.listBoxSearchRes.ItemHeight = 16;
+            this.listBoxSearchRes.Location = new System.Drawing.Point(455, 12);
+            this.listBoxSearchRes.Name = "listBoxSearchRes";
+            this.listBoxSearchRes.Size = new System.Drawing.Size(424, 420);
+            this.listBoxSearchRes.TabIndex = 12;
+            this.listBoxSearchRes.SelectedIndexChanged += new System.EventHandler(this.ListBoxSearchRes_SelectedIndexChanged);
             // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
-            this.Controls.Add(this.listViewSearchRes);
+            this.Controls.Add(this.listBoxSearchRes);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dateTimePickerLate);
             this.Controls.Add(this.dateTimePickerEarly);
@@ -179,6 +179,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerEarly;
         private System.Windows.Forms.DateTimePicker dateTimePickerLate;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.ListView listViewSearchRes;
+        private System.Windows.Forms.ListBox listBoxSearchRes;
     }
 }

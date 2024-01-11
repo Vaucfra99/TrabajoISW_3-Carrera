@@ -29,12 +29,14 @@ namespace UPVTube.GUI
             List<Content> cList = service.Search(textBoxKeyWords.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
             foreach (Content c in cList)
             {
-                listViewSearchRes.Items.Add(c.Id.ToString());
+                listBoxSearchRes.Items.Add(c);
             }
         }
-
-        private void ListViewSearchRes_ItemActivate(object sender, EventArgs e)
+        
+        private void ListBoxSearchRes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Content c = (Content)listBoxSearchRes.SelectedItem;
+            int id = c.Id;
 
         }
     }

@@ -25,21 +25,21 @@ namespace UPVTube.GUI
             register = new Register(service);
         }
 
-        private void btnlogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
             login.ShowDialog();
             this.Close();
         }
 
-        private void btnregister_Click(object sender, EventArgs e)
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
             register.ShowDialog();
             this.Close();
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
