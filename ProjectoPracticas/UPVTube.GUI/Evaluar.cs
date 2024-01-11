@@ -19,5 +19,10 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
         }
+
+        private void Evaluar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
