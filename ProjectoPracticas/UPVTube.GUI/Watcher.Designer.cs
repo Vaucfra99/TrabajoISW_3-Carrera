@@ -34,11 +34,11 @@
             this.UploadDate = new System.Windows.Forms.Label();
             this.IdLable = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.titleField = new System.Windows.Forms.Label();
-            this.CreatorNickField = new System.Windows.Forms.Label();
-            this.ContentIdField = new System.Windows.Forms.Label();
-            this.UploadDateField = new System.Windows.Forms.Label();
-            this.DescriptionField = new System.Windows.Forms.Label();
+            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.ContentTextBox = new System.Windows.Forms.TextBox();
+            this.UploadTextBox = new System.Windows.Forms.TextBox();
+            this.CreatorTextBox = new System.Windows.Forms.TextBox();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,11 +98,11 @@
             this.tableLayoutPanel1.Controls.Add(this.UploadDate, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.IdLable, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.CreatorNick, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.titleField, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CreatorNickField, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ContentIdField, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.UploadDateField, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.DescriptionField, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.DescripcionTextBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.TitleTextBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ContentTextBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.UploadTextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.CreatorTextBox, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,50 +115,41 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(485, 377);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // titleField
+            // DescripcionTextBox
             // 
-            this.titleField.AutoSize = true;
-            this.titleField.Location = new System.Drawing.Point(92, 0);
-            this.titleField.Name = "titleField";
-            this.titleField.Size = new System.Drawing.Size(44, 16);
-            this.titleField.TabIndex = 5;
-            this.titleField.Text = "label1";
+            this.DescripcionTextBox.Location = new System.Drawing.Point(92, 144);
+            this.DescripcionTextBox.Multiline = true;
+            this.DescripcionTextBox.Name = "DescripcionTextBox";
+            this.DescripcionTextBox.Size = new System.Drawing.Size(388, 230);
+            this.DescripcionTextBox.TabIndex = 9;
             // 
-            // CreatorNickField
+            // TitleTextBox
             // 
-            this.CreatorNickField.AutoSize = true;
-            this.CreatorNickField.Location = new System.Drawing.Point(92, 28);
-            this.CreatorNickField.Name = "CreatorNickField";
-            this.CreatorNickField.Size = new System.Drawing.Size(44, 16);
-            this.CreatorNickField.TabIndex = 6;
-            this.CreatorNickField.Text = "label2";
+            this.TitleTextBox.Location = new System.Drawing.Point(92, 3);
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(389, 22);
+            this.TitleTextBox.TabIndex = 10;
             // 
-            // ContentIdField
+            // ContentTextBox
             // 
-            this.ContentIdField.AutoSize = true;
-            this.ContentIdField.Location = new System.Drawing.Point(92, 55);
-            this.ContentIdField.Name = "ContentIdField";
-            this.ContentIdField.Size = new System.Drawing.Size(44, 16);
-            this.ContentIdField.TabIndex = 7;
-            this.ContentIdField.Text = "label3";
+            this.ContentTextBox.Location = new System.Drawing.Point(92, 58);
+            this.ContentTextBox.Name = "ContentTextBox";
+            this.ContentTextBox.Size = new System.Drawing.Size(390, 22);
+            this.ContentTextBox.TabIndex = 11;
             // 
-            // UploadDateField
+            // UploadTextBox
             // 
-            this.UploadDateField.AutoSize = true;
-            this.UploadDateField.Location = new System.Drawing.Point(92, 94);
-            this.UploadDateField.Name = "UploadDateField";
-            this.UploadDateField.Size = new System.Drawing.Size(44, 16);
-            this.UploadDateField.TabIndex = 8;
-            this.UploadDateField.Text = "label4";
+            this.UploadTextBox.Location = new System.Drawing.Point(92, 97);
+            this.UploadTextBox.Name = "UploadTextBox";
+            this.UploadTextBox.Size = new System.Drawing.Size(390, 22);
+            this.UploadTextBox.TabIndex = 12;
             // 
-            // DescriptionField
+            // CreatorTextBox
             // 
-            this.DescriptionField.AutoSize = true;
-            this.DescriptionField.Location = new System.Drawing.Point(92, 141);
-            this.DescriptionField.Name = "DescriptionField";
-            this.DescriptionField.Size = new System.Drawing.Size(44, 16);
-            this.DescriptionField.TabIndex = 9;
-            this.DescriptionField.Text = "label5";
+            this.CreatorTextBox.Location = new System.Drawing.Point(92, 31);
+            this.CreatorTextBox.Name = "CreatorTextBox";
+            this.CreatorTextBox.Size = new System.Drawing.Size(390, 22);
+            this.CreatorTextBox.TabIndex = 13;
             // 
             // GoBackButton
             // 
@@ -175,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 473);
+            this.ClientSize = new System.Drawing.Size(505, 471);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -196,11 +187,11 @@
         private System.Windows.Forms.Label UploadDate;
         private System.Windows.Forms.Label IdLable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label titleField;
-        private System.Windows.Forms.Label CreatorNickField;
-        private System.Windows.Forms.Label ContentIdField;
-        private System.Windows.Forms.Label UploadDateField;
-        private System.Windows.Forms.Label DescriptionField;
         private System.Windows.Forms.Button GoBackButton;
+        private System.Windows.Forms.TextBox DescripcionTextBox;
+        private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.TextBox ContentTextBox;
+        private System.Windows.Forms.TextBox UploadTextBox;
+        private System.Windows.Forms.TextBox CreatorTextBox;
     }
 }

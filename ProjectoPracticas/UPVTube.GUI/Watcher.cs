@@ -28,11 +28,11 @@ namespace UPVTube.GUI
             try
             {
                 Content c = service.Watch(id);
-                titleField.Text = c.Title;
-                CreatorNickField.Text = c.Owner.Nick;
-                ContentIdField.Text = id.ToString();
-                UploadDateField.Text = c.UploadDate.ToString();
-                DescriptionField.Text = c.Description;
+                TitleTextBox.Text = c.Title;
+                CreatorTextBox.Text = c.Owner.Nick;
+                ContentTextBox.Text = c.ContentURI;
+                UploadTextBox.Text = c.UploadDate.ToString();
+                DescripcionTextBox.Text = c.Description;
             }
             catch (ServiceException ex)
             {

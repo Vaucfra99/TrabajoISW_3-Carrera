@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using UPVTube.Services;
 using UPVTube.Entities;
-using UPVTube.GUI;
-using System.Xml.Linq;
+using UPVTube.Services;
+
 
 namespace UPVTube.GUI
 {
@@ -26,20 +19,23 @@ namespace UPVTube.GUI
             this.service = service;
             menu = new Menu(service);
             view = new Watcher(service, WatchId);
+            listBoxSearchRes.Sorted = true;
+
         }
 
-        
+
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 List<Content> cList = service.Search(textBoxKeyWords.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
                 foreach (Content c in cList)
                 {
                     listBoxSearchRes.Items.Add(c);
                 }
+                
             }
-            catch (ServiceException ex) 
+            catch (ServiceException ex)
             {
                 DialogResult answer = MessageBox.Show(this, // Owner
                 ex.Message, // Message
@@ -47,15 +43,15 @@ namespace UPVTube.GUI
                 MessageBoxButtons.OK, // Buttons included
                 MessageBoxIcon.Exclamation); // Icon
             }
-            
-            
+
+
         }
-        
+
         private void ListBoxSearchRes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Content c = (Content)listBoxSearchRes.SelectedItem;
-            WatchId = c.Id;
-            
+            Content c1 = (Content)listBoxSearchRes.SelectedItem;
+            WatchId = c1.Id;
+
             this.Hide();
             view.ShowDialog();
             this.Close();
