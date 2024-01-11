@@ -62,6 +62,12 @@
     <Compile Include="Evaluar.Designer.cs">
       <DependentUpon>Evaluar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation.Designer.cs">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Watcher.cs">
       <SubType>Form</SubType>
     </Compile>
