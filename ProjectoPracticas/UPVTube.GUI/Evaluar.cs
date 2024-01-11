@@ -72,6 +72,11 @@ namespace UPVTube.GUI
         {
 
         }
+
+        private void Evaluar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
