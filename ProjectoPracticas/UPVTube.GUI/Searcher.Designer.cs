@@ -40,6 +40,7 @@
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.listBoxSearchRes = new System.Windows.Forms.ListBox();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelKeyWords
@@ -142,11 +143,22 @@
             this.listBoxSearchRes.TabIndex = 12;
             this.listBoxSearchRes.SelectedIndexChanged += new System.EventHandler(this.ListBoxSearchRes_SelectedIndexChanged);
             // 
+            // GoBackButton
+            // 
+            this.GoBackButton.Location = new System.Drawing.Point(47, 395);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(75, 23);
+            this.GoBackButton.TabIndex = 13;
+            this.GoBackButton.Text = "Atrás";
+            this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBack_Click);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.listBoxSearchRes);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dateTimePickerLate);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerLate;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ListBox listBoxSearchRes;
+        private System.Windows.Forms.Button GoBackButton;
     }
 }

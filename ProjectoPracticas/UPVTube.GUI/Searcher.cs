@@ -17,7 +17,8 @@ namespace UPVTube.GUI
     public partial class Searcher : Form
     {
         private IUPVTubeService service;
-        private Pendiente view;
+        private Watcher view;
+        private Menu menu;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
@@ -41,6 +42,13 @@ namespace UPVTube.GUI
             
             this.Hide();
             view.ShowDialog();//Falta pasarle de lguna forma la id
+            this.Close();
+        }
+
+        private void GoBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menu.ShowDialog();
             this.Close();
         }
     }
