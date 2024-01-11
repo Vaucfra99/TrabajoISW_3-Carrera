@@ -20,11 +20,13 @@ namespace UPVTube.GUI
         private String nick;
         private String password;
         private Menu menu;
+        private UPVTubeApp upvtubeapp;
         public Login(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
             menu = new Menu(service);
+            upvtubeapp = new UPVTubeApp(service);
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -74,9 +76,11 @@ namespace UPVTube.GUI
             TextBoxUser.Clear();
         }
 
-        private void BtnExit_Click(object sender, EventArgs e)
+        private void BtnReturn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            upvtubeapp.ShowDialog();
+            this.Close();
         }
     }
 }

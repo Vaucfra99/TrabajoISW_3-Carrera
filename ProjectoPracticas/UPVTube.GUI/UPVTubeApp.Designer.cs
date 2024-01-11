@@ -41,19 +41,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(84, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 13);
+            this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenid@ a UPVTube";
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(9, 62);
-            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLogin.Location = new System.Drawing.Point(12, 90);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(99, 29);
+            this.BtnLogin.Size = new System.Drawing.Size(141, 48);
             this.BtnLogin.TabIndex = 1;
             this.BtnLogin.Text = "Iniciar Sesión";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -61,10 +60,10 @@
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(152, 62);
-            this.BtnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRegister.Location = new System.Drawing.Point(176, 90);
+            this.BtnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(71, 29);
+            this.BtnRegister.Size = new System.Drawing.Size(141, 48);
             this.BtnRegister.TabIndex = 2;
             this.BtnRegister.Text = "Registrarse";
             this.BtnRegister.UseVisualStyleBackColor = true;
@@ -72,10 +71,10 @@
             // 
             // BtnExit
             // 
-            this.BtnExit.Location = new System.Drawing.Point(172, 154);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnExit.Location = new System.Drawing.Point(241, 185);
+            this.BtnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(50, 28);
+            this.BtnExit.Size = new System.Drawing.Size(76, 39);
             this.BtnExit.TabIndex = 3;
             this.BtnExit.Text = "Salir";
             this.BtnExit.UseVisualStyleBackColor = true;
@@ -83,14 +82,14 @@
             // 
             // UPVTubeApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 191);
+            this.ClientSize = new System.Drawing.Size(329, 235);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UPVTubeApp";
             this.Text = "UPVTube";
             this.Load += new System.EventHandler(this.UPVTubeApp_Load);
