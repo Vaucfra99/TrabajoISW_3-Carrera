@@ -61,6 +61,7 @@ namespace UPVTube.GUI
         private void listaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Content c1 = (Content)listaPendientes.SelectedItem;
+            int id = c1.Id;
             botonPer.Enabled = true; 
             botonPer.Enabled = true;
         }
@@ -68,7 +69,9 @@ namespace UPVTube.GUI
         private void botonPer_Click(object sender, EventArgs e)
         {
             DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            service.EvaluarContent(c.id, true, null);
+            Content c1 = (Content)listaPendientes.SelectedItem;
+            int id = c1.Id;
+            service.EvaluarContent(id, true, null);
         }
 
         private void botonRec_Click(object sender, EventArgs e)

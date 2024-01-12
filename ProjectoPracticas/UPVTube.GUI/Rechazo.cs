@@ -41,7 +41,7 @@ namespace UPVTube.GUI
 
         private void botonEmail_Click(object sender, EventArgs e)
         {
-            DialogResult noPermitido = MessageBox.Show(this, "Email : " + , "Contenido No Autorizado Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult noPermitido = MessageBox.Show(this, "Email : " + "Asunto : Rechazo Contenido \n Mensaje: " + textBoxMotivo.Text, "Contenido No Autorizado Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
             service.EvaluarContent(c.id, false, textBoxMotivo.Text);
         }
     }
