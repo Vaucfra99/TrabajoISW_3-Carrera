@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,8 @@ namespace UPVTube.GUI
         private bool evaluacion;
         private Menu meenu;
         private Rechazo rechazo;
+        private int EvId;
+        private string EvEmail;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace UPVTube.GUI
             botonPer.Enabled = false;
             botonRec.Enabled = false;
             meenu = new Menu(service);
-            rechazo = new Rechazo(service);
+            rechazo = new Rechazo(service, EvId, EvEmail);
             CargarDatosEnListView();
         }
 
@@ -76,6 +79,9 @@ namespace UPVTube.GUI
 
         private void botonRec_Click(object sender, EventArgs e)
         {
+            Content c1 = (Content)listaPendientes.SelectedItem;
+            EvId = c1.Id;
+            EvEmail = c1.Owner.Email;
             this.Hide();
             rechazo.ShowDialog();
             this.Close();

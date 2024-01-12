@@ -20,7 +20,6 @@ namespace UPVTube.GUI
             menu = new Menu(service);
             view = new Watcher(service, WatchId);
             listBoxSearchRes.Sorted = true;
-
         }
 
 

@@ -19,6 +19,7 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Searcher search;
+        private int id;
 
         public Watcher(IUPVTubeService service, int id)
         {

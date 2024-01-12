@@ -158,7 +158,6 @@
             this.Text = "Upload";
             this.Load += new System.EventHandler(this.Upload_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
