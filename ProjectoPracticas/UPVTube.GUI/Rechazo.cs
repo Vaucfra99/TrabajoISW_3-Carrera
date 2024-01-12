@@ -22,6 +22,7 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
             eevaluar = new Evaluar(service);
+
         }
 
         private void BotonEv_Click(object sender, EventArgs e)
