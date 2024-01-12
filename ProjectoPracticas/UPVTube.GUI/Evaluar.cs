@@ -18,6 +18,7 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private bool evaluacion;
         private Menu meenu;
+        private Rechazo rechazo;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace UPVTube.GUI
             botonPer.Enabled = false;
             botonRec.Enabled = false;
             meenu = new Menu(service);
+            rechazo = new Rechazo(service);
             CargarDatosEnListView();
         }
 
@@ -66,11 +68,14 @@ namespace UPVTube.GUI
         private void botonPer_Click(object sender, EventArgs e)
         {
             DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            service.EvaluarContent(c.id, true, null);
         }
 
         private void botonRec_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            rechazo.ShowDialog();
+            this.Close();
         }
 
         private void Evaluar_Load(object sender, EventArgs e)
