@@ -19,7 +19,7 @@ namespace UPVTube.GUI
             IUPVTubeService service = new UPVTubeService(new EntityFrameworkDAL(new UPVTubeDbContext()));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Searcher(service));
+            Application.Run(new UPVTubeApp(service));
         }
     }
 }
