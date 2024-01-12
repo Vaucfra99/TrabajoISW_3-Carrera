@@ -93,21 +93,17 @@ namespace UPVTube.Services
 
         public void AddMember(Member member)
         {
-            // Restricción: No puede haber dos asignaturas con el mismo code
-            if (!dal.GetWhere<Member>(x => x.Email == member.Email).Any())
-            {
-                // Restricción: No puede haber dos asignaturas con el mismo name
+                
                 if (!dal.GetWhere<Member>(x => x.Nick == member.Nick).Any())
                 {
-                    // Sólo se salva si no hay Code ni email duplicado
+                    
                     dal.Insert<Member>(member);
                     dal.Commit();
                 }
-                else
-                    throw new ServiceException("Member with email " + member.Email + " already exists.");
+            else { 
+                    throw new ServiceException("Member with nick " + member.Nick + " already exists.");
             }
-            else
-                throw new ServiceException("Member with nick " + member.Nick + " already exists.");
+           
         }
 
         public void AddContent(Content content)

@@ -37,26 +37,28 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(384, 30);
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(408, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.Size = new System.Drawing.Size(162, 41);
             this.label1.TabIndex = 4;
             this.label1.Text = "Evaluar Contenido";
             // 
             // Button1
             // 
+            this.Button1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.Button1.Location = new System.Drawing.Point(67, 503);
             this.Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(84, 46);
             this.Button1.TabIndex = 6;
-            this.Button1.Text = "Atras";
+            this.Button1.Text = "Atrás";
             this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // ListaPendientes
             // 
+            this.ListaPendientes.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ListaPendientes.FormattingEnabled = true;
             this.ListaPendientes.ItemHeight = 20;
             this.ListaPendientes.Location = new System.Drawing.Point(67, 70);
@@ -69,6 +71,7 @@
             // 
             // BotonPer
             // 
+            this.BotonPer.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.BotonPer.Location = new System.Drawing.Point(603, 500);
             this.BotonPer.Name = "BotonPer";
             this.BotonPer.Size = new System.Drawing.Size(105, 46);
@@ -79,6 +82,7 @@
             // 
             // BotonRec
             // 
+            this.BotonRec.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.BotonRec.Location = new System.Drawing.Point(742, 500);
             this.BotonRec.Name = "BotonRec";
             this.BotonRec.Size = new System.Drawing.Size(109, 46);
@@ -91,17 +95,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.BotonRec);
             this.Controls.Add(this.BotonPer);
             this.Controls.Add(this.ListaPendientes);
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Evaluar";
             this.Text = "Evaluar";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -46,54 +46,64 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(3, 0);
+            this.Title.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Title.Location = new System.Drawing.Point(17, 21);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(43, 16);
+            this.Title.Size = new System.Drawing.Size(68, 24);
             this.Title.TabIndex = 0;
             this.Title.Text = "Titulo:";
             // 
             // CreatorNick
             // 
             this.CreatorNick.AutoSize = true;
-            this.CreatorNick.Location = new System.Drawing.Point(3, 28);
+            this.CreatorNick.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.CreatorNick.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CreatorNick.Location = new System.Drawing.Point(3, 34);
             this.CreatorNick.Name = "CreatorNick";
-            this.CreatorNick.Size = new System.Drawing.Size(59, 16);
+            this.CreatorNick.Size = new System.Drawing.Size(84, 24);
             this.CreatorNick.TabIndex = 1;
             this.CreatorNick.Text = "Creador:";
             // 
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(3, 141);
+            this.Description.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Description.Location = new System.Drawing.Point(3, 176);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(82, 16);
+            this.Description.Size = new System.Drawing.Size(116, 24);
             this.Description.TabIndex = 2;
             this.Description.Text = "Descripcion:";
+            this.Description.Click += new System.EventHandler(this.Description_Click);
             // 
             // UploadDate
             // 
             this.UploadDate.AutoSize = true;
-            this.UploadDate.Location = new System.Drawing.Point(3, 94);
+            this.UploadDate.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.UploadDate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.UploadDate.Location = new System.Drawing.Point(3, 117);
             this.UploadDate.Name = "UploadDate";
-            this.UploadDate.Size = new System.Drawing.Size(67, 32);
+            this.UploadDate.Size = new System.Drawing.Size(88, 48);
             this.UploadDate.TabIndex = 3;
             this.UploadDate.Text = "Fecha de subida:";
             // 
             // IdLable
             // 
             this.IdLable.AutoSize = true;
-            this.IdLable.Location = new System.Drawing.Point(3, 55);
+            this.IdLable.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.IdLable.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.IdLable.Location = new System.Drawing.Point(3, 68);
             this.IdLable.Name = "IdLable";
-            this.IdLable.Size = new System.Drawing.Size(71, 16);
+            this.IdLable.Size = new System.Drawing.Size(103, 24);
             this.IdLable.TabIndex = 4;
             this.IdLable.Text = "Contenido:";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.5567F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.4433F));
-            this.tableLayoutPanel1.Controls.Add(this.Title, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.62637F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.37363F));
             this.tableLayoutPanel1.Controls.Add(this.Description, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.UploadDate, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.IdLable, 0, 2);
@@ -103,70 +113,77 @@
             this.tableLayoutPanel1.Controls.Add(this.ContentTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.UploadTextBox, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.CreatorTextBox, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 15);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(485, 377);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 294F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(546, 471);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(92, 144);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(132, 180);
+            this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DescripcionTextBox.Multiline = true;
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(388, 230);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(411, 286);
             this.DescripcionTextBox.TabIndex = 9;
             // 
             // TitleTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(92, 3);
+            this.TitleTextBox.Location = new System.Drawing.Point(132, 4);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(389, 22);
+            this.TitleTextBox.Size = new System.Drawing.Size(411, 26);
             this.TitleTextBox.TabIndex = 10;
             // 
             // ContentTextBox
             // 
-            this.ContentTextBox.Location = new System.Drawing.Point(92, 58);
+            this.ContentTextBox.Location = new System.Drawing.Point(132, 72);
+            this.ContentTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ContentTextBox.Name = "ContentTextBox";
-            this.ContentTextBox.Size = new System.Drawing.Size(390, 22);
+            this.ContentTextBox.Size = new System.Drawing.Size(411, 26);
             this.ContentTextBox.TabIndex = 11;
             // 
             // UploadTextBox
             // 
-            this.UploadTextBox.Location = new System.Drawing.Point(92, 97);
+            this.UploadTextBox.Location = new System.Drawing.Point(132, 121);
+            this.UploadTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UploadTextBox.Name = "UploadTextBox";
-            this.UploadTextBox.Size = new System.Drawing.Size(390, 22);
+            this.UploadTextBox.Size = new System.Drawing.Size(411, 26);
             this.UploadTextBox.TabIndex = 12;
             // 
             // CreatorTextBox
             // 
-            this.CreatorTextBox.Location = new System.Drawing.Point(92, 31);
+            this.CreatorTextBox.Location = new System.Drawing.Point(132, 38);
+            this.CreatorTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CreatorTextBox.Name = "CreatorTextBox";
-            this.CreatorTextBox.Size = new System.Drawing.Size(390, 22);
+            this.CreatorTextBox.Size = new System.Drawing.Size(411, 26);
             this.CreatorTextBox.TabIndex = 13;
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(17, 422);
+            this.GoBackButton.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.GoBackButton.Location = new System.Drawing.Point(19, 528);
             this.GoBackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(75, 23);
+            this.GoBackButton.Size = new System.Drawing.Size(84, 29);
             this.GoBackButton.TabIndex = 6;
             this.GoBackButton.Text = "Atrás";
             this.GoBackButton.UseVisualStyleBackColor = true;
-            this.GoBackButton.Click += new System.EventHandler(this.GoBack_Click);
             // 
             // Watcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 471);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(568, 589);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -176,6 +193,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

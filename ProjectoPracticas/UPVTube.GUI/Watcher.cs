@@ -56,5 +56,10 @@ namespace UPVTube.GUI
         {
 
         }
+
+        private void Description_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -72,11 +72,11 @@ namespace UPVTube.GUI
             TextBoxUser.Clear();
         }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
+       /*private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
             upvtubeapp.ShowDialog();
             this.Close();
-        }
+        }*/
     }
 }

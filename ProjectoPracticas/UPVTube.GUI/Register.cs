@@ -82,5 +82,10 @@ namespace UPVTube.GUI
             TextBoxNick.Clear();
             TextBoxPassword.Clear();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

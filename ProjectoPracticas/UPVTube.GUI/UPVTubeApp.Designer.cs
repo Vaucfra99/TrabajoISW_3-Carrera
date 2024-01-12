@@ -41,18 +41,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 26);
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(77, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 16);
+            this.label1.Size = new System.Drawing.Size(208, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenid@ a UPVTube";
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(12, 90);
+            this.BtnLogin.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.BtnLogin.Location = new System.Drawing.Point(14, 112);
             this.BtnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(141, 48);
+            this.BtnLogin.Size = new System.Drawing.Size(159, 60);
             this.BtnLogin.TabIndex = 1;
             this.BtnLogin.Text = "Iniciar Sesión";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -60,10 +63,11 @@
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(176, 90);
+            this.BtnRegister.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.BtnRegister.Location = new System.Drawing.Point(198, 112);
             this.BtnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(141, 48);
+            this.BtnRegister.Size = new System.Drawing.Size(159, 60);
             this.BtnRegister.TabIndex = 2;
             this.BtnRegister.Text = "Registrarse";
             this.BtnRegister.UseVisualStyleBackColor = true;
@@ -71,10 +75,11 @@
             // 
             // BtnExit
             // 
-            this.BtnExit.Location = new System.Drawing.Point(241, 185);
+            this.BtnExit.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.BtnExit.Location = new System.Drawing.Point(271, 231);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(76, 39);
+            this.BtnExit.Size = new System.Drawing.Size(86, 49);
             this.BtnExit.TabIndex = 3;
             this.BtnExit.Text = "Salir";
             this.BtnExit.UseVisualStyleBackColor = true;
@@ -82,9 +87,10 @@
             // 
             // UPVTubeApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 235);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(370, 294);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.BtnLogin);

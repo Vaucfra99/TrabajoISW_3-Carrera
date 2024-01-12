@@ -36,7 +36,8 @@
             // 
             // ButtonBuscar
             // 
-            this.ButtonBuscar.Location = new System.Drawing.Point(86, 225);
+            this.ButtonBuscar.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.ButtonBuscar.Location = new System.Drawing.Point(98, 200);
             this.ButtonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonBuscar.Name = "ButtonBuscar";
             this.ButtonBuscar.Size = new System.Drawing.Size(143, 54);
@@ -47,7 +48,8 @@
             // 
             // ButtonSubir
             // 
-            this.ButtonSubir.Location = new System.Drawing.Point(400, 225);
+            this.ButtonSubir.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.ButtonSubir.Location = new System.Drawing.Point(397, 200);
             this.ButtonSubir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonSubir.Name = "ButtonSubir";
             this.ButtonSubir.Size = new System.Drawing.Size(198, 54);
@@ -58,15 +60,17 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 155);
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(219, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 20);
+            this.label1.Size = new System.Drawing.Size(236, 56);
             this.label1.TabIndex = 2;
             this.label1.Text = "¡Bienvenid@!";
             // 
             // BtnVolver
             // 
+            this.BtnVolver.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.BtnVolver.Location = new System.Drawing.Point(448, 366);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnVolver.Name = "BtnVolver";
@@ -74,12 +78,12 @@
             this.BtnVolver.TabIndex = 3;
             this.BtnVolver.Text = "Salir";
             this.BtnVolver.UseVisualStyleBackColor = true;
-            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(656, 430);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.label1);
@@ -89,7 +93,6 @@
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
