@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxMotivo = new System.Windows.Forms.TextBox();
+            this.TextBoxMotivo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.botonEv = new System.Windows.Forms.Button();
-            this.botonEmail = new System.Windows.Forms.Button();
+            this.BotonEv = new System.Windows.Forms.Button();
+            this.BotonEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBoxMotivo
+            // TextBoxMotivo
             // 
-            this.textBoxMotivo.Location = new System.Drawing.Point(140, 79);
-            this.textBoxMotivo.Multiline = true;
-            this.textBoxMotivo.Name = "textBoxMotivo";
-            this.textBoxMotivo.Size = new System.Drawing.Size(617, 364);
-            this.textBoxMotivo.TabIndex = 0;
-            this.textBoxMotivo.TextChanged += new System.EventHandler(this.textBoxMotivo_TextChanged);
+            this.TextBoxMotivo.Location = new System.Drawing.Point(140, 79);
+            this.TextBoxMotivo.Multiline = true;
+            this.TextBoxMotivo.Name = "TextBoxMotivo";
+            this.TextBoxMotivo.Size = new System.Drawing.Size(617, 364);
+            this.TextBoxMotivo.TabIndex = 0;
             // 
             // label1
             // 
@@ -52,39 +51,38 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Motivo del Rechazo";
             // 
-            // botonEv
+            // BotonEv
             // 
-            this.botonEv.Location = new System.Drawing.Point(140, 484);
-            this.botonEv.Name = "botonEv";
-            this.botonEv.Size = new System.Drawing.Size(100, 42);
-            this.botonEv.TabIndex = 2;
-            this.botonEv.Text = "Atrás";
-            this.botonEv.UseVisualStyleBackColor = true;
-            this.botonEv.Click += new System.EventHandler(this.botonEv_Click);
+            this.BotonEv.Location = new System.Drawing.Point(140, 484);
+            this.BotonEv.Name = "BotonEv";
+            this.BotonEv.Size = new System.Drawing.Size(100, 42);
+            this.BotonEv.TabIndex = 2;
+            this.BotonEv.Text = "Atrás";
+            this.BotonEv.UseVisualStyleBackColor = true;
+            this.BotonEv.Click += new System.EventHandler(this.BotonEv_Click);
             // 
-            // botonEmail
+            // BotonEmail
             // 
-            this.botonEmail.Location = new System.Drawing.Point(657, 484);
-            this.botonEmail.Name = "botonEmail";
-            this.botonEmail.Size = new System.Drawing.Size(100, 41);
-            this.botonEmail.TabIndex = 3;
-            this.botonEmail.Text = "Aceptar";
-            this.botonEmail.UseVisualStyleBackColor = true;
-            this.botonEmail.Click += new System.EventHandler(this.botonEmail_Click);
+            this.BotonEmail.Location = new System.Drawing.Point(657, 484);
+            this.BotonEmail.Name = "BotonEmail";
+            this.BotonEmail.Size = new System.Drawing.Size(100, 41);
+            this.BotonEmail.TabIndex = 3;
+            this.BotonEmail.Text = "Aceptar";
+            this.BotonEmail.UseVisualStyleBackColor = true;
+            this.BotonEmail.Click += new System.EventHandler(this.BotonEmail_Click);
             // 
             // Rechazo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
-            this.Controls.Add(this.botonEmail);
-            this.Controls.Add(this.botonEv);
+            this.Controls.Add(this.BotonEmail);
+            this.Controls.Add(this.BotonEv);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxMotivo);
+            this.Controls.Add(this.TextBoxMotivo);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Rechazo";
             this.Text = "Rechazo";
-            this.Load += new System.EventHandler(this.Rechazo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxMotivo;
+        private System.Windows.Forms.TextBox TextBoxMotivo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button botonEv;
-        private System.Windows.Forms.Button botonEmail;
+        private System.Windows.Forms.Button BotonEv;
+        private System.Windows.Forms.Button BotonEmail;
     }
 }

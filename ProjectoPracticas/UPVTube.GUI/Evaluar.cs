@@ -26,8 +26,8 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
-            botonPer.Enabled = false;
-            botonRec.Enabled = false;
+            BotonPer.Enabled = false;
+            BotonRec.Enabled = false;
             meenu = new Menu(service);
             rechazo = new Rechazo(service, EvId, EvEmail);
             CargarDatosEnListView();
@@ -41,7 +41,7 @@ namespace UPVTube.GUI
                 foreach (Content c in cList)
                 { 
 
-                    listaPendientes.Items.Add(c);
+                    ListaPendientes.Items.Add(c);
                 }
 
             }
@@ -55,41 +55,36 @@ namespace UPVTube.GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             meenu.ShowDialog();
             this.Close();
         }
-        private void listaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void ListaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            Content c1 = (Content)listaPendientes.SelectedItem;
+            Content c1 = (Content)ListaPendientes.SelectedItem;
             int id = c1.Id;
-            botonPer.Enabled = true; 
-            botonPer.Enabled = true;
+            BotonPer.Enabled = true; 
+            BotonPer.Enabled = true;
         }
 
-        private void botonPer_Click(object sender, EventArgs e)
+        private void BotonPer_Click(object sender, EventArgs e)
         {
             DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Content c1 = (Content)listaPendientes.SelectedItem;
+            Content c1 = (Content)ListaPendientes.SelectedItem;
             int id = c1.Id;
             service.EvaluarContent(id, true, null);
         }
 
-        private void botonRec_Click(object sender, EventArgs e)
+        private void BotonRec_Click(object sender, EventArgs e)
         {
-            Content c1 = (Content)listaPendientes.SelectedItem;
+            Content c1 = (Content)ListaPendientes.SelectedItem;
             EvId = c1.Id;
             EvEmail = c1.Owner.Email;
             this.Hide();
             rechazo.ShowDialog();
             this.Close();
-        }
-
-        private void Evaluar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 

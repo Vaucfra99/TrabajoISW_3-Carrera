@@ -27,11 +27,6 @@ namespace UPVTube.GUI
             menu = new Menu(service);
         }
 
-        private void Register_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBoxNick_TextChanged(object sender, EventArgs e)
         {
             nick = TextBoxNick.Text;

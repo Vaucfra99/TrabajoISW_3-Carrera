@@ -28,40 +28,36 @@ namespace UPVTube.GUI
             menuu = new Menu(service);
         }
 
-        private void Upload_Load(object sender, EventArgs e)
+        private void TextBoxTitulo_TextChanged(object sender, EventArgs e)
         {
-        }
-
-        private void textBoxTitulo_TextChanged(object sender, EventArgs e)
-        {
-            tittle = textBoxTitulo.Text;
+            tittle = TextBoxTitulo.Text;
 
         }
 
-        private void textBoxDescripcion_TextChanged(object sender, EventArgs e)
+        private void TextBoxDescripcion_TextChanged(object sender, EventArgs e)
         {
-            description = textBoxDescripcion.Text;
+            description = TextBoxDescripcion.Text;
         }
 
-        private void textBoxURI_TextChanged(object sender, EventArgs e)
+        private void TextBoxURI_TextChanged(object sender, EventArgs e)
         {
-            contentURI = textBoxURI.Text;
+            contentURI = TextBoxURI.Text;
         }
 
-        private void checkBoxPublico_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxPublico_CheckedChanged(object sender, EventArgs e)
         {
             if (isPublic == true) { isPublic = false; }
             else { isPublic = true; }
         }
 
-        private void buttonSubir_Click(object sender, EventArgs e)
+        private void ButtonSubir_Click(object sender, EventArgs e)
         {
-            if (textBoxTitulo.Text == string.Empty || textBoxDescripcion.Text == string.Empty || textBoxURI.Text == string.Empty)
+            if (TextBoxTitulo.Text == string.Empty || TextBoxDescripcion.Text == string.Empty || TextBoxURI.Text == string.Empty)
             {
                 DialogResult error = MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxTitulo.Clear();
-                textBoxDescripcion.Clear();
-                textBoxURI.Clear();
+                TextBoxTitulo.Clear();
+                TextBoxDescripcion.Clear();
+                TextBoxURI.Clear();
             }
             else
             {
@@ -83,7 +79,7 @@ namespace UPVTube.GUI
             }
         }
 
-        private void buttonAtras_Click(object sender, EventArgs e)
+        private void ButtonAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
             menuu.ShowDialog();

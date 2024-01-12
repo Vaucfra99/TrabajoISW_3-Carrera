@@ -63,9 +63,5 @@ namespace UPVTube.GUI
             this.Close();
         }
 
-        private void Searcher_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

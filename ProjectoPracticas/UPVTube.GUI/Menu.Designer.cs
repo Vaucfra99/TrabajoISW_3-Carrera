@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.buttonSubir = new System.Windows.Forms.Button();
+            this.ButtonBuscar = new System.Windows.Forms.Button();
+            this.ButtonSubir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonBuscar
+            // ButtonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(76, 180);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(127, 43);
-            this.buttonBuscar.TabIndex = 0;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            this.ButtonBuscar.Location = new System.Drawing.Point(86, 225);
+            this.ButtonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonBuscar.Name = "ButtonBuscar";
+            this.ButtonBuscar.Size = new System.Drawing.Size(143, 54);
+            this.ButtonBuscar.TabIndex = 0;
+            this.ButtonBuscar.Text = "Buscar";
+            this.ButtonBuscar.UseVisualStyleBackColor = true;
+            this.ButtonBuscar.Click += new System.EventHandler(this.ButtonBuscar_Click);
             // 
-            // buttonSubir
+            // ButtonSubir
             // 
-            this.buttonSubir.Location = new System.Drawing.Point(356, 180);
-            this.buttonSubir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSubir.Name = "buttonSubir";
-            this.buttonSubir.Size = new System.Drawing.Size(176, 43);
-            this.buttonSubir.TabIndex = 1;
-            this.buttonSubir.Text = "Subir Contenido";
-            this.buttonSubir.UseVisualStyleBackColor = true;
-            this.buttonSubir.Click += new System.EventHandler(this.buttonSubir_Click);
+            this.ButtonSubir.Location = new System.Drawing.Point(400, 225);
+            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonSubir.Name = "ButtonSubir";
+            this.ButtonSubir.Size = new System.Drawing.Size(198, 54);
+            this.ButtonSubir.TabIndex = 1;
+            this.ButtonSubir.Text = "Subir Contenido";
+            this.ButtonSubir.UseVisualStyleBackColor = true;
+            this.ButtonSubir.Click += new System.EventHandler(this.ButtonSubir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(246, 124);
+            this.label1.Location = new System.Drawing.Point(277, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "¡Bienvenid@!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BtnVolver
             // 
-            this.BtnVolver.Location = new System.Drawing.Point(398, 293);
+            this.BtnVolver.Location = new System.Drawing.Point(448, 366);
+            this.BtnVolver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(123, 33);
+            this.BtnVolver.Size = new System.Drawing.Size(138, 41);
             this.BtnVolver.TabIndex = 3;
             this.BtnVolver.Text = "Salir";
             this.BtnVolver.UseVisualStyleBackColor = true;
@@ -78,17 +78,16 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 344);
+            this.ClientSize = new System.Drawing.Size(656, 430);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonSubir);
-            this.Controls.Add(this.buttonBuscar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.ButtonSubir);
+            this.Controls.Add(this.ButtonBuscar);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Menu";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,8 +95,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button buttonSubir;
+        private System.Windows.Forms.Button ButtonBuscar;
+        private System.Windows.Forms.Button ButtonSubir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnVolver;
     }

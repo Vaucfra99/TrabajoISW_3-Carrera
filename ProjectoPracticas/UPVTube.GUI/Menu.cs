@@ -28,29 +28,18 @@ namespace UPVTube.GUI
             search = new Searcher(service);
             upvtubeapp = new UPVTubeApp(service);
         }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonSubir_Click(object sender, EventArgs e)
+        private void ButtonSubir_Click(object sender, EventArgs e)
         {
             this.Hide();
             upload.ShowDialog();
             this.Close();
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void ButtonBuscar_Click(object sender, EventArgs e)
         {
             this.Hide();
             search.ShowDialog();
             this.Close();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 

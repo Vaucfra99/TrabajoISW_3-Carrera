@@ -190,7 +190,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Searcher";
             this.Text = "Search";
-            this.Load += new System.EventHandler(this.Searcher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.upvTubeDBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

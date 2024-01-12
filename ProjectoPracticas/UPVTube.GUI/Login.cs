@@ -29,10 +29,6 @@ namespace UPVTube.GUI
             upvtubeapp = new UPVTubeApp(service);
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void TextBoxUser_TextChanged(object sender, EventArgs e)
         {

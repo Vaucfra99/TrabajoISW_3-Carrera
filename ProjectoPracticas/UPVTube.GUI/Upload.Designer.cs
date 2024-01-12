@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxTitulo = new System.Windows.Forms.TextBox();
+            this.TextBoxTitulo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.TextBoxDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxURI = new System.Windows.Forms.TextBox();
-            this.checkBoxPublico = new System.Windows.Forms.CheckBox();
-            this.buttonSubir = new System.Windows.Forms.Button();
-            this.buttonAtras = new System.Windows.Forms.Button();
+            this.TextBoxURI = new System.Windows.Forms.TextBox();
+            this.CheckBoxPublico = new System.Windows.Forms.CheckBox();
+            this.ButtonSubir = new System.Windows.Forms.Button();
+            this.ButtonAtras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,14 +58,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Introduzca el título";
             // 
-            // textBoxTitulo
+            // TextBoxTitulo
             // 
-            this.textBoxTitulo.Location = new System.Drawing.Point(186, 105);
-            this.textBoxTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxTitulo.Name = "textBoxTitulo";
-            this.textBoxTitulo.Size = new System.Drawing.Size(236, 26);
-            this.textBoxTitulo.TabIndex = 2;
-            this.textBoxTitulo.TextChanged += new System.EventHandler(this.textBoxTitulo_TextChanged);
+            this.TextBoxTitulo.Location = new System.Drawing.Point(186, 105);
+            this.TextBoxTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxTitulo.Name = "TextBoxTitulo";
+            this.TextBoxTitulo.Size = new System.Drawing.Size(236, 26);
+            this.TextBoxTitulo.TabIndex = 2;
+            this.TextBoxTitulo.TextChanged += new System.EventHandler(this.TextBoxTitulo_TextChanged);
             // 
             // label3
             // 
@@ -76,15 +76,15 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Introduzca la descripción";
             // 
-            // textBoxDescripcion
+            // TextBoxDescripcion
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(55, 185);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxDescripcion.Multiline = true;
-            this.textBoxDescripcion.Name = "textBoxDescripcion";
-            this.textBoxDescripcion.Size = new System.Drawing.Size(366, 125);
-            this.textBoxDescripcion.TabIndex = 4;
-            this.textBoxDescripcion.TextChanged += new System.EventHandler(this.textBoxDescripcion_TextChanged);
+            this.TextBoxDescripcion.Location = new System.Drawing.Point(55, 185);
+            this.TextBoxDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxDescripcion.Multiline = true;
+            this.TextBoxDescripcion.Name = "TextBoxDescripcion";
+            this.TextBoxDescripcion.Size = new System.Drawing.Size(366, 125);
+            this.TextBoxDescripcion.TabIndex = 4;
+            this.TextBoxDescripcion.TextChanged += new System.EventHandler(this.TextBoxDescripcion_TextChanged);
             // 
             // label4
             // 
@@ -95,69 +95,69 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Introduzca la URI";
             // 
-            // textBoxURI
+            // TextBoxURI
             // 
-            this.textBoxURI.Location = new System.Drawing.Point(186, 336);
-            this.textBoxURI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxURI.Name = "textBoxURI";
-            this.textBoxURI.Size = new System.Drawing.Size(236, 26);
-            this.textBoxURI.TabIndex = 6;
-            this.textBoxURI.TextChanged += new System.EventHandler(this.textBoxURI_TextChanged);
+            this.TextBoxURI.Location = new System.Drawing.Point(186, 336);
+            this.TextBoxURI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxURI.Name = "TextBoxURI";
+            this.TextBoxURI.Size = new System.Drawing.Size(236, 26);
+            this.TextBoxURI.TabIndex = 6;
+            this.TextBoxURI.TextChanged += new System.EventHandler(this.TextBoxURI_TextChanged);
             // 
-            // checkBoxPublico
+            // CheckBoxPublico
             // 
-            this.checkBoxPublico.AutoSize = true;
-            this.checkBoxPublico.Location = new System.Drawing.Point(55, 388);
-            this.checkBoxPublico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBoxPublico.Name = "checkBoxPublico";
-            this.checkBoxPublico.Size = new System.Drawing.Size(197, 24);
-            this.checkBoxPublico.TabIndex = 7;
-            this.checkBoxPublico.Text = "Desea que sea público";
-            this.checkBoxPublico.UseVisualStyleBackColor = true;
-            this.checkBoxPublico.CheckedChanged += new System.EventHandler(this.checkBoxPublico_CheckedChanged);
+            this.CheckBoxPublico.AutoSize = true;
+            this.CheckBoxPublico.Location = new System.Drawing.Point(55, 388);
+            this.CheckBoxPublico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CheckBoxPublico.Name = "CheckBoxPublico";
+            this.CheckBoxPublico.Size = new System.Drawing.Size(197, 24);
+            this.CheckBoxPublico.TabIndex = 7;
+            this.CheckBoxPublico.Text = "Desea que sea público";
+            this.CheckBoxPublico.UseVisualStyleBackColor = true;
+            this.CheckBoxPublico.CheckedChanged += new System.EventHandler(this.CheckBoxPublico_CheckedChanged);
             // 
-            // buttonSubir
+            // ButtonSubir
             // 
-            this.buttonSubir.Location = new System.Drawing.Point(186, 450);
-            this.buttonSubir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSubir.Name = "buttonSubir";
-            this.buttonSubir.Size = new System.Drawing.Size(108, 51);
-            this.buttonSubir.TabIndex = 8;
-            this.buttonSubir.Text = "SUBIR";
-            this.buttonSubir.UseVisualStyleBackColor = true;
-            this.buttonSubir.Click += new System.EventHandler(this.buttonSubir_Click);
+            this.ButtonSubir.Location = new System.Drawing.Point(186, 450);
+            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ButtonSubir.Name = "ButtonSubir";
+            this.ButtonSubir.Size = new System.Drawing.Size(108, 51);
+            this.ButtonSubir.TabIndex = 8;
+            this.ButtonSubir.Text = "SUBIR";
+            this.ButtonSubir.UseVisualStyleBackColor = true;
+            this.ButtonSubir.Click += new System.EventHandler(this.ButtonSubir_Click);
             // 
-            // buttonAtras
+            // ButtonAtras
             // 
-            this.buttonAtras.Location = new System.Drawing.Point(15, 519);
-            this.buttonAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAtras.Name = "buttonAtras";
-            this.buttonAtras.Size = new System.Drawing.Size(62, 29);
-            this.buttonAtras.TabIndex = 9;
-            this.buttonAtras.Text = "Atrás";
-            this.buttonAtras.UseVisualStyleBackColor = true;
-            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
+            this.ButtonAtras.Location = new System.Drawing.Point(15, 519);
+            this.ButtonAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ButtonAtras.Name = "ButtonAtras";
+            this.ButtonAtras.Size = new System.Drawing.Size(62, 29);
+            this.ButtonAtras.TabIndex = 9;
+            this.ButtonAtras.Text = "Atrás";
+            this.ButtonAtras.UseVisualStyleBackColor = true;
+            this.ButtonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
             // 
             // Upload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 562);
-            this.Controls.Add(this.buttonAtras);
-            this.Controls.Add(this.buttonSubir);
-            this.Controls.Add(this.checkBoxPublico);
-            this.Controls.Add(this.textBoxURI);
+            this.Controls.Add(this.ButtonAtras);
+            this.Controls.Add(this.ButtonSubir);
+            this.Controls.Add(this.CheckBoxPublico);
+            this.Controls.Add(this.TextBoxURI);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxDescripcion);
+            this.Controls.Add(this.TextBoxDescripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxTitulo);
+            this.Controls.Add(this.TextBoxTitulo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Upload";
             this.Text = "Upload";
-            this.Load += new System.EventHandler(this.Upload_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,13 +165,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxTitulo;
+        private System.Windows.Forms.TextBox TextBoxTitulo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxDescripcion;
+        private System.Windows.Forms.TextBox TextBoxDescripcion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxURI;
-        private System.Windows.Forms.CheckBox checkBoxPublico;
-        private System.Windows.Forms.Button buttonSubir;
-        private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.TextBox TextBoxURI;
+        private System.Windows.Forms.CheckBox CheckBoxPublico;
+        private System.Windows.Forms.Button ButtonSubir;
+        private System.Windows.Forms.Button ButtonAtras;
     }
 }
