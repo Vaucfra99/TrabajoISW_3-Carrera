@@ -176,6 +176,8 @@ namespace UPVTube.Services
 
         public List<Content> Search(String keyWords, String creatorNick, String subject, DateTime earliest, DateTime latest)
         {
+            // To Do Alumnos ------------------------------------
+            // Da excepción (añadir .ToList();)
             List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
