@@ -11,14 +11,16 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Watcher view;
-        private Menu menu;
+        //private Menu menu;
         private int WatchId;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            menu = new Menu(service);
-            view = new Watcher(service, WatchId);
+            //menu = new Menu(service);
+            // Eliminado Watcher porque WatchId no tiene valor aquí 
+            // y genera excepción en constructor
+            //view = new Watcher(service, WatchId);
             listBoxSearchRes.Sorted = true;
         }
 
@@ -30,7 +32,13 @@ namespace UPVTube.GUI
                 List<Content> cList = service.Search(textBoxKeyWords.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
                 foreach (Content c in cList)
                 {
-                    listBoxSearchRes.Items.Add(c);
+                    // Esto está mal, hay que tener un datagridview
+                    // y meter en él la info a mostrar del content
+                    // De momento meto sólo el Id para que se pueda mostrar 
+                    // el Watcher
+                    // TO DO ALUMNOS -----------------------------------
+
+                    listBoxSearchRes.Items.Add(c.Id);
                 }
                 
             }
@@ -48,18 +56,23 @@ namespace UPVTube.GUI
 
         private void ListBoxSearchRes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Content c1 = (Content)listBoxSearchRes.SelectedItem;
-            WatchId = c1.Id;
+            //Content c1 = (Content)listBoxSearchRes.SelectedItem;
+            //WatchId = c1.Id;
+            // Esto cambiará cuando se tenga un datagridview
+            // TO DO Alumnos -----------------------------------
+            WatchId = (int) listBoxSearchRes.SelectedItem;
+            //this.Hide();
 
-            this.Hide();
+            // Añadido, aquí WatchId sí tiene valor
+            view = new Watcher(service, WatchId);
             view.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void GoBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menu.ShowDialog();
+            //this.Hide();
+            //menu.ShowDialog();
             this.Close();
         }
 

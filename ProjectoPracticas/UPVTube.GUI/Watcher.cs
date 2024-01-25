@@ -18,14 +18,14 @@ namespace UPVTube.GUI
     public partial class Watcher : Form
     {
         private IUPVTubeService service;
-        private Searcher search;
+        //private Searcher search;
         private int id;
 
         public Watcher(IUPVTubeService service, int id)
         {
             InitializeComponent();
             this.service = service;
-            search = new Searcher(service);
+            //search = new Searcher(service);
             try
             {
                 Content c = service.Watch(id);
@@ -47,8 +47,8 @@ namespace UPVTube.GUI
 
         private void GoBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            search.ShowDialog();
+            //this.Hide();
+            //search.ShowDialog();
             this.Close();
         }
 

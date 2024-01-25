@@ -19,13 +19,13 @@ namespace UPVTube.GUI
         private String description;
         private String contentURI;
         private Boolean isPublic = false;
-        private Menu menuu;
+        //private Menu menuu;
 
         public Upload(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            menuu = new Menu(service);
+            //menuu = new Menu(service);
         }
 
         private void TextBoxTitulo_TextChanged(object sender, EventArgs e)
@@ -96,8 +96,8 @@ namespace UPVTube.GUI
 
         private void ButtonAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menuu.ShowDialog();
+            //this.Hide();
+            //menuu.ShowDialog();
             this.Close();
         }
     }

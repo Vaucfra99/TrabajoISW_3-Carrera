@@ -18,7 +18,7 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private bool evaluacion;
-        private Menu meenu;
+        //private Menu meenu;
         private Rechazo rechazo;
         private int EvId;
         private string EvEmail;
@@ -28,7 +28,7 @@ namespace UPVTube.GUI
             this.service = service;
             BotonPer.Enabled = false;
             BotonRec.Enabled = false;
-            meenu = new Menu(service);
+            //meenu = new Menu(service);
             rechazo = new Rechazo(service, EvId, EvEmail);
             CargarDatosEnListView();
         }
@@ -57,8 +57,8 @@ namespace UPVTube.GUI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            meenu.ShowDialog();
+            //this.Hide();
+            //meenu.ShowDialog();
             this.Close();
         }
         private void ListaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -82,9 +82,9 @@ namespace UPVTube.GUI
             Content c1 = (Content)ListaPendientes.SelectedItem;
             EvId = c1.Id;
             EvEmail = c1.Owner.Email;
-            this.Hide();
+            //this.Hide();
             rechazo.ShowDialog();
-            this.Close();
+            //this.Close();
         }
     }
 

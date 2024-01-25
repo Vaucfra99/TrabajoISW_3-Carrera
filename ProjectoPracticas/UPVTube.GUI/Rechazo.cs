@@ -14,21 +14,21 @@ namespace UPVTube.GUI
     public partial class Rechazo : Form
     {
         private IUPVTubeService service;
-        private Evaluar eevaluar;
+        //private Evaluar eevaluar;
         private int id;
         private string email;
         public Rechazo(IUPVTubeService service, int id, string email)
         {
             InitializeComponent();
             this.service = service;
-            eevaluar = new Evaluar(service);
+            //eevaluar = new Evaluar(service);
 
         }
 
         private void BotonEv_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            eevaluar.ShowDialog();
+            //this.Hide();
+            //eevaluar.ShowDialog();
             this.Close();
         }
 
@@ -36,8 +36,8 @@ namespace UPVTube.GUI
         {
             DialogResult noPermitido = MessageBox.Show(this, "Email : " + email + "\n" + "Asunto : Rechazo Contenido \n Mensaje: " + TextBoxMotivo.Text, "Contenido No Autorizado Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
             service.EvaluarContent(id, false, TextBoxMotivo.Text);
-            this.Hide();
-            eevaluar.ShowDialog();
+            //this.Hide();
+            //eevaluar.ShowDialog();
             this.Close();
         }
     }

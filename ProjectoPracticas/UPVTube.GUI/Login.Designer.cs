@@ -43,9 +43,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(84, 48);
+            this.label1.Location = new System.Drawing.Point(75, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesión";
             // 
@@ -54,9 +54,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(21, 111);
+            this.label2.Location = new System.Drawing.Point(19, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
@@ -65,39 +65,39 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(12, 202);
+            this.label3.Location = new System.Drawing.Point(11, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 24);
+            this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
             // TextBoxUser
             // 
             this.TextBoxUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TextBoxUser.Location = new System.Drawing.Point(132, 111);
+            this.TextBoxUser.Location = new System.Drawing.Point(117, 89);
             this.TextBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.Size = new System.Drawing.Size(156, 26);
+            this.TextBoxUser.Size = new System.Drawing.Size(139, 22);
             this.TextBoxUser.TabIndex = 3;
             this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Location = new System.Drawing.Point(132, 200);
+            this.TextBoxPassword.Location = new System.Drawing.Point(117, 160);
             this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(156, 26);
+            this.TextBoxPassword.Size = new System.Drawing.Size(139, 22);
             this.TextBoxPassword.TabIndex = 4;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // BtnAceptar
             // 
             this.BtnAceptar.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnAceptar.Location = new System.Drawing.Point(205, 266);
+            this.BtnAceptar.Location = new System.Drawing.Point(182, 213);
             this.BtnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(83, 49);
+            this.BtnAceptar.Size = new System.Drawing.Size(74, 39);
             this.BtnAceptar.TabIndex = 5;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
@@ -106,10 +106,10 @@
             // BtnClear
             // 
             this.BtnClear.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnClear.Location = new System.Drawing.Point(22, 266);
+            this.BtnClear.Location = new System.Drawing.Point(20, 213);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(86, 49);
+            this.BtnClear.Size = new System.Drawing.Size(76, 39);
             this.BtnClear.TabIndex = 6;
             this.BtnClear.Text = "Borrar";
             this.BtnClear.UseVisualStyleBackColor = true;
@@ -118,20 +118,21 @@
             // BtnReturn
             // 
             this.BtnReturn.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnReturn.Location = new System.Drawing.Point(25, 378);
-            this.BtnReturn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnReturn.Location = new System.Drawing.Point(22, 302);
+            this.BtnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnReturn.Name = "BtnReturn";
-            this.BtnReturn.Size = new System.Drawing.Size(86, 49);
+            this.BtnReturn.Size = new System.Drawing.Size(76, 39);
             this.BtnReturn.TabIndex = 7;
             this.BtnReturn.Text = "Volver";
             this.BtnReturn.UseVisualStyleBackColor = true;
+            this.BtnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(315, 442);
+            this.ClientSize = new System.Drawing.Size(280, 354);
             this.Controls.Add(this.BtnReturn);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAceptar);

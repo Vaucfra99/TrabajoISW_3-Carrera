@@ -45,14 +45,13 @@ namespace UPVTube.Services
 
             // Añadir los 3 miembros
 
-            Member m1 = new Member("irene@alumno.com","Irene San Román Fuentes", DateTime.Now, "irene", "irene1");
+            Member m1 = new Member("irene@inf.upv.es", "Irene San Román Fuentes", DateTime.Now, "irene", "irene1");
             AddMember(m1);
-            Member m2 = new Member("victor@alumno.com", "Victor Aucejo Franco", DateTime.Now, "victor", "victor2");
+            Member m2 = new Member("victor@inf.upv.es", "Victor Aucejo Franco", DateTime.Now, "victor", "victor2");
             AddMember(m2);
-            Member m3 = new Member("juan@alumno.com", "Juan Candela Morant", DateTime.Now, "juan", "juan3");
+            Member m3 = new Member("fjaen@dsic.upv.es", "Javier Jaen", DateTime.Now, "fjaen", "pitufo");
             AddMember(m3);
-            Member m4 = new Member("nacho@alumno.com", "Igancio de Lucas Gil", DateTime.Now, "nacho", "nacho4");
-            AddMember(m4);
+           
 
 
             // Añadir los 4 contenidos
@@ -63,7 +62,7 @@ namespace UPVTube.Services
             AddContent(c2);
             Content c3 = new Content("teoría 1", "Teoría 1 ISW", false, "ISW Teoría 1 Contenidos", DateTime.Now, m3);
             AddContent(c3);
-            Content c4 = new Content("teoría 2", "Teoría 2 ISW", false, "ISW Teoría 2 Contenidos", DateTime.Now, m4);
+            Content c4 = new Content("teoría 2", "Teoría 2 ISW", false, "ISW Teoría 2 Contenidos", DateTime.Now, m3);
             AddContent(c4);
 
             dal.Commit();

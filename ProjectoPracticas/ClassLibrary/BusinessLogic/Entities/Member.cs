@@ -35,8 +35,12 @@ namespace UPVTube.Entities
             this.Password = password;
         }
 
-        public Boolean isStudent() { return false; }
-        public Boolean isTeacher() { return false; }
+        public Boolean isStudent() {
+            //To Do Alumnos -----------------------------------
+            return false; }
+        public Boolean isTeacher() {
+            //To Do Alumnos -----------------------------------
+            return false; }
 
         public void AddContent(Content c) {
             Contents.Add(c);

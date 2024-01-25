@@ -27,16 +27,16 @@ namespace UPVTube.GUI
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             login.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             register.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
