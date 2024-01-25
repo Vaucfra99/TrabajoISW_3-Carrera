@@ -54,9 +54,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UPVTubePersistenceTests">
-      <HintPath>..\UPVTubePersistenceTests\obj\Debug\UPVTubePersistenceTests.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Evaluar.cs">

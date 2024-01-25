@@ -178,6 +178,7 @@ namespace UPVTube.Services
         {
             // To Do Alumnos ------------------------------------
             // Da excepción (añadir .ToList();)
+            // Ocurrirá en todos los .Where(...)
             List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
@@ -190,6 +191,7 @@ namespace UPVTube.Services
             {
                 latest = DateTime.Now;
             }
+            
             cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
 
             if (!(Logged.isStudent() || Logged.isTeacher()))
