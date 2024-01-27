@@ -192,7 +192,7 @@ namespace UPVTube.Services
                 latest = DateTime.Now;
             }
             
-            cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0);
+            cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0).ToList();
 
             if (!(Logged.isStudent() || Logged.isTeacher()))
             {
