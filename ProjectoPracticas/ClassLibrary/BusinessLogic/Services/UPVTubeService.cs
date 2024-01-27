@@ -179,7 +179,7 @@ namespace UPVTube.Services
             // To Do Alumnos ------------------------------------
             // Da excepción (añadir .ToList();)
             // Ocurrirá en todos los .Where(...)
-            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes);
+            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).ToList();
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
             if (earliest == null)

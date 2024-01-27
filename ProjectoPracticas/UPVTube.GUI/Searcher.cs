@@ -61,7 +61,7 @@ namespace UPVTube.GUI
             // Esto cambiará cuando se tenga un datagridview
             // TO DO Alumnos -----------------------------------
             WatchId = (int) listBoxSearchRes.SelectedItem;
-            //this.Hide();
+            //this.Hide();  
 
             // Añadido, aquí WatchId sí tiene valor
             view = new Watcher(service, WatchId);
