@@ -194,7 +194,7 @@ namespace UPVTube.Services
             
             cList = (List<Content>)cList.Where<Content>(c => c.UploadDate.CompareTo(earliest) >= 0 && c.UploadDate.CompareTo(latest) <= 0).ToList();
 
-            if (!(Logged.isStudent() || Logged.isTeacher()))
+            if (!(Logged.IsStudent() || Logged.IsTeacher()))
             {
                 cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true);
             }
@@ -221,7 +221,7 @@ namespace UPVTube.Services
         public List<Content> GetPendingContents()
         {
             //El profesor ha iniciado sesion en el sistema
-            if (Logged == null || !(Logged.isTeacher()))
+            if (Logged == null || !(Logged.IsTeacher()))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
@@ -236,7 +236,7 @@ namespace UPVTube.Services
 
         public void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo) {
            
-            if (Logged == null || !(Logged.isTeacher()))
+            if (Logged == null || !(Logged.IsTeacher()))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
