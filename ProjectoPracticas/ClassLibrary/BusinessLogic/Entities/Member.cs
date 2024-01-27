@@ -35,13 +35,18 @@ namespace UPVTube.Entities
             this.Password = password;
         }
 
-        public Boolean isStudent() {
-            //To Do Alumnos -----------------------------------
-            return false; }
-        public Boolean isTeacher() {
-            //To Do Alumnos -----------------------------------
-            return false; }
-
+        public bool IsStudent()
+        {
+            foreach (String alias in StudentDomains)
+                if (Email.Contains(alias)) return true;
+            return false;
+        }
+        public bool IsTeacher()
+        {
+            foreach (String alias in TeacherDomains)
+                if (Email.Contains(alias)) return true;
+            return false;
+        }
         public void AddContent(Content c) {
             Contents.Add(c);
     }
