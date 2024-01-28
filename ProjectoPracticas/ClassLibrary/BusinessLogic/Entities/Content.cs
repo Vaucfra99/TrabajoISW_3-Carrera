@@ -27,7 +27,7 @@ namespace UPVTube.Entities
             this.UploadDate = uploadDate;
             this.Owner = owner;
             this.Authorized = Authorized.Yes;
-            if (this.Owner.isStudent()){ this.Authorized = Authorized.Pending;}
+            if (this.Owner.IsStudent()){ this.Authorized = Authorized.Pending;}
 
         }
     }

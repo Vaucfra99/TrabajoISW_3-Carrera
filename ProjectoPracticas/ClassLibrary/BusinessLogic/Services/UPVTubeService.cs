@@ -128,6 +128,7 @@ namespace UPVTube.Services
             else
             {
                 user = new Member(email, fullName, DateTime.Now, nick, password);
+                Logged = user;
                 dal.Insert(user);
                 dal.Commit();
             }
@@ -174,8 +175,39 @@ namespace UPVTube.Services
         }
 
 
-        public List<Content> Search(String keyWords, String creatorNick, String subject, DateTime earliest, DateTime latest)
+        public List<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest)
         {
+           // IEnumerable<Content> aux = dal.GetAll<Content>();
+           // IEnumerable<Content> cList = new List<Content>();
+
+           // if (earliest == null){earliest = new DateTime(1990, 0, 0, 0, 0, 0);}
+          //  if (latest == null){latest = DateTime.Now;}
+          //
+           // foreach (Content c in aux) {
+           //     if (
+           //         (creatorNick == null || creatorNick.Equals(c.Owner)) &&
+           //         (title == null || title.Equals(c.Title)) &&
+          //          (latest >= c.UploadDate) &&
+           //         (earliest <= c.UploadDate) 
+           //         ) 
+          //      {
+          //          cList = cList.Append<Content>(c);
+          //      }
+            
+            
+           // }
+
+
+
+
+
+
+
+
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // To Do Alumnos ------------------------------------
             // Da excepción (añadir .ToList();)
             // Ocurrirá en todos los .Where(...)
@@ -183,9 +215,9 @@ namespace UPVTube.Services
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
             if (earliest == null)
-            {
-                earliest = new DateTime(1990, 0, 0, 0, 0, 0); 
-            }
+           {
+             earliest = new DateTime(1990, 0, 0, 0, 0, 0); 
+          }
             //Si no hay fecha final se pone por defecto la actual
             if (latest == null)
             {
@@ -196,19 +228,19 @@ namespace UPVTube.Services
 
             if (!(Logged.IsStudent() || Logged.IsTeacher()))
             {
-                cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true);
+               cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true).ToList();
             }
-            if (!(creatorNick == null || creatorNick == ""))
+           if (!(creatorNick == null || creatorNick == ""))
             {
-                cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick);
-            }
+                cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick).ToList();
+           }
             if (!(subject == null || subject == ""))
-            {
-                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName == subject).Any() == true);
+          {
+                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName == subject).Any() == true).ToList();
             }
-            if (!(keyWords == null || keyWords == ""))
-            {
-                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(keyWords));
+            if (!(title == null || title == ""))
+           {
+               cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(title)).ToList();
             }
             return cList;
         }
