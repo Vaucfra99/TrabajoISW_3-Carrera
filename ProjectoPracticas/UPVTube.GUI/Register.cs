@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UPVTube.Entities;
 using UPVTube.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -24,7 +25,7 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
-            menu = new Menu(service);
+            
         }
 
         private void TextBoxNick_TextChanged(object sender, EventArgs e)
@@ -60,7 +61,9 @@ namespace UPVTube.GUI
             else {
                 try
                 {
+                    Member m = new Member(email, fullname, DateTime.Now, nick, password);
                     service.Register(email, fullname, nick, password);
+                    menu = new Menu(service, m);
                     this.Hide();
                     menu.ShowDialog();
                     this.Close();
@@ -83,9 +86,9 @@ namespace UPVTube.GUI
             TextBoxPassword.Clear();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void buttonReturn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

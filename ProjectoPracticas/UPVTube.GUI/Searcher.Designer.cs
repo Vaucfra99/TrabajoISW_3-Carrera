@@ -42,7 +42,6 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.GridContents = new System.Windows.Forms.DataGridView();
-            this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ownerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             this.uploadDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastAccess = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,8 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(41, 47);
+            this.labelTitle.Location = new System.Drawing.Point(31, 38);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(60, 20);
             this.labelTitle.TabIndex = 0;
@@ -68,7 +69,8 @@
             // 
             this.labelUplNick.AutoSize = true;
             this.labelUplNick.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelUplNick.Location = new System.Drawing.Point(41, 95);
+            this.labelUplNick.Location = new System.Drawing.Point(31, 77);
+            this.labelUplNick.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUplNick.Name = "labelUplNick";
             this.labelUplNick.Size = new System.Drawing.Size(134, 20);
             this.labelUplNick.TabIndex = 1;
@@ -78,7 +80,8 @@
             // 
             this.labelSubject.AutoSize = true;
             this.labelSubject.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelSubject.Location = new System.Drawing.Point(41, 135);
+            this.labelSubject.Location = new System.Drawing.Point(31, 110);
+            this.labelSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSubject.Name = "labelSubject";
             this.labelSubject.Size = new System.Drawing.Size(70, 20);
             this.labelSubject.TabIndex = 2;
@@ -86,33 +89,34 @@
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.Location = new System.Drawing.Point(180, 47);
-            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.textBoxTitle.Location = new System.Drawing.Point(135, 38);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(216, 22);
+            this.textBoxTitle.Size = new System.Drawing.Size(163, 20);
             this.textBoxTitle.TabIndex = 3;
             // 
             // textBoxUplNick
             // 
-            this.textBoxUplNick.Location = new System.Drawing.Point(180, 95);
-            this.textBoxUplNick.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.textBoxUplNick.Location = new System.Drawing.Point(135, 77);
+            this.textBoxUplNick.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBoxUplNick.Name = "textBoxUplNick";
-            this.textBoxUplNick.Size = new System.Drawing.Size(216, 22);
+            this.textBoxUplNick.Size = new System.Drawing.Size(163, 20);
             this.textBoxUplNick.TabIndex = 4;
             // 
             // textBoxSubject
             // 
-            this.textBoxSubject.Location = new System.Drawing.Point(180, 133);
-            this.textBoxSubject.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.textBoxSubject.Location = new System.Drawing.Point(135, 108);
+            this.textBoxSubject.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBoxSubject.Name = "textBoxSubject";
-            this.textBoxSubject.Size = new System.Drawing.Size(215, 22);
+            this.textBoxSubject.Size = new System.Drawing.Size(162, 20);
             this.textBoxSubject.TabIndex = 5;
             // 
             // labelEarly
             // 
             this.labelEarly.AutoSize = true;
             this.labelEarly.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelEarly.Location = new System.Drawing.Point(41, 217);
+            this.labelEarly.Location = new System.Drawing.Point(31, 176);
+            this.labelEarly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEarly.Name = "labelEarly";
             this.labelEarly.Size = new System.Drawing.Size(183, 20);
             this.labelEarly.TabIndex = 6;
@@ -122,7 +126,8 @@
             // 
             this.labelLate.AutoSize = true;
             this.labelLate.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelLate.Location = new System.Drawing.Point(41, 297);
+            this.labelLate.Location = new System.Drawing.Point(31, 241);
+            this.labelLate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLate.Name = "labelLate";
             this.labelLate.Size = new System.Drawing.Size(173, 20);
             this.labelLate.TabIndex = 7;
@@ -130,27 +135,27 @@
             // 
             // dateTimePickerEarly
             // 
-            this.dateTimePickerEarly.Location = new System.Drawing.Point(44, 247);
-            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.dateTimePickerEarly.Location = new System.Drawing.Point(33, 201);
+            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerEarly.Name = "dateTimePickerEarly";
-            this.dateTimePickerEarly.Size = new System.Drawing.Size(332, 22);
+            this.dateTimePickerEarly.Size = new System.Drawing.Size(250, 20);
             this.dateTimePickerEarly.TabIndex = 8;
             // 
             // dateTimePickerLate
             // 
-            this.dateTimePickerLate.Location = new System.Drawing.Point(44, 326);
-            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.dateTimePickerLate.Location = new System.Drawing.Point(33, 265);
+            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerLate.Name = "dateTimePickerLate";
-            this.dateTimePickerLate.Size = new System.Drawing.Size(332, 22);
+            this.dateTimePickerLate.Size = new System.Drawing.Size(250, 20);
             this.dateTimePickerLate.TabIndex = 9;
             // 
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.buttonSearch.Location = new System.Drawing.Point(300, 395);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.buttonSearch.Location = new System.Drawing.Point(225, 321);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 35);
+            this.buttonSearch.Size = new System.Drawing.Size(56, 28);
             this.buttonSearch.TabIndex = 10;
             this.buttonSearch.Text = "Buscar";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -159,13 +164,15 @@
             // GoBackButton
             // 
             this.GoBackButton.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.GoBackButton.Location = new System.Drawing.Point(47, 395);
-            this.GoBackButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.GoBackButton.Location = new System.Drawing.Point(35, 321);
+            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(75, 35);
+            this.GoBackButton.Size = new System.Drawing.Size(66, 28);
             this.GoBackButton.TabIndex = 13;
             this.GoBackButton.Text = "Atrás";
             this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            this.GoBackButton.Leave += new System.EventHandler(this.GoBackButton_Click);
             // 
             // GridContents
             // 
@@ -180,16 +187,11 @@
             this.subjectsDataGridViewTextBoxColumn,
             this.LastAccess});
             this.GridContents.DataSource = this.contentBindingSource;
-            this.GridContents.Location = new System.Drawing.Point(485, 47);
-            this.GridContents.Margin = new System.Windows.Forms.Padding(4);
+            this.GridContents.Location = new System.Drawing.Point(364, 38);
             this.GridContents.Name = "GridContents";
             this.GridContents.RowHeadersWidth = 51;
-            this.GridContents.Size = new System.Drawing.Size(931, 383);
+            this.GridContents.Size = new System.Drawing.Size(698, 311);
             this.GridContents.TabIndex = 14;
-            // 
-            // contentBindingSource
-            // 
-            this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -246,12 +248,16 @@
             this.LastAccess.Name = "LastAccess";
             this.LastAccess.Width = 125;
             // 
+            // contentBindingSource
+            // 
+            this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
+            // 
             // Searcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1465, 449);
+            this.ClientSize = new System.Drawing.Size(1099, 365);
             this.Controls.Add(this.GridContents);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.buttonSearch);
@@ -266,7 +272,7 @@
             this.Controls.Add(this.labelUplNick);
             this.Controls.Add(this.labelTitle);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Searcher";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Searcher_Load);

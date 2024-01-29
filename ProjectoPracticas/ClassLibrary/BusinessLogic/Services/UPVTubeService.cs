@@ -57,13 +57,16 @@ namespace UPVTube.Services
             // Añadir los 4 contenidos
 
             Content c1 = new Content("teoría", "Práctica 1 ISW", true, "ISW Práctica 1 Contenidos", DateTime.Now, m1);
-            AddContent(c1);
+            c1.Authorized = Authorized.Pending;
+            dal.Insert(c1);
             Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now, m2);
-            AddContent(c2);
+            c2.Authorized = Authorized.Pending;
+            dal.Insert(c2);
             Content c3 = new Content("teoría 1", "Teoría 1 ISW", false, "ISW Teoría 1 Contenidos", DateTime.Now, m3);
-            AddContent(c3);
+            c3.Authorized = Authorized.Pending;
+            dal.Insert(c3);
             Content c4 = new Content("teoría 2", "Teoría 2 ISW", false, "ISW Teoría 2 Contenidos", DateTime.Now, m3);
-            AddContent(c4);
+            dal.Insert(c4);
 
             dal.Commit();
         }
@@ -104,12 +107,6 @@ namespace UPVTube.Services
             }
            
         }
-
-        public void AddContent(Content content)
-        {
-                dal.Insert<Content>(content);
-                dal.Commit();
-            }
            
 
 
@@ -177,33 +174,27 @@ namespace UPVTube.Services
 
         public List<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest)
         {
-           // IEnumerable<Content> aux = dal.GetAll<Content>();
-           // IEnumerable<Content> cList = new List<Content>();
+            /**
+            IEnumerable<Content> aux = dal.GetAll<Content>();
+            IEnumerable<Content> cList = new List<Content>();
 
-           // if (earliest == null){earliest = new DateTime(1990, 0, 0, 0, 0, 0);}
-          //  if (latest == null){latest = DateTime.Now;}
-          //
-           // foreach (Content c in aux) {
-           //     if (
-           //         (creatorNick == null || creatorNick.Equals(c.Owner)) &&
-           //         (title == null || title.Equals(c.Title)) &&
-          //          (latest >= c.UploadDate) &&
-           //         (earliest <= c.UploadDate) 
-           //         ) 
-          //      {
-          //          cList = cList.Append<Content>(c);
-          //      }
+            if (earliest == null){earliest = new DateTime(1990, 0, 0, 0, 0, 0);}
+            if (latest == null){latest = DateTime.Now;}
+          
+            foreach (Content c in aux) {
+                if (
+                    (creatorNick == null || creatorNick.Equals(c.Owner)) &&
+                    (title == null || title.Equals(c.Title)) &&
+                    (latest >= c.UploadDate) &&
+                    (earliest <= c.UploadDate) 
+                    ) 
+                {
+                    cList = cList.Append<Content>(c);
+                }
             
             
-           // }
-
-
-
-
-
-
-
-
+            }
+            */
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,9 +206,9 @@ namespace UPVTube.Services
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
             if (earliest == null)
-           {
+            {
              earliest = new DateTime(1990, 0, 0, 0, 0, 0); 
-          }
+            }
             //Si no hay fecha final se pone por defecto la actual
             if (latest == null)
             {
@@ -230,16 +221,16 @@ namespace UPVTube.Services
             {
                cList = (List<Content>)cList.Where<Content>(c => c.IsPublic == true).ToList();
             }
-           if (!(creatorNick == null || creatorNick == ""))
+            if (!(creatorNick == null || creatorNick == ""))
             {
                 cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick).ToList();
-           }
+            }
             if (!(subject == null || subject == ""))
-          {
+            {
                 cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName == subject).Any() == true).ToList();
             }
             if (!(title == null || title == ""))
-           {
+            {
                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(title)).ToList();
             }
             return cList;
@@ -253,7 +244,7 @@ namespace UPVTube.Services
         public List<Content> GetPendingContents()
         {
             //El profesor ha iniciado sesion en el sistema
-            if (Logged == null || !(Logged.IsTeacher()))
+            if (!(Logged.IsTeacher()))
             {
                 throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
             }
@@ -264,6 +255,11 @@ namespace UPVTube.Services
                 .ToList();
             //Lo llamará el formulario
 
+        }
+
+        public Member ReturnLoggedMember()
+        {
+            return Logged;
         }
 
         public void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo) {

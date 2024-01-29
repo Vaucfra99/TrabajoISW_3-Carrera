@@ -21,13 +21,13 @@ namespace UPVTube.Services
         // A partir de aquí los necesarios para los CU solicitados
         //
         void AddMember(Member member);
-        void AddContent(Content content);
         void Register(String email, String fullName, String nick, String password);
         void LogIn(string nick, String password);
         void LogOut();
         void Upload(String title, String description, String contentUri, Boolean isPublic);
         List<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest);
         Content Watch(int id);
+        Member ReturnLoggedMember();
         void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo);
         List<Content> GetPendingContents();
     }

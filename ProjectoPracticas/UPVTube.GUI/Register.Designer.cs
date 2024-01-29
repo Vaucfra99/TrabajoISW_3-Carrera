@@ -38,6 +38,9 @@
             this.TextBoxEmail = new System.Windows.Forms.TextBox();
             this.BtnAccept = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -46,9 +49,10 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(24, 72);
+            this.label2.Location = new System.Drawing.Point(31, 268);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
@@ -57,9 +61,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(24, 174);
+            this.label3.Location = new System.Drawing.Point(31, 342);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 24);
+            this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
@@ -68,62 +73,68 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(24, 275);
+            this.label4.Location = new System.Drawing.Point(25, 60);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
+            this.label4.Size = new System.Drawing.Size(148, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Nombre:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Text = "Nombre Completo:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(24, 371);
+            this.label5.Location = new System.Drawing.Point(25, 139);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
+            this.label5.Size = new System.Drawing.Size(152, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Email:";
+            this.label5.Text = "Correo Electrónico:";
             // 
             // TextBoxNick
             // 
-            this.TextBoxNick.Location = new System.Drawing.Point(166, 69);
+            this.TextBoxNick.Location = new System.Drawing.Point(35, 311);
+            this.TextBoxNick.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxNick.Name = "TextBoxNick";
-            this.TextBoxNick.Size = new System.Drawing.Size(124, 26);
+            this.TextBoxNick.Size = new System.Drawing.Size(254, 20);
             this.TextBoxNick.TabIndex = 5;
             this.TextBoxNick.TextChanged += new System.EventHandler(this.TextBoxNick_TextChanged);
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Location = new System.Drawing.Point(166, 174);
+            this.TextBoxPassword.Location = new System.Drawing.Point(35, 389);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.Name = "TextBoxPassword";
-            this.TextBoxPassword.Size = new System.Drawing.Size(124, 26);
+            this.TextBoxPassword.Size = new System.Drawing.Size(254, 20);
             this.TextBoxPassword.TabIndex = 6;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // TextBoxFullName
             // 
-            this.TextBoxFullName.Location = new System.Drawing.Point(170, 271);
+            this.TextBoxFullName.Location = new System.Drawing.Point(29, 100);
+            this.TextBoxFullName.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxFullName.Name = "TextBoxFullName";
-            this.TextBoxFullName.Size = new System.Drawing.Size(121, 26);
+            this.TextBoxFullName.Size = new System.Drawing.Size(260, 20);
             this.TextBoxFullName.TabIndex = 7;
             this.TextBoxFullName.TextChanged += new System.EventHandler(this.TextBoxFullName_TextChanged);
             // 
             // TextBoxEmail
             // 
-            this.TextBoxEmail.Location = new System.Drawing.Point(166, 371);
+            this.TextBoxEmail.Location = new System.Drawing.Point(29, 179);
+            this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxEmail.Name = "TextBoxEmail";
-            this.TextBoxEmail.Size = new System.Drawing.Size(124, 26);
+            this.TextBoxEmail.Size = new System.Drawing.Size(260, 20);
             this.TextBoxEmail.TabIndex = 8;
             this.TextBoxEmail.TextChanged += new System.EventHandler(this.TextBoxEmail_TextChanged);
             // 
             // BtnAccept
             // 
             this.BtnAccept.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnAccept.Location = new System.Drawing.Point(212, 446);
+            this.BtnAccept.Location = new System.Drawing.Point(304, 459);
+            this.BtnAccept.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAccept.Name = "BtnAccept";
-            this.BtnAccept.Size = new System.Drawing.Size(104, 34);
+            this.BtnAccept.Size = new System.Drawing.Size(77, 28);
             this.BtnAccept.TabIndex = 9;
             this.BtnAccept.Text = "Aceptar";
             this.BtnAccept.UseVisualStyleBackColor = true;
@@ -132,20 +143,53 @@
             // BtnClear
             // 
             this.BtnClear.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnClear.Location = new System.Drawing.Point(28, 443);
+            this.BtnClear.Location = new System.Drawing.Point(178, 458);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(104, 37);
+            this.BtnClear.Size = new System.Drawing.Size(69, 28);
             this.BtnClear.TabIndex = 10;
             this.BtnClear.Text = "Borrar";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Informacion Personal";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 234);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Informacion de Acceso";
+            // 
+            // buttonReturn
+            // 
+            this.buttonReturn.Location = new System.Drawing.Point(35, 459);
+            this.buttonReturn.Name = "buttonReturn";
+            this.buttonReturn.Size = new System.Drawing.Size(77, 28);
+            this.buttonReturn.TabIndex = 13;
+            this.buttonReturn.Text = "Volver";
+            this.buttonReturn.UseVisualStyleBackColor = true;
+            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            this.buttonReturn.Leave += new System.EventHandler(this.buttonReturn_Click);
+            // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(340, 526);
+            this.ClientSize = new System.Drawing.Size(403, 515);
+            this.Controls.Add(this.buttonReturn);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAccept);
             this.Controls.Add(this.TextBoxEmail);
@@ -156,6 +200,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);
@@ -174,5 +219,8 @@
         private System.Windows.Forms.TextBox TextBoxEmail;
         private System.Windows.Forms.Button BtnAccept;
         private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonReturn;
     }
 }

@@ -12,13 +12,11 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Watcher view;
-        //private Menu menu;
         private int WatchId;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            //menu = new Menu(service);
             // Eliminado Watcher porque WatchId no tiene valor aquí 
             // y genera excepción en constructor
             //view = new Watcher(service, WatchId);
@@ -53,16 +51,16 @@ namespace UPVTube.GUI
         }
 
         
-        private void GoBack_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //menu.ShowDialog();
-            this.Close();
-        }
+        
 
         private void Searcher_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

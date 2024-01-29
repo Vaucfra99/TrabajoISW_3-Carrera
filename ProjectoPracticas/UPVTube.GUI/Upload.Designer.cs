@@ -44,18 +44,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(42, 54);
+            this.label2.Location = new System.Drawing.Point(28, 35);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 24);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Introduzca el título";
             // 
             // TextBoxTitulo
             // 
-            this.TextBoxTitulo.Location = new System.Drawing.Point(222, 54);
-            this.TextBoxTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxTitulo.Location = new System.Drawing.Point(148, 35);
+            this.TextBoxTitulo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TextBoxTitulo.Name = "TextBoxTitulo";
-            this.TextBoxTitulo.Size = new System.Drawing.Size(236, 26);
+            this.TextBoxTitulo.Size = new System.Drawing.Size(159, 20);
             this.TextBoxTitulo.TabIndex = 2;
             this.TextBoxTitulo.TextChanged += new System.EventHandler(this.TextBoxTitulo_TextChanged);
             // 
@@ -64,20 +65,20 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(42, 125);
+            this.label3.Location = new System.Drawing.Point(28, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(225, 24);
+            this.label3.Size = new System.Drawing.Size(196, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Introduzca la descripción";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // TextBoxDescripcion
             // 
-            this.TextBoxDescripcion.Location = new System.Drawing.Point(46, 153);
-            this.TextBoxDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxDescripcion.Location = new System.Drawing.Point(31, 99);
+            this.TextBoxDescripcion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TextBoxDescripcion.Multiline = true;
             this.TextBoxDescripcion.Name = "TextBoxDescripcion";
-            this.TextBoxDescripcion.Size = new System.Drawing.Size(425, 125);
+            this.TextBoxDescripcion.Size = new System.Drawing.Size(285, 83);
             this.TextBoxDescripcion.TabIndex = 4;
             this.TextBoxDescripcion.TextChanged += new System.EventHandler(this.TextBoxDescripcion_TextChanged);
             // 
@@ -86,18 +87,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(42, 323);
+            this.label4.Location = new System.Drawing.Point(28, 210);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 24);
+            this.label4.Size = new System.Drawing.Size(140, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Introduzca la URI";
             // 
             // TextBoxURI
             // 
-            this.TextBoxURI.Location = new System.Drawing.Point(235, 323);
-            this.TextBoxURI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxURI.Location = new System.Drawing.Point(157, 210);
+            this.TextBoxURI.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TextBoxURI.Name = "TextBoxURI";
-            this.TextBoxURI.Size = new System.Drawing.Size(236, 26);
+            this.TextBoxURI.Size = new System.Drawing.Size(159, 20);
             this.TextBoxURI.TabIndex = 6;
             this.TextBoxURI.TextChanged += new System.EventHandler(this.TextBoxURI_TextChanged);
             // 
@@ -106,10 +108,10 @@
             this.CheckBoxPublico.AutoSize = true;
             this.CheckBoxPublico.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.CheckBoxPublico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CheckBoxPublico.Location = new System.Drawing.Point(55, 388);
-            this.CheckBoxPublico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CheckBoxPublico.Location = new System.Drawing.Point(37, 252);
+            this.CheckBoxPublico.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CheckBoxPublico.Name = "CheckBoxPublico";
-            this.CheckBoxPublico.Size = new System.Drawing.Size(221, 28);
+            this.CheckBoxPublico.Size = new System.Drawing.Size(193, 24);
             this.CheckBoxPublico.TabIndex = 7;
             this.CheckBoxPublico.Text = "Desea que sea público";
             this.CheckBoxPublico.UseVisualStyleBackColor = true;
@@ -118,10 +120,10 @@
             // ButtonSubir
             // 
             this.ButtonSubir.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.ButtonSubir.Location = new System.Drawing.Point(186, 450);
-            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ButtonSubir.Location = new System.Drawing.Point(124, 292);
+            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ButtonSubir.Name = "ButtonSubir";
-            this.ButtonSubir.Size = new System.Drawing.Size(108, 51);
+            this.ButtonSubir.Size = new System.Drawing.Size(72, 33);
             this.ButtonSubir.TabIndex = 8;
             this.ButtonSubir.Text = "SUBIR";
             this.ButtonSubir.UseVisualStyleBackColor = true;
@@ -130,20 +132,21 @@
             // ButtonAtras
             // 
             this.ButtonAtras.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.ButtonAtras.Location = new System.Drawing.Point(15, 519);
-            this.ButtonAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ButtonAtras.Location = new System.Drawing.Point(10, 337);
+            this.ButtonAtras.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ButtonAtras.Name = "ButtonAtras";
-            this.ButtonAtras.Size = new System.Drawing.Size(69, 29);
+            this.ButtonAtras.Size = new System.Drawing.Size(61, 28);
             this.ButtonAtras.TabIndex = 9;
             this.ButtonAtras.Text = "Atrás";
             this.ButtonAtras.UseVisualStyleBackColor = true;
+            this.ButtonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
             // 
             // Upload
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(503, 562);
+            this.ClientSize = new System.Drawing.Size(335, 397);
             this.Controls.Add(this.ButtonAtras);
             this.Controls.Add(this.ButtonSubir);
             this.Controls.Add(this.CheckBoxPublico);
@@ -153,7 +156,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TextBoxTitulo);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Upload";
             this.Text = "Upload";
             this.Load += new System.EventHandler(this.Upload_Load);

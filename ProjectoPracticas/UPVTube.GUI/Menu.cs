@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UPVTube.Entities;
 using UPVTube.Services;
 
 namespace UPVTube.GUI
@@ -17,32 +18,29 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private Upload upload;
         private Searcher search;
-        //private UPVTubeApp upvtubeapp;
-        
-        public Menu(IUPVTubeService service)
+        private Evaluar evaluar;
+        private Member member;
+        public Menu(IUPVTubeService service,  Member member)
         {
             InitializeComponent();
             this.service = service;
+            this.member = member;
             service.DBInitialization();//siempre que se ejecute, se resetea la base de datos.
             upload = new Upload(service);
             search = new Searcher(service);
-            //upvtubeapp = new UPVTubeApp(service);
+            evaluar = new Evaluar(service);
             // El Menu debería mostrar si es un teacher el buscar pendientes de evaluar
             // Si es un externo sólo debe mostrar el buscar
             // To Do Alumnos -----------------------------------
         }
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             upload.ShowDialog();
-            //this.Close();
         }
 
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             search.ShowDialog();
-            //this.Close();
 
         }
         
@@ -53,9 +51,27 @@ namespace UPVTube.GUI
         // el botón, yendo a la ventana de Propiedades -> Icono del rayo
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //upvtubeapp.ShowDialog();
             this.Close();
+        }
+
+        private void buttonEvaluate_Click(object sender, EventArgs e)
+        {
+            evaluar.ShowDialog();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            buttonEvaluate.Enabled = false;  
+            ButtonSubir.Enabled = false;
+            if (member.IsTeacher())
+            {
+                buttonEvaluate.Enabled = true;
+                ButtonSubir.Enabled = true;
+            }
+            if (member.IsStudent())
+            {
+                ButtonSubir.Enabled = true;
+            }
         }
     }
 }

@@ -89,15 +89,8 @@ namespace UPVTube.GUI
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonAtras_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //menuu.ShowDialog();
             this.Close();
         }
     }

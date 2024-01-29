@@ -30,7 +30,7 @@ namespace UPVTube.GUI
             BotonRec.Enabled = false;
             //meenu = new Menu(service);
             rechazo = new Rechazo(service, EvId, EvEmail);
-            CargarDatosEnListView();
+            
         }
 
         private void CargarDatosEnListView()
@@ -39,8 +39,7 @@ namespace UPVTube.GUI
             {
                 List<Content> cList = service.GetPendingContents();
                 foreach (Content c in cList)
-                { 
-
+                {
                     ListaPendientes.Items.Add(c);
                 }
 
@@ -55,12 +54,6 @@ namespace UPVTube.GUI
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //meenu.ShowDialog();
-            this.Close();
-        }
         private void ListaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Content c1 = (Content)ListaPendientes.SelectedItem;
@@ -85,6 +78,16 @@ namespace UPVTube.GUI
             //this.Hide();
             rechazo.ShowDialog();
             //this.Close();
+        }
+
+        private void buttonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+            CargarDatosEnListView();
         }
     }
 
