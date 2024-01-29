@@ -32,7 +32,7 @@
             this.ButtonSubir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.Button();
-            this.buttonEvaluate = new System.Windows.Forms.Button();
+            this.ButtonEvaluate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonBuscar
@@ -83,15 +83,15 @@
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             this.BtnVolver.Leave += new System.EventHandler(this.BtnVolver_Click);
             // 
-            // buttonEvaluate
+            // ButtonEvaluate
             // 
-            this.buttonEvaluate.Location = new System.Drawing.Point(479, 137);
-            this.buttonEvaluate.Name = "buttonEvaluate";
-            this.buttonEvaluate.Size = new System.Drawing.Size(118, 27);
-            this.buttonEvaluate.TabIndex = 4;
-            this.buttonEvaluate.Text = "Evaluar";
-            this.buttonEvaluate.UseVisualStyleBackColor = true;
-            this.buttonEvaluate.Click += new System.EventHandler(this.buttonEvaluate_Click);
+            this.ButtonEvaluate.Location = new System.Drawing.Point(479, 137);
+            this.ButtonEvaluate.Name = "ButtonEvaluate";
+            this.ButtonEvaluate.Size = new System.Drawing.Size(118, 27);
+            this.ButtonEvaluate.TabIndex = 4;
+            this.ButtonEvaluate.Text = "Evaluar";
+            this.ButtonEvaluate.UseVisualStyleBackColor = true;
+            this.ButtonEvaluate.Click += new System.EventHandler(this.buttonEvaluate_Click);
             // 
             // Menu
             // 
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(653, 396);
-            this.Controls.Add(this.buttonEvaluate);
+            this.Controls.Add(this.ButtonEvaluate);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonSubir);
@@ -117,6 +117,6 @@
         private System.Windows.Forms.Button ButtonSubir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnVolver;
-        private System.Windows.Forms.Button buttonEvaluate;
+        private System.Windows.Forms.Button ButtonEvaluate;
     }
 }

@@ -125,9 +125,9 @@ namespace UPVTube.Services
             else
             {
                 user = new Member(email, fullName, DateTime.Now, nick, password);
-                Logged = user;
                 dal.Insert(user);
                 dal.Commit();
+                Logged = user;
             }
         }
         public void LogIn(String nick, String password)
@@ -172,9 +172,9 @@ namespace UPVTube.Services
         }
 
 
-        public List<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest)
+        public IEnumerable<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest)
         {
-            /**
+            
             IEnumerable<Content> aux = dal.GetAll<Content>();
             IEnumerable<Content> cList = new List<Content>();
 
@@ -191,12 +191,12 @@ namespace UPVTube.Services
                 {
                     cList = cList.Append<Content>(c);
                 }
-            
+                
             
             }
-            */
+            cList = cList.OrderBy(c => c.UploadDate);
 
-
+            /**
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // To Do Alumnos ------------------------------------
@@ -233,7 +233,9 @@ namespace UPVTube.Services
             {
                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(title)).ToList();
             }
+            */
             return cList;
+
         }
 
         public Content Watch(int id)
@@ -241,20 +243,19 @@ namespace UPVTube.Services
             return dal.GetById<Content>(id);
         }
 
-        public List<Content> GetPendingContents()
+        public IEnumerable<Content> GetPendingContents()
         {
-            //El profesor ha iniciado sesion en el sistema
-            if (!(Logged.IsTeacher()))
+            IEnumerable<Content> pending = new List<Content>();
+            IEnumerable<Content> all = dal.GetAll<Content>();
+            
+            foreach (Content c in all)
             {
-                throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
+                if (c.Authorized == Authorized.Pending)
+                {
+                    pending = pending.Append<Content>(c);
+                }
             }
-
-            //Devuelve lista de pending contents
-                 return dal.GetWhere<Content>(c => c.Authorized == Authorized.Pending)
-                .OrderBy(c => c.UploadDate) //ordenado por fecha de subida
-                .ToList();
-            //Lo llamará el formulario
-
+            return pending;
         }
 
         public Member ReturnLoggedMember()

@@ -13,6 +13,7 @@ namespace UPVTube.GUI
         private IUPVTubeService service;
         private Watcher view;
         private int WatchId;
+        private string acceso;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
@@ -30,10 +31,10 @@ namespace UPVTube.GUI
             try
             {
                 IEnumerable<Content> cList = service.Search(textBoxTitle.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
-                cList = cList.OrderBy(c => c.UploadDate);
                 foreach (Content c in cList)
                 {
-                    GridContents.Rows.Add(c.Title, c.Owner, c.Description, c.IsPublic, DateTime.Now, c.Subjects, DateTime.Now);
+                    acceso = "prueba";
+                    GridContents.Rows.Add(c.Title, c.Owner, c.Description, acceso, c.UploadDate, c.Subjects);
                 }
 
 
@@ -47,11 +48,13 @@ namespace UPVTube.GUI
                 MessageBoxIcon.Exclamation); // Icon
             }
 
-
+            //                cList = cList.OrderBy(c => c.UploadDate);
+            //                if (c.IsPublic) { acceso = "Público"; }
+            //                else { acceso = "Privado"; }
         }
 
-        
-        
+
+
 
         private void Searcher_Load(object sender, EventArgs e)
         {

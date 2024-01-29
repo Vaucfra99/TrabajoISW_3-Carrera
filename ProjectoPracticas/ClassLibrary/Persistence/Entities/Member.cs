@@ -18,9 +18,9 @@ namespace UPVTube.Entities
         [Key]
         public String Nick { get; set; }
         public String Password { get; set; }
-        public List<String> StudentDomains = new List<String> {"@dsic.upv.es", "@dsica.upv.es"};
-        public List<String> TeacherDomains = new List<String> {"@inf.upv.es"};
-    public virtual ICollection<Visualization> Visualizations { get; set; }
+        public List<String> TeacherDomains = new List<String> {"@dsic.upv.es", "@dsica.upv.es"};
+        public List<String> StudentDomains = new List<String> {"@inf.upv.es"};
+        public virtual ICollection<Visualization> Visualizations { get; set; }
         public virtual ICollection<Content> Contents { get; set; }
         public virtual ICollection<Evaluation> Evaluations { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }

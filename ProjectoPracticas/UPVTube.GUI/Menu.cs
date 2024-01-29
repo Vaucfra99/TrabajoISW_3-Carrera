@@ -20,12 +20,10 @@ namespace UPVTube.GUI
         private Searcher search;
         private Evaluar evaluar;
         private Member member;
-        public Menu(IUPVTubeService service,  Member member)
+        public Menu(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            this.member = member;
-            service.DBInitialization();//siempre que se ejecute, se resetea la base de datos.
             upload = new Upload(service);
             search = new Searcher(service);
             evaluar = new Evaluar(service);
@@ -51,6 +49,7 @@ namespace UPVTube.GUI
         // el botón, yendo a la ventana de Propiedades -> Icono del rayo
         private void BtnVolver_Click(object sender, EventArgs e)
         {
+            service.LogOut();
             this.Close();
         }
 
@@ -61,11 +60,12 @@ namespace UPVTube.GUI
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            buttonEvaluate.Enabled = false;  
+            member = service.ReturnLoggedMember();
+            ButtonEvaluate.Enabled = false;  
             ButtonSubir.Enabled = false;
             if (member.IsTeacher())
             {
-                buttonEvaluate.Enabled = true;
+                ButtonEvaluate.Enabled = true;
                 ButtonSubir.Enabled = true;
             }
             if (member.IsStudent())

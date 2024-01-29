@@ -61,9 +61,8 @@ namespace UPVTube.GUI
             else {
                 try
                 {
-                    Member m = new Member(email, fullname, DateTime.Now, nick, password);
                     service.Register(email, fullname, nick, password);
-                    menu = new Menu(service, m);
+                    menu = new Menu(service);
                     this.Hide();
                     menu.ShowDialog();
                     this.Close();

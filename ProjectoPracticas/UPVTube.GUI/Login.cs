@@ -52,8 +52,7 @@ namespace UPVTube.GUI
                 {
                     service.LogIn(nick, password);
                     this.Hide();
-                    member = service.ReturnLoggedMember();
-                    menu = new Menu(service, member);
+                    menu = new Menu(service);
                     menu.ShowDialog();
                     this.Close();
 
@@ -75,7 +74,6 @@ namespace UPVTube.GUI
 
        private void BtnReturn_Click(object sender, EventArgs e)
         {
-
             this.Close();
         }
     }

@@ -41,17 +41,17 @@
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
-            this.GridContents = new System.Windows.Forms.DataGridView();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isPublicDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.uploadDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastAccess = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
+            this.GridContents = new System.Windows.Forms.DataGridView();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Propietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaSubida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asignaturas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UltimoAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -61,7 +61,7 @@
             this.labelTitle.Location = new System.Drawing.Point(31, 38);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(60, 20);
+            this.labelTitle.Size = new System.Drawing.Size(47, 16);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Título:";
             // 
@@ -72,7 +72,7 @@
             this.labelUplNick.Location = new System.Drawing.Point(31, 77);
             this.labelUplNick.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUplNick.Name = "labelUplNick";
-            this.labelUplNick.Size = new System.Drawing.Size(134, 20);
+            this.labelUplNick.Size = new System.Drawing.Size(106, 16);
             this.labelUplNick.TabIndex = 1;
             this.labelUplNick.Text = "Nick del creador:";
             // 
@@ -83,7 +83,7 @@
             this.labelSubject.Location = new System.Drawing.Point(31, 110);
             this.labelSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(70, 20);
+            this.labelSubject.Size = new System.Drawing.Size(54, 16);
             this.labelSubject.TabIndex = 2;
             this.labelSubject.Text = "Subject:";
             // 
@@ -118,7 +118,7 @@
             this.labelEarly.Location = new System.Drawing.Point(31, 176);
             this.labelEarly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEarly.Name = "labelEarly";
-            this.labelEarly.Size = new System.Drawing.Size(183, 20);
+            this.labelEarly.Size = new System.Drawing.Size(143, 16);
             this.labelEarly.TabIndex = 6;
             this.labelEarly.Text = "Fecha de subida inicial:";
             // 
@@ -129,7 +129,7 @@
             this.labelLate.Location = new System.Drawing.Point(31, 241);
             this.labelLate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLate.Name = "labelLate";
-            this.labelLate.Size = new System.Drawing.Size(173, 20);
+            this.labelLate.Size = new System.Drawing.Size(134, 16);
             this.labelLate.TabIndex = 7;
             this.labelLate.Text = "Fecha de subida final:";
             // 
@@ -174,83 +174,74 @@
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             this.GoBackButton.Leave += new System.EventHandler(this.GoBackButton_Click);
             // 
-            // GridContents
-            // 
-            this.GridContents.AutoGenerateColumns = false;
-            this.GridContents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridContents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titleDataGridViewTextBoxColumn,
-            this.ownerDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.isPublicDataGridViewCheckBoxColumn,
-            this.uploadDateDataGridViewTextBoxColumn,
-            this.subjectsDataGridViewTextBoxColumn,
-            this.LastAccess});
-            this.GridContents.DataSource = this.contentBindingSource;
-            this.GridContents.Location = new System.Drawing.Point(364, 38);
-            this.GridContents.Name = "GridContents";
-            this.GridContents.RowHeadersWidth = 51;
-            this.GridContents.Size = new System.Drawing.Size(698, 311);
-            this.GridContents.TabIndex = 14;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ownerDataGridViewTextBoxColumn
-            // 
-            this.ownerDataGridViewTextBoxColumn.DataPropertyName = "Owner";
-            this.ownerDataGridViewTextBoxColumn.HeaderText = "Owner";
-            this.ownerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ownerDataGridViewTextBoxColumn.Name = "ownerDataGridViewTextBoxColumn";
-            this.ownerDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // isPublicDataGridViewCheckBoxColumn
-            // 
-            this.isPublicDataGridViewCheckBoxColumn.DataPropertyName = "IsPublic";
-            this.isPublicDataGridViewCheckBoxColumn.HeaderText = "IsPublic";
-            this.isPublicDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.isPublicDataGridViewCheckBoxColumn.Name = "isPublicDataGridViewCheckBoxColumn";
-            this.isPublicDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // uploadDateDataGridViewTextBoxColumn
-            // 
-            this.uploadDateDataGridViewTextBoxColumn.DataPropertyName = "UploadDate";
-            this.uploadDateDataGridViewTextBoxColumn.HeaderText = "UploadDate";
-            this.uploadDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.uploadDateDataGridViewTextBoxColumn.Name = "uploadDateDataGridViewTextBoxColumn";
-            this.uploadDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // subjectsDataGridViewTextBoxColumn
-            // 
-            this.subjectsDataGridViewTextBoxColumn.DataPropertyName = "Subjects";
-            this.subjectsDataGridViewTextBoxColumn.HeaderText = "Subjects";
-            this.subjectsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subjectsDataGridViewTextBoxColumn.Name = "subjectsDataGridViewTextBoxColumn";
-            this.subjectsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // LastAccess
-            // 
-            this.LastAccess.HeaderText = "LastAccess";
-            this.LastAccess.MinimumWidth = 6;
-            this.LastAccess.Name = "LastAccess";
-            this.LastAccess.Width = 125;
-            // 
             // contentBindingSource
             // 
             this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
+            // 
+            // GridContents
+            // 
+            this.GridContents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridContents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Titulo,
+            this.Propietario,
+            this.Descripcion,
+            this.Acceso,
+            this.FechaSubida,
+            this.Asignaturas,
+            this.UltimoAcceso});
+            this.GridContents.Location = new System.Drawing.Point(338, 39);
+            this.GridContents.Name = "GridContents";
+            this.GridContents.Size = new System.Drawing.Size(734, 309);
+            this.GridContents.TabIndex = 14;
+            // 
+            // Titulo
+            // 
+            this.Titulo.Frozen = true;
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // Propietario
+            // 
+            this.Propietario.Frozen = true;
+            this.Propietario.HeaderText = "Propietario";
+            this.Propietario.Name = "Propietario";
+            this.Propietario.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.Frozen = true;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Acceso
+            // 
+            this.Acceso.Frozen = true;
+            this.Acceso.HeaderText = "Acceso";
+            this.Acceso.Name = "Acceso";
+            this.Acceso.ReadOnly = true;
+            // 
+            // FechaSubida
+            // 
+            this.FechaSubida.Frozen = true;
+            this.FechaSubida.HeaderText = "FechaSubida";
+            this.FechaSubida.Name = "FechaSubida";
+            this.FechaSubida.ReadOnly = true;
+            // 
+            // Asignaturas
+            // 
+            this.Asignaturas.Frozen = true;
+            this.Asignaturas.HeaderText = "Asignaturas";
+            this.Asignaturas.Name = "Asignaturas";
+            this.Asignaturas.ReadOnly = true;
+            // 
+            // UltimoAcceso
+            // 
+            this.UltimoAcceso.Frozen = true;
+            this.UltimoAcceso.HeaderText = "UltimoAcceso";
+            this.UltimoAcceso.Name = "UltimoAcceso";
+            this.UltimoAcceso.ReadOnly = true;
             // 
             // Searcher
             // 
@@ -276,8 +267,8 @@
             this.Name = "Searcher";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Searcher_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridContents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,12 +290,12 @@
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.BindingSource contentBindingSource;
         private System.Windows.Forms.DataGridView GridContents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ownerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isPublicDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uploadDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastAccess;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Propietario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acceso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSubida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asignaturas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UltimoAcceso;
     }
 }

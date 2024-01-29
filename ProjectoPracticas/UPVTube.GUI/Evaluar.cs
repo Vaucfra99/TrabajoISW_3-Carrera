@@ -37,10 +37,16 @@ namespace UPVTube.GUI
         {
             try
             {
-                List<Content> cList = service.GetPendingContents();
+                IEnumerable<Content> cList = service.GetPendingContents();
                 foreach (Content c in cList)
                 {
-                    ListaPendientes.Items.Add(c);
+                    String sub = "";
+                    foreach (Subject s in c.Subjects)
+                    {
+                        sub += "" + s.Name; 
+                    }
+                    
+                    GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, true, c.UploadDate, sub);
                 }
 
             }
@@ -56,25 +62,25 @@ namespace UPVTube.GUI
 
         private void ListaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            Content c1 = (Content)ListaPendientes.SelectedItem;
-            int id = c1.Id;
-            BotonPer.Enabled = true; 
-            BotonPer.Enabled = true;
+            //Content c1 = (Content)ListaPendientes.SelectedItem;
+            //int id = c1.Id;
+            //BotonPer.Enabled = true; 
+            //BotonRec.Enabled = true;
         }
 
         private void BotonPer_Click(object sender, EventArgs e)
         {
             DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Content c1 = (Content)ListaPendientes.SelectedItem;
-            int id = c1.Id;
-            service.EvaluarContent(id, true, null);
+           // Content c1 = (Content)ListaPendientes.SelectedItem;
+            //int id = c1.Id;
+           // service.EvaluarContent(id, true, null);
         }
 
         private void BotonRec_Click(object sender, EventArgs e)
         {
-            Content c1 = (Content)ListaPendientes.SelectedItem;
-            EvId = c1.Id;
-            EvEmail = c1.Owner.Email;
+            //Content c1 = (Content)ListaPendientes.SelectedItem;
+            //EvId = c1.Id;
+            //EvEmail = c1.Owner.Email;
             //this.Hide();
             rechazo.ShowDialog();
             //this.Close();
@@ -85,7 +91,7 @@ namespace UPVTube.GUI
             this.Close();
         }
 
-        private void buttonMostrar_Click(object sender, EventArgs e)
+        private void buttonShowPending_Click(object sender, EventArgs e)
         {
             CargarDatosEnListView();
         }
