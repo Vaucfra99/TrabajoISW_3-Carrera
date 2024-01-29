@@ -58,14 +58,21 @@ namespace UPVTube.Services
 
             Content c1 = new Content("teoría", "Práctica 1 ISW", true, "ISW Práctica 1 Contenidos", DateTime.Now, m1);
             c1.Authorized = Authorized.Pending;
+            c1.Subjects.Add(s1);
+            c1.Subjects.Add(s3);
             dal.Insert(c1);
             Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now, m2);
             c2.Authorized = Authorized.Pending;
+            c2.Subjects.Add(s4);
             dal.Insert(c2);
             Content c3 = new Content("teoría 1", "Teoría 1 ISW", false, "ISW Teoría 1 Contenidos", DateTime.Now, m3);
             c3.Authorized = Authorized.Pending;
+            c3.Subjects.Add(s1);
+            c3.Subjects.Add(s4);
+            c3.Subjects.Add(s3);
             dal.Insert(c3);
             Content c4 = new Content("teoría 2", "Teoría 2 ISW", false, "ISW Teoría 2 Contenidos", DateTime.Now, m3);
+            c4.Subjects.Add(s2);
             dal.Insert(c4);
 
             dal.Commit();
@@ -172,7 +179,7 @@ namespace UPVTube.Services
         }
 
 
-        public IEnumerable<Content> Search(String title, String creatorNick, String subject, DateTime earliest, DateTime latest)
+        public IEnumerable<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
             
             IEnumerable<Content> aux = dal.GetAll<Content>();
@@ -182,11 +189,22 @@ namespace UPVTube.Services
             if (latest == null){latest = DateTime.Now;}
           
             foreach (Content c in aux) {
+                bool isSubject = subject == null;
+                if (!isSubject)
+                {
+                    foreach (var a in c.Subjects)
+                        if (a.Code == subject.Code)
+                        {
+                            isSubject = true;
+                            break;
+                        }
+                }
                 if (
                     (creatorNick == null || creatorNick.Equals(c.Owner)) &&
                     (title == null || title.Equals(c.Title)) &&
                     (latest >= c.UploadDate) &&
-                    (earliest <= c.UploadDate) 
+                    (earliest <= c.UploadDate) &&
+                    isSubject
                     ) 
                 {
                     cList = cList.Append<Content>(c);
@@ -261,6 +279,16 @@ namespace UPVTube.Services
         public Member ReturnLoggedMember()
         {
             return Logged;
+        }
+
+        public IEnumerable<Subject> getSubjects()
+        {
+            return dal.GetAll<Subject>();
+        }
+
+        public IEnumerable<Member> getMembers()
+        {
+            return dal.GetAll<Member>();
         }
 
         public void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo) {

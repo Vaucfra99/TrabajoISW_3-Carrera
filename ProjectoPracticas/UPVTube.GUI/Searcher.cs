@@ -30,11 +30,11 @@ namespace UPVTube.GUI
             GridContents.Visible = true;
             try
             {
-                IEnumerable<Content> cList = service.Search(textBoxTitle.Text, textBoxUplNick.Text, textBoxSubject.Text, dateTimePickerEarly.Value, dateTimePickerLate.Value);
+                IEnumerable<Content> cList = service.Search(textBoxTitle.Text, textBoxUplNick.Text, s, dateTimePickerEarly.Value, dateTimePickerLate.Value);
                 foreach (Content c in cList)
                 {
-                    acceso = "prueba";
-                    GridContents.Rows.Add(c.Title, c.Owner, c.Description, acceso, c.UploadDate, c.Subjects);
+                    
+                    GridContents.Rows.Add(c.Title, c.Owner, c.Description, "hola", c.UploadDate, c.Subjects);
                 }
 
 
@@ -58,7 +58,14 @@ namespace UPVTube.GUI
 
         private void Searcher_Load(object sender, EventArgs e)
         {
+            List<Subject> subjects = new List<Subject>(service.getSubjects());
+            Subject noSubject = new Subject(00000, "xxxxx", "xxxxx");
+            subjects.Add(noSubject);
 
+
+            IList<Member> members = new List<Member>(service.getMembers());
+            Member noMember = new Member("xxx@xxx.xxx", "xxxx", DateTime.Now, "xxxx", "0000");
+            members.Add(noMember);
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)

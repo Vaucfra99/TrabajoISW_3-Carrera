@@ -34,14 +34,12 @@
             this.labelSubject = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.textBoxUplNick = new System.Windows.Forms.TextBox();
-            this.textBoxSubject = new System.Windows.Forms.TextBox();
             this.labelEarly = new System.Windows.Forms.Label();
             this.labelLate = new System.Windows.Forms.Label();
             this.dateTimePickerEarly = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
-            this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GridContents = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Propietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +48,10 @@
             this.FechaSubida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asignaturas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UltimoAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
+            this.comboBoxSubject = new System.Windows.Forms.ComboBox();
+            this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -83,9 +83,9 @@
             this.labelSubject.Location = new System.Drawing.Point(31, 110);
             this.labelSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(54, 16);
+            this.labelSubject.Size = new System.Drawing.Size(77, 16);
             this.labelSubject.TabIndex = 2;
-            this.labelSubject.Text = "Subject:";
+            this.labelSubject.Text = "Asignatura:";
             // 
             // textBoxTitle
             // 
@@ -102,14 +102,6 @@
             this.textBoxUplNick.Name = "textBoxUplNick";
             this.textBoxUplNick.Size = new System.Drawing.Size(163, 20);
             this.textBoxUplNick.TabIndex = 4;
-            // 
-            // textBoxSubject
-            // 
-            this.textBoxSubject.Location = new System.Drawing.Point(135, 108);
-            this.textBoxSubject.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBoxSubject.Name = "textBoxSubject";
-            this.textBoxSubject.Size = new System.Drawing.Size(162, 20);
-            this.textBoxSubject.TabIndex = 5;
             // 
             // labelEarly
             // 
@@ -173,10 +165,6 @@
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             this.GoBackButton.Leave += new System.EventHandler(this.GoBackButton_Click);
-            // 
-            // contentBindingSource
-            // 
-            this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
             // 
             // GridContents
             // 
@@ -243,12 +231,30 @@
             this.UltimoAcceso.Name = "UltimoAcceso";
             this.UltimoAcceso.ReadOnly = true;
             // 
+            // comboBoxSubject
+            // 
+            this.comboBoxSubject.FormattingEnabled = true;
+            this.comboBoxSubject.Items.AddRange(new object[] {
+            "BDA",
+            "ISW",
+            "AIC",
+            "SIN"});
+            this.comboBoxSubject.Location = new System.Drawing.Point(135, 114);
+            this.comboBoxSubject.Name = "comboBoxSubject";
+            this.comboBoxSubject.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxSubject.TabIndex = 15;
+            // 
+            // contentBindingSource
+            // 
+            this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1099, 365);
+            this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.GridContents);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.buttonSearch);
@@ -256,7 +262,6 @@
             this.Controls.Add(this.dateTimePickerEarly);
             this.Controls.Add(this.labelLate);
             this.Controls.Add(this.labelEarly);
-            this.Controls.Add(this.textBoxSubject);
             this.Controls.Add(this.textBoxUplNick);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.labelSubject);
@@ -267,8 +272,8 @@
             this.Name = "Searcher";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Searcher_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +286,6 @@
         private System.Windows.Forms.Label labelSubject;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.TextBox textBoxUplNick;
-        private System.Windows.Forms.TextBox textBoxSubject;
         private System.Windows.Forms.Label labelEarly;
         private System.Windows.Forms.Label labelLate;
         private System.Windows.Forms.DateTimePicker dateTimePickerEarly;
@@ -297,5 +301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaSubida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asignaturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn UltimoAcceso;
+        private System.Windows.Forms.ComboBox comboBoxSubject;
     }
 }

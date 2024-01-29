@@ -43,7 +43,7 @@ namespace UPVTube.GUI
                     String sub = "";
                     foreach (Subject s in c.Subjects)
                     {
-                        sub += "" + s.Name; 
+                        sub += s.Name + ", "; 
                     }
                     
                     GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, true, c.UploadDate, sub);
