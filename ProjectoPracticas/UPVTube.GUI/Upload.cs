@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UPVTube.Entities;
 using UPVTube.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -15,35 +16,13 @@ namespace UPVTube.GUI
     public partial class Upload : Form
     {
         private IUPVTubeService service;
-        private String tittle;
-        private String description;
-        private String contentURI;
         private Boolean isPublic = false;
-        //private Menu menuu;
 
         public Upload(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            //menuu = new Menu(service);
         }
-
-        private void TextBoxTitulo_TextChanged(object sender, EventArgs e)
-        {
-            tittle = TextBoxTitulo.Text;
-
-        }
-
-        private void TextBoxDescripcion_TextChanged(object sender, EventArgs e)
-        {
-            description = TextBoxDescripcion.Text;
-        }
-
-        private void TextBoxURI_TextChanged(object sender, EventArgs e)
-        {
-            contentURI = TextBoxURI.Text;
-        }
-
         private void CheckBoxPublico_CheckedChanged(object sender, EventArgs e)
         {
             if (isPublic == true) { isPublic = false; }
@@ -61,11 +40,35 @@ namespace UPVTube.GUI
             }
             else
             {
-            
                 try
                 {
-                    service.Upload(tittle, description, contentURI, isPublic);
+                    List<Subject> lSub= new List<Subject>();
+                    foreach (object item in checkedListBoxSubjects.CheckedItems)
+                    {
+                        lSub.Add((Subject)item);
+                    }
+
+                    Member logged = service.ReturnLoggedMember();
+
+                    Boolean pub = false;
+                    if (CheckBoxPublico.Checked) { pub = true; }
+
+                    Content c = new Content(TextBoxURI.Text, TextBoxDescripcion.Text, pub, TextBoxTitulo.Text, DateTime.Now, logged);
+                    c.Subjects = lSub;
+                    c.Authorized = Authorized.Pending;
+                    service.Upload(c);
+                    
                     DialogResult subido = MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    TextBoxDescripcion.Clear();
+                    TextBoxTitulo.Clear();
+                    TextBoxURI.Clear();
+                    CheckBoxPublico.Checked = false;
+                    for (int i = 0; i < checkedListBoxSubjects.Items.Count; i++)
+                    {
+                        checkedListBoxSubjects.SetSelected(i, false);
+                        checkedListBoxSubjects.SetItemChecked(i, false);
+                    }
                 }
                 catch (ServiceException ex)
                 {
@@ -79,14 +82,12 @@ namespace UPVTube.GUI
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Upload_Load(object sender, EventArgs e)
         {
-
+            List<Subject> subs = new List<Subject>(service.getSubjects());
+            checkedListBoxSubjects.DataSource = subs;
+            checkedListBoxSubjects.ValueMember = "Code";
+            checkedListBoxSubjects.DisplayMember = "Name";
         }
 
         private void ButtonAtras_Click(object sender, EventArgs e)

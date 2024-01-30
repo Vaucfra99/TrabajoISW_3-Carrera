@@ -11,30 +11,34 @@ namespace UPVTube.GUI
     public partial class Searcher : Form
     {
         private IUPVTubeService service;
-        private Watcher view;
-        private int WatchId;
-        private string acceso;
+        private Watcher watcher;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            // Eliminado Watcher porque WatchId no tiene valor aquí 
-            // y genera excepción en constructor
-            //view = new Watcher(service, WatchId);
-            GridContents.Visible = false;
         }
 
-
-        private void ButtonSearch_Click(object sender, EventArgs e)
+        private void CargarDatosEnGridView()
         {
-            GridContents.Visible = true;
             try
             {
-                IEnumerable<Content> cList = service.Search(textBoxTitle.Text, textBoxUplNick.Text, s, dateTimePickerEarly.Value, dateTimePickerLate.Value);
+                String selectedMember = ((Member) comboBoxMember.SelectedItem).Nick;
+                if (selectedMember.Equals("     ")) { selectedMember = null; }
+                Subject selectedSubject = (Subject) comboBoxSubject.SelectedItem;
+                if (selectedSubject.Code == 0000) { selectedSubject = null; }
+
+                IEnumerable<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
                 foreach (Content c in cList)
                 {
-                    
-                    GridContents.Rows.Add(c.Title, c.Owner, c.Description, "hola", c.UploadDate, c.Subjects);
+                    ///Duda para la tutoria no sabemos como añadir los contenidos en el gridview y no sabemos porque no va
+                    String sub = "";
+                    foreach (Subject s in c.Subjects)
+                    {
+                        sub += s.Name + ", ";
+                    }
+                    String acceso = "Privado";
+                    if (c.IsPublic) { acceso = "Público"; }
+                    GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
                 }
 
 
@@ -47,30 +51,56 @@ namespace UPVTube.GUI
                 MessageBoxButtons.OK, // Buttons included
                 MessageBoxIcon.Exclamation); // Icon
             }
-
-            //                cList = cList.OrderBy(c => c.UploadDate);
-            //                if (c.IsPublic) { acceso = "Público"; }
-            //                else { acceso = "Privado"; }
         }
 
-
-
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            GridContents.Enabled = true;
+            GridContents.Rows.Clear();
+            CargarDatosEnGridView();
+        }
 
         private void Searcher_Load(object sender, EventArgs e)
         {
+
+            GridContents.Enabled = false;
+
             List<Subject> subjects = new List<Subject>(service.getSubjects());
-            Subject noSubject = new Subject(00000, "xxxxx", "xxxxx");
+            Subject noSubject = new Subject(00000, "xxxxx", "     ");
             subjects.Add(noSubject);
+            comboBoxSubject.DataSource = subjects;
+            comboBoxSubject.SelectedItem = noSubject;
+            comboBoxSubject.DisplayMember = "Name";
+            comboBoxSubject.ValueMember = "Code";
 
 
             IList<Member> members = new List<Member>(service.getMembers());
-            Member noMember = new Member("xxx@xxx.xxx", "xxxx", DateTime.Now, "xxxx", "0000");
+            Member noMember = new Member("xxx@xxx.xxx", "     ", DateTime.Now, "     ", "0000");
             members.Add(noMember);
+            comboBoxMember.DataSource = members;
+            comboBoxMember.SelectedItem = noMember;
+            comboBoxMember.DisplayMember = "Nick";
+            comboBoxMember.ValueMember = "Nick";
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonVerCont_Click(object sender, EventArgs e)
+        {
+            if (GridContents.Enabled == true)
+            {
+                int id = (int)GridContents.SelectedRows[0].Cells[6].Value;
+                Content c = service.getContent(id);
+                watcher = new Watcher(service, c);
+                watcher.ShowDialog();
+            }
+            else
+            {
+                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

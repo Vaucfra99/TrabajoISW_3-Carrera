@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPVTube.Entities;
+using UPVTube.Persistence;
 using UPVTube.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -17,23 +18,19 @@ namespace UPVTube.GUI
     public partial class Evaluar : Form
     {
         private IUPVTubeService service;
-        private bool evaluacion;
-        //private Menu meenu;
-        private Rechazo rechazo;
-        private int EvId;
-        private string EvEmail;
+        //private Rechazo rechazo;
+        //private int EvId;
+        //private string EvEmail;
+        private Watcher watcher;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            BotonPer.Enabled = false;
-            BotonRec.Enabled = false;
-            //meenu = new Menu(service);
-            rechazo = new Rechazo(service, EvId, EvEmail);
+            //rechazo = new Rechazo(service, EvId, EvEmail);
             
         }
 
-        private void CargarDatosEnListView()
+        private void CargarDatosEnGridView()
         {
             try
             {
@@ -45,8 +42,9 @@ namespace UPVTube.GUI
                     {
                         sub += s.Name + ", "; 
                     }
-                    
-                    GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, true, c.UploadDate, sub);
+                    String acceso = "Privado";
+                    if (c.IsPublic) { acceso = "Público"; }
+                    GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate.ToShortDateString(), sub, c.Id);
                 }
 
             }
@@ -60,30 +58,59 @@ namespace UPVTube.GUI
             }
         }
 
-        private void ListaPendientes_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            //Content c1 = (Content)ListaPendientes.SelectedItem;
-            //int id = c1.Id;
-            //BotonPer.Enabled = true; 
-            //BotonRec.Enabled = true;
-        }
-
         private void BotonPer_Click(object sender, EventArgs e)
         {
-            DialogResult permitido = MessageBox.Show(this, "¡El contenido ha sido autorizado correctamente!", "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           // Content c1 = (Content)ListaPendientes.SelectedItem;
-            //int id = c1.Id;
-           // service.EvaluarContent(id, true, null);
+            if (GridPending.SelectedRows == null)
+            {
+                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                try
+                {
+                    int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
+                    Content c = service.getContent(id);
+
+                    Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
+                    service.EvaluarContent(ev, Authorized.Yes);
+                    
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + " Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
+                    DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GridPending.SelectedRows.Clear();
+                }
+                catch (ServiceException ex)
+                {
+                    DialogResult error = MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void BotonRec_Click(object sender, EventArgs e)
         {
-            //Content c1 = (Content)ListaPendientes.SelectedItem;
-            //EvId = c1.Id;
-            //EvEmail = c1.Owner.Email;
-            //this.Hide();
-            rechazo.ShowDialog();
-            //this.Close();
+            if (GridPending.SelectedRows == null)
+            {
+                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                try
+                {
+                    int id = (int) GridPending.SelectedRows[0].Cells[6].Value;
+                    Content c = service.getContent(id);
+                  
+                    Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
+                    service.EvaluarContent(ev, Authorized.No);
+
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + " Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
+                    DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+                catch (ServiceException ex)
+                {
+                    DialogResult error = MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonAtras_Click(object sender, EventArgs e)
@@ -93,7 +120,31 @@ namespace UPVTube.GUI
 
         private void buttonShowPending_Click(object sender, EventArgs e)
         {
-            CargarDatosEnListView();
+            GridPending.Enabled = true;
+            CargarDatosEnGridView();
+            buttonShowPending.Enabled = false;
+        }
+
+        private void Evaluar_Load(object sender, EventArgs e)
+        {
+            GridPending.Enabled = false;
+            buttonShowPending.Enabled = true;
+        }
+
+        private void buttonVerCont_Click(object sender, EventArgs e)
+        {
+            if (GridPending.Enabled == true)
+            {
+                int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
+                Content c = service.getContent(id);
+                watcher = new Watcher(service, c);
+                watcher.ShowDialog();
+            }
+            else
+            {
+                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
     }
 

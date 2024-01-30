@@ -16,36 +16,12 @@ namespace UPVTube.GUI
     public partial class Register : Form //UPVTubeFormbase (tiene que heredar de esta)
     {
         private IUPVTubeService service;
-        private String nick;
-        private String password;
-        private String fullname;
-        private String email;
         private Menu menu;
         public Register(IUPVTubeService service) //:base (service) 
         {
             InitializeComponent();
             this.service = service;
             
-        }
-
-        private void TextBoxNick_TextChanged(object sender, EventArgs e)
-        {
-            nick = TextBoxNick.Text;
-        }
-
-        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-            password = TextBoxPassword.Text;
-        }
-
-        private void TextBoxFullName_TextChanged(object sender, EventArgs e)
-        {
-            fullname = TextBoxFullName.Text;
-        }
-
-        private void TextBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-            email = TextBoxEmail.Text;
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
@@ -61,8 +37,12 @@ namespace UPVTube.GUI
             else {
                 try
                 {
-                    service.Register(email, fullname, nick, password);
+                    service.Register(TextBoxEmail.Text, TextBoxFullName.Text, TextBoxNick.Text, TextBoxPassword.Text);
                     menu = new Menu(service);
+                    TextBoxEmail.Clear();
+                    TextBoxFullName.Clear();
+                    TextBoxNick.Clear();
+                    TextBoxPassword.Clear();
                     this.Hide();
                     menu.ShowDialog();
                     this.Close();

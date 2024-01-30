@@ -24,13 +24,14 @@ namespace UPVTube.Services
         void Register(String email, String fullName, String nick, String password);
         void LogIn(string nick, String password);
         void LogOut();
-        void Upload(String title, String description, String contentUri, Boolean isPublic);
+        void Upload(Content content);
         IEnumerable<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest);
         Content Watch(int id);
         Member ReturnLoggedMember();
         IEnumerable<Subject> getSubjects();
         IEnumerable<Member> getMembers();
-        void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo);
+        Content getContent(int id);
+        void EvaluarContent(Evaluation evaluation, Authorized aut);
         IEnumerable<Content> GetPendingContents();
     }
 }

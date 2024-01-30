@@ -61,7 +61,7 @@ namespace UPVTube.Services
             c1.Subjects.Add(s1);
             c1.Subjects.Add(s3);
             dal.Insert(c1);
-            Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now, m2);
+            Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now.AddDays(-500), m2);
             c2.Authorized = Authorized.Pending;
             c2.Subjects.Add(s4);
             dal.Insert(c2);
@@ -159,17 +159,15 @@ namespace UPVTube.Services
             }
         }
 
-        public void Upload(String title, String description, String contentUri, Boolean isPublic)
+        public void Upload(Content c)
         {
             if (Logged == null) { throw new ServiceException("El usuario no ha iniciado sesión"); }
             else
             {
-                DateTime uploadTime = DateTime.Now;
-                Content content = new Content(contentUri, description, isPublic, title, uploadTime, Logged);
-               
-                    dal.Commit();
+                dal.Insert<Content>(c);
+                dal.Commit();
     
-               //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dadp permisos 
+               //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dado permisos 
                 
                
                
@@ -291,17 +289,28 @@ namespace UPVTube.Services
             return dal.GetAll<Member>();
         }
 
-        public void EvaluarContent(int contentId, bool evaluacion, string motivoRechazo) {
-           
-            if (Logged == null || !(Logged.IsTeacher()))
+        public Content getContent(int id) 
+        {
+            return dal.GetById<Content>(id);
+        }
+
+        public void EvaluarContent(Evaluation ev, Authorized a) 
+        {
+            if (a == Authorized.Yes) 
             {
-                throw new ServiceException("Se requiere que un profesor haya iniciado sesión para evaluar contenido.");
+                ev.Content.Authorized = Authorized.Yes;
             }
-            Content c = dal.GetById<Content>(contentId);
-            if (evaluacion) { c.Authorized = Authorized.Yes; }
-            else { c.Authorized = Authorized.No;}
-            Evaluation evaluation = new Evaluation(DateTime.Now, motivoRechazo, Logged, c);
-            dal.Insert(evaluation);
+            else 
+            {
+                if (ev.RejectionReason.Equals("")){
+                    throw new ServiceException("Es necesario añadir una razón de rechazo");
+                }
+                else
+                {
+                    ev.Content.Authorized = Authorized.No;
+                }
+            }
+            dal.Insert<Evaluation>(ev);
             dal.Commit();
         }
     }

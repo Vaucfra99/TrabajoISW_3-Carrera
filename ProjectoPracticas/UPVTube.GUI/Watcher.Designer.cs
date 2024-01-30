@@ -32,14 +32,14 @@
             this.CreatorNick = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.Label();
             this.UploadDate = new System.Windows.Forms.Label();
-            this.IdLable = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
-            this.ContentTextBox = new System.Windows.Forms.TextBox();
-            this.UploadTextBox = new System.Windows.Forms.TextBox();
-            this.CreatorTextBox = new System.Windows.Forms.TextBox();
-            this.GoBackButton = new System.Windows.Forms.Button();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.textBoxPropietario = new System.Windows.Forms.TextBox();
+            this.textBoxUri = new System.Windows.Forms.TextBox();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,6 @@
             this.Description.Size = new System.Drawing.Size(81, 16);
             this.Description.TabIndex = 2;
             this.Description.Text = "Descripcion:";
-            this.Description.Click += new System.EventHandler(this.Description_Click);
             // 
             // UploadDate
             // 
@@ -92,17 +91,17 @@
             this.UploadDate.TabIndex = 3;
             this.UploadDate.Text = "Fecha de subida:";
             // 
-            // IdLable
+            // label1
             // 
-            this.IdLable.AutoSize = true;
-            this.IdLable.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.IdLable.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.IdLable.Location = new System.Drawing.Point(2, 44);
-            this.IdLable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.IdLable.Name = "IdLable";
-            this.IdLable.Size = new System.Drawing.Size(71, 16);
-            this.IdLable.TabIndex = 4;
-            this.IdLable.Text = "Contenido:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(2, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Uri:";
             // 
             // tableLayoutPanel1
             // 
@@ -111,15 +110,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.37363F));
             this.tableLayoutPanel1.Controls.Add(this.Description, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.UploadDate, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.IdLable, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.CreatorNick, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.DescripcionTextBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.TitleTextBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ContentTextBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.UploadTextBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.CreatorTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxDescripcion, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxTitle, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxDate, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPropietario, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxUri, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
@@ -130,57 +129,56 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(364, 306);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // DescripcionTextBox
+            // textBoxDescripcion
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(87, 116);
-            this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DescripcionTextBox.Multiline = true;
-            this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(275, 188);
-            this.DescripcionTextBox.TabIndex = 9;
+            this.textBoxDescripcion.Location = new System.Drawing.Point(87, 116);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxDescripcion.Multiline = true;
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.Size = new System.Drawing.Size(275, 188);
+            this.textBoxDescripcion.TabIndex = 9;
             // 
-            // TitleTextBox
+            // textBoxTitle
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(87, 2);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(275, 20);
-            this.TitleTextBox.TabIndex = 10;
+            this.textBoxTitle.Location = new System.Drawing.Point(87, 2);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.Size = new System.Drawing.Size(275, 20);
+            this.textBoxTitle.TabIndex = 10;
             // 
-            // ContentTextBox
+            // textBoxDate
             // 
-            this.ContentTextBox.Location = new System.Drawing.Point(87, 46);
-            this.ContentTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ContentTextBox.Name = "ContentTextBox";
-            this.ContentTextBox.Size = new System.Drawing.Size(275, 20);
-            this.ContentTextBox.TabIndex = 11;
+            this.textBoxDate.Location = new System.Drawing.Point(87, 78);
+            this.textBoxDate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(275, 20);
+            this.textBoxDate.TabIndex = 12;
             // 
-            // UploadTextBox
+            // textBoxPropietario
             // 
-            this.UploadTextBox.Location = new System.Drawing.Point(87, 78);
-            this.UploadTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UploadTextBox.Name = "UploadTextBox";
-            this.UploadTextBox.Size = new System.Drawing.Size(275, 20);
-            this.UploadTextBox.TabIndex = 12;
+            this.textBoxPropietario.Location = new System.Drawing.Point(87, 24);
+            this.textBoxPropietario.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPropietario.Name = "textBoxPropietario";
+            this.textBoxPropietario.Size = new System.Drawing.Size(275, 20);
+            this.textBoxPropietario.TabIndex = 13;
             // 
-            // CreatorTextBox
+            // textBoxUri
             // 
-            this.CreatorTextBox.Location = new System.Drawing.Point(87, 24);
-            this.CreatorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CreatorTextBox.Name = "CreatorTextBox";
-            this.CreatorTextBox.Size = new System.Drawing.Size(275, 20);
-            this.CreatorTextBox.TabIndex = 13;
+            this.textBoxUri.Location = new System.Drawing.Point(88, 47);
+            this.textBoxUri.Name = "textBoxUri";
+            this.textBoxUri.Size = new System.Drawing.Size(273, 20);
+            this.textBoxUri.TabIndex = 14;
             // 
-            // GoBackButton
+            // buttonVolver
             // 
-            this.GoBackButton.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.GoBackButton.Location = new System.Drawing.Point(13, 343);
-            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(56, 19);
-            this.GoBackButton.TabIndex = 6;
-            this.GoBackButton.Text = "Atrás";
-            this.GoBackButton.UseVisualStyleBackColor = true;
+            this.buttonVolver.Location = new System.Drawing.Point(19, 346);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(72, 31);
+            this.buttonVolver.TabIndex = 6;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.buttonVolver.Leave += new System.EventHandler(this.buttonVolver_Click);
             // 
             // Watcher
             // 
@@ -188,10 +186,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(379, 383);
+            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.Title);
-            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Watcher";
             this.Text = "Watcher";
             this.Load += new System.EventHandler(this.Watcher_Load);
@@ -208,13 +206,13 @@
         private System.Windows.Forms.Label CreatorNick;
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Label UploadDate;
-        private System.Windows.Forms.Label IdLable;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button GoBackButton;
-        private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.TextBox TitleTextBox;
-        private System.Windows.Forms.TextBox ContentTextBox;
-        private System.Windows.Forms.TextBox UploadTextBox;
-        private System.Windows.Forms.TextBox CreatorTextBox;
+        private System.Windows.Forms.TextBox textBoxDescripcion;
+        private System.Windows.Forms.TextBox textBoxTitle;
+        private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.TextBox textBoxPropietario;
+        private System.Windows.Forms.TextBox textBoxUri;
+        private System.Windows.Forms.Button buttonVolver;
     }
 }

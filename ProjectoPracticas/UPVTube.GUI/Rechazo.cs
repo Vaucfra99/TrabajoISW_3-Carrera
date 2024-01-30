@@ -15,8 +15,8 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         //private Evaluar eevaluar;
-        private int id;
-        private string email;
+        //private int id;
+        //private string email;
         public Rechazo(IUPVTubeService service, int id, string email)
         {
             InitializeComponent();
@@ -34,8 +34,8 @@ namespace UPVTube.GUI
 
         private void BotonEmail_Click(object sender, EventArgs e)
         {
-            DialogResult noPermitido = MessageBox.Show(this, "Email : " + email + "\n" + "Asunto : Rechazo Contenido \n Mensaje: " + TextBoxMotivo.Text, "Contenido No Autorizado Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            service.EvaluarContent(id, false, TextBoxMotivo.Text);
+            //DialogResult noPermitido = MessageBox.Show(this, "Email : " + email + "\n" + "Asunto : Rechazo Contenido \n Mensaje: " + TextBoxMotivo.Text, "Contenido No Autorizado Email", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //service.EvaluarContent(id, false, TextBoxMotivo.Text);
             //this.Hide();
             //eevaluar.ShowDialog();
             this.Close();

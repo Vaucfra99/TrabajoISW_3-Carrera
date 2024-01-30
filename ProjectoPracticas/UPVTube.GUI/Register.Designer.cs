@@ -99,7 +99,6 @@
             this.TextBoxNick.Name = "TextBoxNick";
             this.TextBoxNick.Size = new System.Drawing.Size(254, 20);
             this.TextBoxNick.TabIndex = 5;
-            this.TextBoxNick.TextChanged += new System.EventHandler(this.TextBoxNick_TextChanged);
             // 
             // TextBoxPassword
             // 
@@ -108,7 +107,6 @@
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.Size = new System.Drawing.Size(254, 20);
             this.TextBoxPassword.TabIndex = 6;
-            this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // TextBoxFullName
             // 
@@ -117,7 +115,6 @@
             this.TextBoxFullName.Name = "TextBoxFullName";
             this.TextBoxFullName.Size = new System.Drawing.Size(260, 20);
             this.TextBoxFullName.TabIndex = 7;
-            this.TextBoxFullName.TextChanged += new System.EventHandler(this.TextBoxFullName_TextChanged);
             // 
             // TextBoxEmail
             // 
@@ -126,7 +123,6 @@
             this.TextBoxEmail.Name = "TextBoxEmail";
             this.TextBoxEmail.Size = new System.Drawing.Size(260, 20);
             this.TextBoxEmail.TabIndex = 8;
-            this.TextBoxEmail.TextChanged += new System.EventHandler(this.TextBoxEmail_TextChanged);
             // 
             // BtnAccept
             // 

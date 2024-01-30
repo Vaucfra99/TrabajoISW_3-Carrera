@@ -17,7 +17,7 @@ namespace UPVTube.Entities
             this.Visualizations = new List<Visualization>();
 
         }
-        public Content( string contentUri, string description, bool isPublic, string title,DateTime uploadDate, Member owner ):this()
+        public Content(string contentUri, string description, bool isPublic, string title, DateTime uploadDate, Member owner ):this()
 
         {
             this.ContentURI = contentUri;

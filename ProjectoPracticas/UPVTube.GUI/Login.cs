@@ -20,7 +20,6 @@ namespace UPVTube.GUI
         private String nick;
         private String password;
         private Menu menu;
-        private Member member;
         public Login(IUPVTubeService service)
         {
             InitializeComponent();
@@ -51,6 +50,8 @@ namespace UPVTube.GUI
                 try
                 {
                     service.LogIn(nick, password);
+                    TextBoxPassword.Clear();
+                    TextBoxUser.Clear();
                     this.Hide();
                     menu = new Menu(service);
                     menu.ShowDialog();
