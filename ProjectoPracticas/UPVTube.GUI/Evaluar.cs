@@ -18,15 +18,11 @@ namespace UPVTube.GUI
     public partial class Evaluar : Form
     {
         private IUPVTubeService service;
-        //private Rechazo rechazo;
-        //private int EvId;
-        //private string EvEmail;
         private Watcher watcher;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
-            //rechazo = new Rechazo(service, EvId, EvEmail);
             
         }
 
@@ -70,13 +66,15 @@ namespace UPVTube.GUI
                 {
                     int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
                     Content c = service.getContent(id);
-
+                    //Dudita
+                    c.Authorized = Authorized.Yes;
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.Yes);
                     
-                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + " Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
                     DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GridPending.SelectedRows.Clear();
+                    GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
+                    textBoxMotivo.Clear();
                 }
                 catch (ServiceException ex)
                 {
@@ -98,13 +96,16 @@ namespace UPVTube.GUI
                 {
                     int id = (int) GridPending.SelectedRows[0].Cells[6].Value;
                     Content c = service.getContent(id);
+                    //Dudita v2
+                    c.Authorized = Authorized.No;
                   
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.No);
 
-                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + " Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
                     DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
+                    textBoxMotivo.Clear();
                 }
                 catch (ServiceException ex)
                 {
@@ -115,6 +116,7 @@ namespace UPVTube.GUI
 
         private void buttonAtras_Click(object sender, EventArgs e)
         {
+            GridPending.Rows.Clear();
             this.Close();
         }
 
@@ -133,7 +135,7 @@ namespace UPVTube.GUI
 
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
-            if (GridPending.Enabled == true)
+            if (GridPending.Enabled == true && GridPending.SelectedRows.Count == 1)
             {
                 int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
                 Content c = service.getContent(id);

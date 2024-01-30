@@ -27,9 +27,6 @@ namespace UPVTube.GUI
             upload = new Upload(service);
             search = new Searcher(service);
             evaluar = new Evaluar(service);
-            // El Menu debería mostrar si es un teacher el buscar pendientes de evaluar
-            // Si es un externo sólo debe mostrar el buscar
-            // To Do Alumnos -----------------------------------
         }
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
@@ -41,12 +38,6 @@ namespace UPVTube.GUI
             search.ShowDialog();
 
         }
-        
-        // To Do Alumnos -------------------------------
-        // Hay que enlazar en todos los formularios el evento Click
-        // del botón volver a su función correspondiente
-        // Esto se hace en el diseñador del formulario seleccionando 
-        // el botón, yendo a la ventana de Propiedades -> Icono del rayo
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             service.LogOut();

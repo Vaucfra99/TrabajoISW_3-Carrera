@@ -30,7 +30,7 @@ namespace UPVTube.GUI
                 IEnumerable<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
                 foreach (Content c in cList)
                 {
-                    ///Duda para la tutoria no sabemos como añadir los contenidos en el gridview y no sabemos porque no va
+                    ///Duda para la tutoria no sabemos como añadir los contenidos en el gridview y no sabemos porque no va. Parece que es problema del codigo
                     String sub = "";
                     foreach (Subject s in c.Subjects)
                     {
@@ -40,8 +40,6 @@ namespace UPVTube.GUI
                     if (c.IsPublic) { acceso = "Público"; }
                     GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
                 }
-
-
             }
             catch (ServiceException ex)
             {
@@ -53,12 +51,6 @@ namespace UPVTube.GUI
             }
         }
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            GridContents.Enabled = true;
-            GridContents.Rows.Clear();
-            CargarDatosEnGridView();
-        }
 
         private void Searcher_Load(object sender, EventArgs e)
         {
@@ -85,12 +77,13 @@ namespace UPVTube.GUI
 
         private void GoBackButton_Click(object sender, EventArgs e)
         {
+            GridContents.Rows.Clear();
             this.Close();
         }
 
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
-            if (GridContents.Enabled == true)
+            if (GridContents.Enabled == true && GridContents.SelectedRows.Count == 1)
             {
                 int id = (int)GridContents.SelectedRows[0].Cells[6].Value;
                 Content c = service.getContent(id);
@@ -101,6 +94,12 @@ namespace UPVTube.GUI
             {
                 DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            GridContents.Enabled = true;
+            CargarDatosEnGridView();
         }
     }
 }

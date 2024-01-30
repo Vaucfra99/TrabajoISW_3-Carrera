@@ -62,12 +62,6 @@
     <Compile Include="Evaluar.Designer.cs">
       <DependentUpon>Evaluar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rechazo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rechazo.Designer.cs">
-      <DependentUpon>Rechazo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Searcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,9 +124,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Rechazo.resx">
-      <DependentUpon>Rechazo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>

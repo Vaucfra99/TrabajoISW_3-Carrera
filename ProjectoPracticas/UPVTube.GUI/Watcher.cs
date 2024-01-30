@@ -38,6 +38,8 @@ namespace UPVTube.GUI
             textBoxTitle.Enabled = false;
             textBoxPropietario.Text = content.Owner.FullName;
             textBoxPropietario.Enabled = false;
+            Visualization v = new Visualization(DateTime.Now, content, content.Owner);
+            content.Visualizations.Add(v);
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)

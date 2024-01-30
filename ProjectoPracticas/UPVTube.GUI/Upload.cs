@@ -55,7 +55,6 @@ namespace UPVTube.GUI
 
                     Content c = new Content(TextBoxURI.Text, TextBoxDescripcion.Text, pub, TextBoxTitulo.Text, DateTime.Now, logged);
                     c.Subjects = lSub;
-                    c.Authorized = Authorized.Pending;
                     service.Upload(c);
                     
                     DialogResult subido = MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);

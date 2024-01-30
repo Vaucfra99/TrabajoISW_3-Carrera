@@ -36,7 +36,6 @@
             this.labelLate = new System.Windows.Forms.Label();
             this.dateTimePickerEarly = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.GridContents = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +45,13 @@
             this.FechaSubida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asignaturas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UltimoAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.comboBoxMember = new System.Windows.Forms.ComboBox();
             this.buttonVerCont = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -126,18 +126,6 @@
             this.dateTimePickerLate.Name = "dateTimePickerLate";
             this.dateTimePickerLate.Size = new System.Drawing.Size(250, 20);
             this.dateTimePickerLate.TabIndex = 9;
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.buttonSearch.Location = new System.Drawing.Point(225, 321);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(56, 28);
-            this.buttonSearch.TabIndex = 10;
-            this.buttonSearch.Text = "Buscar";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // GoBackButton
             // 
@@ -224,6 +212,13 @@
             this.UltimoAcceso.Name = "UltimoAcceso";
             this.UltimoAcceso.ReadOnly = true;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // comboBoxSubject
             // 
             this.comboBoxSubject.FormattingEnabled = true;
@@ -262,12 +257,15 @@
             this.buttonVerCont.UseVisualStyleBackColor = true;
             this.buttonVerCont.Click += new System.EventHandler(this.buttonVerCont_Click);
             // 
-            // ID
+            // buttonSearch
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.buttonSearch.Location = new System.Drawing.Point(233, 322);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(80, 26);
+            this.buttonSearch.TabIndex = 18;
+            this.buttonSearch.Text = "Buscar";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // Searcher
             // 
@@ -275,12 +273,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1099, 365);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonVerCont);
             this.Controls.Add(this.comboBoxMember);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.GridContents);
             this.Controls.Add(this.GoBackButton);
-            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dateTimePickerLate);
             this.Controls.Add(this.dateTimePickerEarly);
             this.Controls.Add(this.labelLate);
@@ -310,7 +308,6 @@
         private System.Windows.Forms.Label labelLate;
         private System.Windows.Forms.DateTimePicker dateTimePickerEarly;
         private System.Windows.Forms.DateTimePicker dateTimePickerLate;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.BindingSource contentBindingSource;
         private System.Windows.Forms.DataGridView GridContents;
@@ -326,5 +323,6 @@
         private System.Windows.Forms.ComboBox comboBoxMember;
         private System.Windows.Forms.Button buttonVerCont;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

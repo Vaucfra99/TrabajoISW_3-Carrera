@@ -34,20 +34,20 @@
             this.BotonPer = new System.Windows.Forms.Button();
             this.BotonRec = new System.Windows.Forms.Button();
             this.buttonShowPending = new System.Windows.Forms.Button();
-            this.GridPending = new System.Windows.Forms.DataGridView();
             this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonVerCont = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxMotivo = new System.Windows.Forms.TextBox();
+            this.GridPending = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Publico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaSubida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asignaturas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPending)).BeginInit();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPending)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,28 +108,6 @@
             this.buttonShowPending.UseVisualStyleBackColor = true;
             this.buttonShowPending.Click += new System.EventHandler(this.buttonShowPending_Click);
             // 
-            // GridPending
-            // 
-            this.GridPending.AllowUserToAddRows = false;
-            this.GridPending.AllowUserToDeleteRows = false;
-            this.GridPending.AllowUserToResizeColumns = false;
-            this.GridPending.AllowUserToResizeRows = false;
-            this.GridPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridPending.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Titulo,
-            this.Autor,
-            this.Descripcion,
-            this.Publico,
-            this.FechaSubida,
-            this.Asignaturas,
-            this.ID});
-            this.GridPending.Location = new System.Drawing.Point(45, 62);
-            this.GridPending.MultiSelect = false;
-            this.GridPending.Name = "GridPending";
-            this.GridPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPending.Size = new System.Drawing.Size(693, 223);
-            this.GridPending.TabIndex = 17;
-            // 
             // contentBindingSource
             // 
             this.contentBindingSource.DataSource = typeof(UPVTube.Entities.Content);
@@ -163,52 +141,62 @@
             this.textBoxMotivo.Size = new System.Drawing.Size(692, 127);
             this.textBoxMotivo.TabIndex = 20;
             // 
+            // GridPending
+            // 
+            this.GridPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridPending.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Titulo,
+            this.Autor,
+            this.Descripcion,
+            this.Acceso,
+            this.FechaSubida,
+            this.Asignaturas,
+            this.Id});
+            this.GridPending.Location = new System.Drawing.Point(43, 63);
+            this.GridPending.MultiSelect = false;
+            this.GridPending.Name = "GridPending";
+            this.GridPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPending.Size = new System.Drawing.Size(693, 214);
+            this.GridPending.TabIndex = 21;
+            // 
             // Titulo
             // 
             this.Titulo.HeaderText = "Titulo";
             this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
             this.Titulo.Width = 200;
             // 
             // Autor
             // 
             this.Autor.HeaderText = "Autor";
             this.Autor.Name = "Autor";
-            this.Autor.ReadOnly = true;
-            this.Autor.Width = 50;
+            this.Autor.Width = 75;
             // 
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
             // 
-            // Publico
+            // Acceso
             // 
-            this.Publico.HeaderText = "Publico";
-            this.Publico.Name = "Publico";
-            this.Publico.ReadOnly = true;
-            this.Publico.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Publico.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Acceso.HeaderText = "Acceso";
+            this.Acceso.Name = "Acceso";
+            this.Acceso.Width = 75;
             // 
             // FechaSubida
             // 
-            this.FechaSubida.HeaderText = "FechaSubida";
+            this.FechaSubida.HeaderText = "Fecha de Subida";
             this.FechaSubida.Name = "FechaSubida";
-            this.FechaSubida.ReadOnly = true;
             // 
             // Asignaturas
             // 
             this.Asignaturas.HeaderText = "Asignaturas";
             this.Asignaturas.Name = "Asignaturas";
-            this.Asignaturas.ReadOnly = true;
             // 
-            // ID
+            // Id
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // Evaluar
             // 
@@ -216,10 +204,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(775, 581);
+            this.Controls.Add(this.GridPending);
             this.Controls.Add(this.textBoxMotivo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonVerCont);
-            this.Controls.Add(this.GridPending);
             this.Controls.Add(this.buttonShowPending);
             this.Controls.Add(this.BotonRec);
             this.Controls.Add(this.BotonPer);
@@ -230,8 +218,8 @@
             this.Name = "Evaluar";
             this.Text = "Evaluar";
             this.Load += new System.EventHandler(this.Evaluar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPending)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPending)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,16 +232,16 @@
         private System.Windows.Forms.Button BotonRec;
         private System.Windows.Forms.Button buttonShowPending;
         private System.Windows.Forms.BindingSource contentBindingSource;
-        private System.Windows.Forms.DataGridView GridPending;
         private System.Windows.Forms.Button buttonVerCont;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxMotivo;
+        private System.Windows.Forms.DataGridView GridPending;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Publico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acceso;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaSubida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asignaturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }
