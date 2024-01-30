@@ -27,7 +27,6 @@ namespace UPVTube.GUI
             
         }
 
-
         private void TextBoxUser_TextChanged(object sender, EventArgs e)
         {
             nick = TextBoxUser.Text;
@@ -73,9 +72,10 @@ namespace UPVTube.GUI
             TextBoxUser.Clear();
         }
 
-       private void BtnReturn_Click(object sender, EventArgs e)
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            TextBoxPassword.Clear();
+            TextBoxUser.Clear();
         }
     }
 }

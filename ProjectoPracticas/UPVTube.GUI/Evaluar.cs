@@ -19,6 +19,7 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Watcher watcher;
+        private Boolean check = false;
         public Evaluar(IUPVTubeService service)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace UPVTube.GUI
 
         private void CargarDatosEnGridView()
         {
+
             try
             {
                 IEnumerable<Content> cList = service.GetPendingContents();
@@ -41,6 +43,7 @@ namespace UPVTube.GUI
                     String acceso = "Privado";
                     if (c.IsPublic) { acceso = "Público"; }
                     GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate.ToShortDateString(), sub, c.Id);
+                    check = true;
                 }
 
             }
@@ -66,7 +69,6 @@ namespace UPVTube.GUI
                 {
                     int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
                     Content c = service.getContent(id);
-                    //Dudita
                     c.Authorized = Authorized.Yes;
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.Yes);
@@ -96,7 +98,6 @@ namespace UPVTube.GUI
                 {
                     int id = (int) GridPending.SelectedRows[0].Cells[6].Value;
                     Content c = service.getContent(id);
-                    //Dudita v2
                     c.Authorized = Authorized.No;
                   
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
@@ -114,15 +115,13 @@ namespace UPVTube.GUI
             }
         }
 
-        private void buttonAtras_Click(object sender, EventArgs e)
-        {
-            GridPending.Rows.Clear();
-            this.Close();
-        }
-
         private void buttonShowPending_Click(object sender, EventArgs e)
         {
             GridPending.Enabled = true;
+            if (check)
+            {
+                GridPending.Rows.Clear();
+            }
             CargarDatosEnGridView();
             buttonShowPending.Enabled = false;
         }
@@ -135,7 +134,7 @@ namespace UPVTube.GUI
 
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
-            if (GridPending.Enabled == true && GridPending.SelectedRows.Count == 1)
+            if (GridPending.Enabled == true && GridPending.SelectedRows != null)
             {
                 int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
                 Content c = service.getContent(id);
@@ -147,6 +146,13 @@ namespace UPVTube.GUI
                 DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+        }
+
+        private void Evaluar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GridPending.Rows.Clear();
+            GridPending.Refresh();
+            GridPending.Enabled = false;
         }
     }
 

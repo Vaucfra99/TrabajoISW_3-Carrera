@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonAtras = new System.Windows.Forms.Button();
             this.BotonPer = new System.Windows.Forms.Button();
             this.BotonRec = new System.Windows.Forms.Button();
             this.buttonShowPending = new System.Windows.Forms.Button();
@@ -61,26 +60,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Evaluar Contenido";
             // 
-            // buttonAtras
-            // 
-            this.buttonAtras.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.buttonAtras.Location = new System.Drawing.Point(43, 523);
-            this.buttonAtras.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonAtras.Name = "buttonAtras";
-            this.buttonAtras.Size = new System.Drawing.Size(71, 30);
-            this.buttonAtras.TabIndex = 6;
-            this.buttonAtras.Text = "Atrás";
-            this.buttonAtras.UseVisualStyleBackColor = true;
-            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
-            this.buttonAtras.Leave += new System.EventHandler(this.buttonAtras_Click);
-            // 
             // BotonPer
             // 
             this.BotonPer.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BotonPer.Location = new System.Drawing.Point(522, 523);
+            this.BotonPer.Location = new System.Drawing.Point(482, 521);
             this.BotonPer.Margin = new System.Windows.Forms.Padding(2);
             this.BotonPer.Name = "BotonPer";
-            this.BotonPer.Size = new System.Drawing.Size(99, 30);
+            this.BotonPer.Size = new System.Drawing.Size(99, 31);
             this.BotonPer.TabIndex = 14;
             this.BotonPer.Text = "Autorizar";
             this.BotonPer.UseVisualStyleBackColor = true;
@@ -89,10 +75,10 @@
             // BotonRec
             // 
             this.BotonRec.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BotonRec.Location = new System.Drawing.Point(651, 523);
+            this.BotonRec.Location = new System.Drawing.Point(651, 521);
             this.BotonRec.Margin = new System.Windows.Forms.Padding(2);
             this.BotonRec.Name = "BotonRec";
-            this.BotonRec.Size = new System.Drawing.Size(85, 30);
+            this.BotonRec.Size = new System.Drawing.Size(85, 31);
             this.BotonRec.TabIndex = 15;
             this.BotonRec.Text = "Rechazar";
             this.BotonRec.UseVisualStyleBackColor = true;
@@ -100,7 +86,7 @@
             // 
             // buttonShowPending
             // 
-            this.buttonShowPending.Location = new System.Drawing.Point(142, 522);
+            this.buttonShowPending.Location = new System.Drawing.Point(45, 522);
             this.buttonShowPending.Name = "buttonShowPending";
             this.buttonShowPending.Size = new System.Drawing.Size(147, 30);
             this.buttonShowPending.TabIndex = 16;
@@ -114,9 +100,9 @@
             // 
             // buttonVerCont
             // 
-            this.buttonVerCont.Location = new System.Drawing.Point(341, 523);
+            this.buttonVerCont.Location = new System.Drawing.Point(272, 522);
             this.buttonVerCont.Name = "buttonVerCont";
-            this.buttonVerCont.Size = new System.Drawing.Size(127, 29);
+            this.buttonVerCont.Size = new System.Drawing.Size(127, 31);
             this.buttonVerCont.TabIndex = 18;
             this.buttonVerCont.Text = "Ver Contenido";
             this.buttonVerCont.UseVisualStyleBackColor = true;
@@ -211,12 +197,12 @@
             this.Controls.Add(this.buttonShowPending);
             this.Controls.Add(this.BotonRec);
             this.Controls.Add(this.BotonPer);
-            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Evaluar";
             this.Text = "Evaluar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Evaluar_FormClosing);
             this.Load += new System.EventHandler(this.Evaluar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPending)).EndInit();
@@ -227,7 +213,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.Button BotonPer;
         private System.Windows.Forms.Button BotonRec;
         private System.Windows.Forms.Button buttonShowPending;

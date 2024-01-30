@@ -89,9 +89,17 @@ namespace UPVTube.GUI
             checkedListBoxSubjects.DisplayMember = "Name";
         }
 
-        private void ButtonAtras_Click(object sender, EventArgs e)
+        private void Upload_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            TextBoxTitulo.Clear();
+            TextBoxDescripcion.Clear();
+            TextBoxURI.Clear();
+            CheckBoxPublico.Checked = false;
+            for (int i = 0; i < checkedListBoxSubjects.Items.Count; i++)
+            {
+                checkedListBoxSubjects.SetSelected(i, false);
+                checkedListBoxSubjects.SetItemChecked(i, false);
+            }
         }
     }
 }

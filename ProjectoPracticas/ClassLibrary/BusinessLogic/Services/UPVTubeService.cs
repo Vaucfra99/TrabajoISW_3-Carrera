@@ -177,47 +177,9 @@ namespace UPVTube.Services
         }
 
 
-        public IEnumerable<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
+        public List<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
             
-            IEnumerable<Content> aux = dal.GetAll<Content>();
-            IEnumerable<Content> cList = new List<Content>();
-
-            if (earliest == null){earliest = new DateTime(1990, 0, 0, 0, 0, 0);}
-            if (latest == null){latest = DateTime.Now;}
-          
-            foreach (Content c in aux) {
-                bool isSubject = subject == null;
-                if (!isSubject)
-                {
-                    foreach (var a in c.Subjects)
-                        if (a.Code == subject.Code)
-                        {
-                            isSubject = true;
-                            break;
-                        }
-                }
-                if (
-                    (creatorNick == null || creatorNick.Equals(c.Owner)) &&
-                    (title == null || title.Equals(c.Title)) &&
-                    (latest >= c.UploadDate) &&
-                    (earliest <= c.UploadDate) &&
-                    isSubject
-                    ) 
-                {
-                    cList = cList.Append<Content>(c);
-                }
-                
-            
-            }
-            cList = cList.OrderBy(c => c.UploadDate);
-
-            /**
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // To Do Alumnos ------------------------------------
-            // Da excepción (añadir .ToList();)
-            // Ocurrirá en todos los .Where(...)
             List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).ToList();
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
@@ -241,15 +203,15 @@ namespace UPVTube.Services
             {
                 cList = (List<Content>)cList.Where<Content>(c => c.Owner.Nick == creatorNick).ToList();
             }
-            if (!(subject == null || subject == ""))
+            if (!(subject == null ))
             {
-                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName == subject).Any() == true).ToList();
+                cList = (List<Content>)cList.Where<Content>(c => c.Subjects.Where<Subject>(s => s.FullName.Equals(subject.FullName)).Any() == true).ToList();
             }
             if (!(title == null || title == ""))
             {
                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(title)).ToList();
             }
-            */
+            cList.OrderBy(c => c.UploadDate);
             return cList;
 
         }
@@ -271,6 +233,7 @@ namespace UPVTube.Services
                     pending = pending.Append<Content>(c);
                 }
             }
+            pending.OrderBy(c => c.UploadDate);
             return pending;
         }
 

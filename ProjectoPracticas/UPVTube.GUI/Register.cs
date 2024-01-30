@@ -65,9 +65,12 @@ namespace UPVTube.GUI
             TextBoxPassword.Clear();
         }
 
-        private void buttonReturn_Click(object sender, EventArgs e)
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            TextBoxEmail.Clear();
+            TextBoxFullName.Clear();
+            TextBoxNick.Clear();
+            TextBoxPassword.Clear();
         }
     }
 }

@@ -40,7 +40,6 @@
             this.BtnClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -52,7 +51,7 @@
             this.label2.Location = new System.Drawing.Point(31, 268);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
@@ -64,7 +63,7 @@
             this.label3.Location = new System.Drawing.Point(31, 342);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
+            this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
@@ -76,7 +75,7 @@
             this.label4.Location = new System.Drawing.Point(25, 60);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 20);
+            this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nombre Completo:";
             // 
@@ -88,7 +87,7 @@
             this.label5.Location = new System.Drawing.Point(25, 139);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 20);
+            this.label5.Size = new System.Drawing.Size(121, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo Electrónico:";
             // 
@@ -127,7 +126,7 @@
             // BtnAccept
             // 
             this.BtnAccept.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnAccept.Location = new System.Drawing.Point(304, 459);
+            this.BtnAccept.Location = new System.Drawing.Point(212, 459);
             this.BtnAccept.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAccept.Name = "BtnAccept";
             this.BtnAccept.Size = new System.Drawing.Size(77, 28);
@@ -139,7 +138,7 @@
             // BtnClear
             // 
             this.BtnClear.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnClear.Location = new System.Drawing.Point(178, 458);
+            this.BtnClear.Location = new System.Drawing.Point(35, 459);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(69, 28);
@@ -153,7 +152,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 15);
+            this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Informacion Personal";
             // 
@@ -162,28 +161,16 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 15);
+            this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Informacion de Acceso";
-            // 
-            // buttonReturn
-            // 
-            this.buttonReturn.Location = new System.Drawing.Point(35, 459);
-            this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(77, 28);
-            this.buttonReturn.TabIndex = 13;
-            this.buttonReturn.Text = "Volver";
-            this.buttonReturn.UseVisualStyleBackColor = true;
-            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
-            this.buttonReturn.Leave += new System.EventHandler(this.buttonReturn_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(403, 515);
-            this.Controls.Add(this.buttonReturn);
+            this.ClientSize = new System.Drawing.Size(326, 515);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnClear);
@@ -199,6 +186,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
             this.Text = "Register";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,6 +205,5 @@
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button buttonReturn;
     }
 }

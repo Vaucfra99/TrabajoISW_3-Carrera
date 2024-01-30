@@ -35,7 +35,6 @@
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
-            this.BtnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,9 +42,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(75, 38);
+            this.label1.Location = new System.Drawing.Point(56, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(98, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesión";
             // 
@@ -54,9 +54,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(19, 89);
+            this.label2.Location = new System.Drawing.Point(14, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
@@ -65,39 +66,40 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(11, 162);
+            this.label3.Location = new System.Drawing.Point(8, 132);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
+            this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
             // TextBoxUser
             // 
             this.TextBoxUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TextBoxUser.Location = new System.Drawing.Point(117, 89);
-            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TextBoxUser.Location = new System.Drawing.Point(88, 72);
+            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.Size = new System.Drawing.Size(139, 22);
+            this.TextBoxUser.Size = new System.Drawing.Size(105, 20);
             this.TextBoxUser.TabIndex = 3;
             this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Location = new System.Drawing.Point(117, 160);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TextBoxPassword.Location = new System.Drawing.Point(88, 130);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(139, 22);
+            this.TextBoxPassword.Size = new System.Drawing.Size(105, 20);
             this.TextBoxPassword.TabIndex = 4;
             this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // BtnAceptar
             // 
             this.BtnAceptar.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnAceptar.Location = new System.Drawing.Point(182, 213);
-            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAceptar.Location = new System.Drawing.Point(136, 173);
+            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(74, 39);
+            this.BtnAceptar.Size = new System.Drawing.Size(56, 32);
             this.BtnAceptar.TabIndex = 5;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
@@ -106,34 +108,21 @@
             // BtnClear
             // 
             this.BtnClear.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnClear.Location = new System.Drawing.Point(20, 213);
-            this.BtnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnClear.Location = new System.Drawing.Point(15, 173);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(76, 39);
+            this.BtnClear.Size = new System.Drawing.Size(57, 32);
             this.BtnClear.TabIndex = 6;
             this.BtnClear.Text = "Borrar";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
-            // BtnReturn
-            // 
-            this.BtnReturn.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnReturn.Location = new System.Drawing.Point(22, 302);
-            this.BtnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnReturn.Name = "BtnReturn";
-            this.BtnReturn.Size = new System.Drawing.Size(76, 39);
-            this.BtnReturn.TabIndex = 7;
-            this.BtnReturn.Text = "Volver";
-            this.BtnReturn.UseVisualStyleBackColor = true;
-            this.BtnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
-            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(280, 354);
-            this.Controls.Add(this.BtnReturn);
+            this.ClientSize = new System.Drawing.Size(210, 288);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.TextBoxPassword);
@@ -141,9 +130,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +148,5 @@
         private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button BtnClear;
-        private System.Windows.Forms.Button BtnReturn;
     }
 }

@@ -36,7 +36,6 @@
             this.TextBoxURI = new System.Windows.Forms.TextBox();
             this.CheckBoxPublico = new System.Windows.Forms.CheckBox();
             this.ButtonSubir = new System.Windows.Forms.Button();
-            this.ButtonAtras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBoxSubjects = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
@@ -128,18 +127,6 @@
             this.ButtonSubir.UseVisualStyleBackColor = true;
             this.ButtonSubir.Click += new System.EventHandler(this.ButtonSubir_Click);
             // 
-            // ButtonAtras
-            // 
-            this.ButtonAtras.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.ButtonAtras.Location = new System.Drawing.Point(11, 433);
-            this.ButtonAtras.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ButtonAtras.Name = "ButtonAtras";
-            this.ButtonAtras.Size = new System.Drawing.Size(61, 28);
-            this.ButtonAtras.TabIndex = 9;
-            this.ButtonAtras.Text = "Atrás";
-            this.ButtonAtras.UseVisualStyleBackColor = true;
-            this.ButtonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -169,7 +156,6 @@
             this.ClientSize = new System.Drawing.Size(335, 473);
             this.Controls.Add(this.checkedListBoxSubjects);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ButtonAtras);
             this.Controls.Add(this.ButtonSubir);
             this.Controls.Add(this.CheckBoxPublico);
             this.Controls.Add(this.TextBoxURI);
@@ -181,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Upload";
             this.Text = "Upload";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Upload_FormClosing);
             this.Load += new System.EventHandler(this.Upload_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,7 +183,6 @@
         private System.Windows.Forms.TextBox TextBoxURI;
         private System.Windows.Forms.CheckBox CheckBoxPublico;
         private System.Windows.Forms.Button ButtonSubir;
-        private System.Windows.Forms.Button ButtonAtras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBoxSubjects;
     }

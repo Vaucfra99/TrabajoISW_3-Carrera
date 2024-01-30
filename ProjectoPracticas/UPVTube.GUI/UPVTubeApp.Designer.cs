@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.BtnRegister = new System.Windows.Forms.Button();
-            this.BtnExit = new System.Windows.Forms.Button();
             this.buttonBD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -75,18 +74,6 @@
             this.BtnRegister.UseVisualStyleBackColor = true;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
-            // BtnExit
-            // 
-            this.BtnExit.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnExit.Location = new System.Drawing.Point(181, 150);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(57, 32);
-            this.BtnExit.TabIndex = 3;
-            this.BtnExit.Text = "Salir";
-            this.BtnExit.UseVisualStyleBackColor = true;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
-            // 
             // buttonBD
             // 
             this.buttonBD.Location = new System.Drawing.Point(20, 155);
@@ -104,14 +91,13 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(247, 191);
             this.Controls.Add(this.buttonBD);
-            this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "UPVTubeApp";
             this.Text = "UPVTube";
-            this.Load += new System.EventHandler(this.UPVTubeApp_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UPVTubeApp_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,7 +111,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Button BtnRegister;
-        private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Button buttonBD;
     }
 }

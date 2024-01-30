@@ -39,7 +39,6 @@
             this.textBoxDate = new System.Windows.Forms.TextBox();
             this.textBoxPropietario = new System.Windows.Forms.TextBox();
             this.textBoxUri = new System.Windows.Forms.TextBox();
-            this.buttonVolver = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,30 +168,19 @@
             this.textBoxUri.Size = new System.Drawing.Size(273, 20);
             this.textBoxUri.TabIndex = 14;
             // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(19, 346);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(72, 31);
-            this.buttonVolver.TabIndex = 6;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            this.buttonVolver.Leave += new System.EventHandler(this.buttonVolver_Click);
-            // 
             // Watcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(379, 383);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Watcher";
             this.Text = "Watcher";
             this.Load += new System.EventHandler(this.Watcher_Load);
+            this.Leave += new System.EventHandler(this.Watcher_Leave);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -213,6 +201,5 @@
         private System.Windows.Forms.TextBox textBoxDate;
         private System.Windows.Forms.TextBox textBoxPropietario;
         private System.Windows.Forms.TextBox textBoxUri;
-        private System.Windows.Forms.Button buttonVolver;
     }
 }

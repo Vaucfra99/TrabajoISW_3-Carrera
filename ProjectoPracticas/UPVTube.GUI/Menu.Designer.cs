@@ -31,7 +31,6 @@
             this.ButtonBuscar = new System.Windows.Forms.Button();
             this.ButtonSubir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnVolver = new System.Windows.Forms.Button();
             this.ButtonEvaluate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -70,19 +69,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "¡Bienvenid@!";
             // 
-            // BtnVolver
-            // 
-            this.BtnVolver.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnVolver.Location = new System.Drawing.Point(65, 234);
-            this.BtnVolver.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(92, 27);
-            this.BtnVolver.TabIndex = 3;
-            this.BtnVolver.Text = "Salir";
-            this.BtnVolver.UseVisualStyleBackColor = true;
-            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            this.BtnVolver.Leave += new System.EventHandler(this.BtnVolver_Click);
-            // 
             // ButtonEvaluate
             // 
             this.ButtonEvaluate.Location = new System.Drawing.Point(479, 137);
@@ -100,12 +86,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(653, 396);
             this.Controls.Add(this.ButtonEvaluate);
-            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonSubir);
             this.Controls.Add(this.ButtonBuscar);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
@@ -116,7 +102,6 @@
         private System.Windows.Forms.Button ButtonBuscar;
         private System.Windows.Forms.Button ButtonSubir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.Button ButtonEvaluate;
     }
 }

@@ -26,31 +26,22 @@ namespace UPVTube.GUI
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             login.ShowDialog();
-            //this.Close();
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             register.ShowDialog();
-            //this.Close();
-        }
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void UPVTubeApp_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonBD_Click(object sender, EventArgs e)
         {
             service.DBInitialization();
+        }
+
+        private void UPVTubeApp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

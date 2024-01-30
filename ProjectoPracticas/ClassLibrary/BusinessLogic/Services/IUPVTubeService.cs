@@ -25,7 +25,7 @@ namespace UPVTube.Services
         void LogIn(string nick, String password);
         void LogOut();
         void Upload(Content content);
-        IEnumerable<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest);
+        List<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest);
         Content Watch(int id);
         Member ReturnLoggedMember();
         IEnumerable<Subject> getSubjects();

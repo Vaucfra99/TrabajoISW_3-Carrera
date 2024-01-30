@@ -36,7 +36,6 @@
             this.labelLate = new System.Windows.Forms.Label();
             this.dateTimePickerEarly = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLate = new System.Windows.Forms.DateTimePicker();
-            this.GoBackButton = new System.Windows.Forms.Button();
             this.GridContents = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Propietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,7 +115,7 @@
             this.dateTimePickerEarly.Location = new System.Drawing.Point(33, 201);
             this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerEarly.Name = "dateTimePickerEarly";
-            this.dateTimePickerEarly.Size = new System.Drawing.Size(250, 20);
+            this.dateTimePickerEarly.Size = new System.Drawing.Size(264, 20);
             this.dateTimePickerEarly.TabIndex = 8;
             // 
             // dateTimePickerLate
@@ -124,21 +123,8 @@
             this.dateTimePickerLate.Location = new System.Drawing.Point(33, 265);
             this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerLate.Name = "dateTimePickerLate";
-            this.dateTimePickerLate.Size = new System.Drawing.Size(250, 20);
+            this.dateTimePickerLate.Size = new System.Drawing.Size(264, 20);
             this.dateTimePickerLate.TabIndex = 9;
-            // 
-            // GoBackButton
-            // 
-            this.GoBackButton.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.GoBackButton.Location = new System.Drawing.Point(35, 321);
-            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(66, 28);
-            this.GoBackButton.TabIndex = 13;
-            this.GoBackButton.Text = "Atrás";
-            this.GoBackButton.UseVisualStyleBackColor = true;
-            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
-            this.GoBackButton.Leave += new System.EventHandler(this.GoBackButton_Click);
             // 
             // GridContents
             // 
@@ -249,7 +235,7 @@
             // 
             // buttonVerCont
             // 
-            this.buttonVerCont.Location = new System.Drawing.Point(118, 321);
+            this.buttonVerCont.Location = new System.Drawing.Point(34, 320);
             this.buttonVerCont.Name = "buttonVerCont";
             this.buttonVerCont.Size = new System.Drawing.Size(88, 28);
             this.buttonVerCont.TabIndex = 17;
@@ -259,7 +245,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(233, 322);
+            this.buttonSearch.Location = new System.Drawing.Point(218, 322);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(80, 26);
             this.buttonSearch.TabIndex = 18;
@@ -278,7 +264,6 @@
             this.Controls.Add(this.comboBoxMember);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.GridContents);
-            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.dateTimePickerLate);
             this.Controls.Add(this.dateTimePickerEarly);
             this.Controls.Add(this.labelLate);
@@ -291,6 +276,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Searcher";
             this.Text = "Search";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Searcher_FormClosing);
             this.Load += new System.EventHandler(this.Searcher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
@@ -308,7 +294,6 @@
         private System.Windows.Forms.Label labelLate;
         private System.Windows.Forms.DateTimePicker dateTimePickerEarly;
         private System.Windows.Forms.DateTimePicker dateTimePickerLate;
-        private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.BindingSource contentBindingSource;
         private System.Windows.Forms.DataGridView GridContents;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;

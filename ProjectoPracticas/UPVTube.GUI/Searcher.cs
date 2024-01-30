@@ -27,7 +27,7 @@ namespace UPVTube.GUI
                 Subject selectedSubject = (Subject) comboBoxSubject.SelectedItem;
                 if (selectedSubject.Code == 0000) { selectedSubject = null; }
 
-                IEnumerable<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
+                List<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
                 foreach (Content c in cList)
                 {
                     ///Duda para la tutoria no sabemos como añadir los contenidos en el gridview y no sabemos porque no va. Parece que es problema del codigo
@@ -75,17 +75,11 @@ namespace UPVTube.GUI
             comboBoxMember.ValueMember = "Nick";
         }
 
-        private void GoBackButton_Click(object sender, EventArgs e)
-        {
-            GridContents.Rows.Clear();
-            this.Close();
-        }
-
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
-            if (GridContents.Enabled == true && GridContents.SelectedRows.Count == 1)
+            if (GridContents.Enabled == true && GridContents.SelectedRows != null)
             {
-                int id = (int)GridContents.SelectedRows[0].Cells[6].Value;
+                int id = (int)GridContents.SelectedRows[0].Cells[7].Value;
                 Content c = service.getContent(id);
                 watcher = new Watcher(service, c);
                 watcher.ShowDialog();
@@ -99,7 +93,16 @@ namespace UPVTube.GUI
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             GridContents.Enabled = true;
+            GridContents.Rows.Clear();
+            GridContents.Refresh();
             CargarDatosEnGridView();
+        }
+
+        private void Searcher_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GridContents.Rows.Clear();
+            GridContents.Refresh();
+            GridContents.Enabled = false;
         }
     }
 }

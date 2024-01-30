@@ -38,11 +38,6 @@ namespace UPVTube.GUI
             search.ShowDialog();
 
         }
-        private void BtnVolver_Click(object sender, EventArgs e)
-        {
-            service.LogOut();
-            this.Close();
-        }
 
         private void buttonEvaluate_Click(object sender, EventArgs e)
         {
@@ -63,6 +58,11 @@ namespace UPVTube.GUI
             {
                 ButtonSubir.Enabled = true;
             }
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            service.LogOut();
         }
     }
 }
