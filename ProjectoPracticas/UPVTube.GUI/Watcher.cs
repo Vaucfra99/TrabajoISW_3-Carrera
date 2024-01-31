@@ -19,12 +19,15 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Content content;
+        private Comentar comment;
 
         public Watcher(IUPVTubeService service, Content content)
         {
             InitializeComponent();
             this.service = service;
             this.content = content;
+           
+          
         }
         private void Watcher_Load(object sender, EventArgs e)
         {
@@ -40,11 +43,39 @@ namespace UPVTube.GUI
             textBoxPropietario.Enabled = false;
             Visualization v = new Visualization(DateTime.Now, content, content.Owner);
             content.Visualizations.Add(v);
+            GridViewComentarios.Rows.Clear();
+            RellenarGrid();
+            GridViewComentarios.Refresh();
+
         }
 
-        private void Watcher_Leave(object sender, EventArgs e)
+       
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+
+
+            this.comment = new Comentar(service, content);
+            comment.ShowDialog();
+
+        }
+
+
+
+
+        public void RellenarGrid()
+        {
+
+            IEnumerable<Comment> commentList = service.GetComments();
+            foreach (Comment c in commentList)
+            {
+
+                GridViewComentarios.Rows.Add(c.Writer.ToString(),c.Text);
+
+            }
+
+
         }
     }
 }

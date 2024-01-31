@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UPVTube.Services
 {
@@ -80,6 +81,10 @@ namespace UPVTube.Services
             c4.Subjects.Add(s2);
             dal.Insert(c4);
 
+            
+
+            Comment comment = new Comment("hola", DateTime.Now, c1, m3);
+            dal.Insert(comment);
             dal.Commit();
         }
 
@@ -233,6 +238,23 @@ namespace UPVTube.Services
             }
             pending.OrderBy(c => c.UploadDate);
             return pending;
+        }
+
+
+        public IEnumerable<Comment> GetComments() { 
+
+            IEnumerable<Comment> comments = dal.GetAll<Comment>();
+            comments=comments.OrderBy(c => c.WritingDate);
+            return comments;
+        
+        }
+
+
+        public void CrearComentario(Comment c) {
+
+            dal.Insert(c);
+            dal.Commit();
+    
         }
 
         public Member ReturnLoggedMember()

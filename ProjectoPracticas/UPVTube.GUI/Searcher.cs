@@ -30,7 +30,6 @@ namespace UPVTube.GUI
                 List<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
                 foreach (Content c in cList)
                 {
-                    ///Duda para la tutoria no sabemos como añadir los contenidos en el gridview y no sabemos porque no va. Parece que es problema del codigo
                     String sub = "";
                     foreach (Subject s in c.Subjects)
                     {

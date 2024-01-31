@@ -118,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Comentar.resx">
+      <DependentUpon>Comentar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Evaluar.resx">
       <DependentUpon>Evaluar.cs</DependentUpon>
     </EmbeddedResource>
