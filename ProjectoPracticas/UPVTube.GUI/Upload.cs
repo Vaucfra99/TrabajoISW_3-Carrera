@@ -37,6 +37,12 @@ namespace UPVTube.GUI
                 TextBoxTitulo.Clear();
                 TextBoxDescripcion.Clear();
                 TextBoxURI.Clear();
+                CheckBoxPublico.Checked = false;
+                for (int i = 0; i < checkedListBoxSubjects.Items.Count; i++)
+                {
+                    checkedListBoxSubjects.SetSelected(i, false);
+                    checkedListBoxSubjects.SetItemChecked(i, false);
+                }
             }
             else
             {
