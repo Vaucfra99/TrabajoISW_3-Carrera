@@ -48,6 +48,7 @@ namespace UPVTube.Services
             Member m1 = new Member("irene@inf.upv.es", "Irene San Román Fuentes", DateTime.Now, "irene", "irene1");
             AddMember(m1);
             Member m2 = new Member("victor@inf.upv.es", "Victor Aucejo Franco", DateTime.Now, "victor", "victor2");
+            m2.SubscribedTo.Add(m1);
             AddMember(m2);
             Member m3 = new Member("fjaen@dsic.upv.es", "Javier Jaen", DateTime.Now, "fjaen", "pitufo");
             AddMember(m3);
@@ -166,14 +167,7 @@ namespace UPVTube.Services
             {
                 dal.Insert<Content>(c);
                 dal.Commit();
-    
-               //para saber si puedes subirlo o no haces Logged.Authroeised == Yes o lo q sea para ver si el profesor te ha dado permisos 
-                
-               
-               
-               
-               
-            }
+                }
         }
 
 
@@ -255,6 +249,40 @@ namespace UPVTube.Services
         public Content getContent(int id) 
         {
             return dal.GetById<Content>(id);
+        }
+        
+        public List<Member> getNotSubscribedTo() 
+        { 
+            IEnumerable<Member> all = dal.GetAll<Member>();
+            List<Member> listAll = all.ToList();
+            IEnumerable<Member> subscribedTo = Logged.SubscribedTo;
+            List<Member> listSubscribedTo = subscribedTo.ToList();
+            List<Member> notSubscribed = new List<Member>();
+
+            if (listSubscribedTo.Count() == 0)
+            {
+                return listAll;
+            }
+            else
+            {
+                foreach (Member m1 in listAll)
+                {
+                    foreach (Member m2 in listSubscribedTo)
+                    {
+                        if (m1.Equals(m2) == false && m1 != Logged)
+                        {
+                            notSubscribed.Add(m1);
+                        }
+                    }
+                }
+            }
+
+            
+            return notSubscribed;
+        }
+        public IEnumerable<Member> getSubscribedTo()
+        {
+            return Logged.SubscribedTo;
         }
 
         public void EvaluarContent(Evaluation ev, Authorized a) 

@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comentar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comentar.Designer.cs">
+      <DependentUpon>Comentar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Evaluar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="Searcher.Designer.cs">
       <DependentUpon>Searcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscripciones.Designer.cs">
+      <DependentUpon>Subscripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Watcher.cs">
       <SubType>Form</SubType>
@@ -129,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Searcher.resx">
       <DependentUpon>Searcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscripciones.resx">
+      <DependentUpon>Subscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Upload.resx">
       <DependentUpon>Upload.cs</DependentUpon>

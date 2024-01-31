@@ -30,6 +30,8 @@ namespace UPVTube.Services
         Member ReturnLoggedMember();
         IEnumerable<Subject> getSubjects();
         IEnumerable<Member> getMembers();
+        List<Member> getNotSubscribedTo();
+        IEnumerable<Member> getSubscribedTo();
         Content getContent(int id);
         void EvaluarContent(Evaluation evaluation, Authorized aut);
         IEnumerable<Content> GetPendingContents();

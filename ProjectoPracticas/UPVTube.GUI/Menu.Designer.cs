@@ -32,6 +32,7 @@
             this.ButtonSubir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ButtonEvaluate = new System.Windows.Forms.Button();
+            this.buttonSubscription = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonBuscar
@@ -79,12 +80,23 @@
             this.ButtonEvaluate.UseVisualStyleBackColor = true;
             this.ButtonEvaluate.Click += new System.EventHandler(this.buttonEvaluate_Click);
             // 
+            // buttonSubscription
+            // 
+            this.buttonSubscription.Location = new System.Drawing.Point(73, 223);
+            this.buttonSubscription.Name = "buttonSubscription";
+            this.buttonSubscription.Size = new System.Drawing.Size(192, 27);
+            this.buttonSubscription.TabIndex = 5;
+            this.buttonSubscription.Text = "Subscripciones";
+            this.buttonSubscription.UseVisualStyleBackColor = true;
+            this.buttonSubscription.Click += new System.EventHandler(this.buttonSubscription_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(653, 396);
+            this.Controls.Add(this.buttonSubscription);
             this.Controls.Add(this.ButtonEvaluate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonSubir);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Button ButtonSubir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ButtonEvaluate;
+        private System.Windows.Forms.Button buttonSubscription;
     }
 }

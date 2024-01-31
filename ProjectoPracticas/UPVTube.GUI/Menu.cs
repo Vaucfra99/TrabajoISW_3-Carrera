@@ -19,6 +19,7 @@ namespace UPVTube.GUI
         private Upload upload;
         private Searcher search;
         private Evaluar evaluar;
+        private Subscripciones subscripciones;  
         private Member member;
         public Menu(IUPVTubeService service)
         {
@@ -27,6 +28,7 @@ namespace UPVTube.GUI
             upload = new Upload(service);
             search = new Searcher(service);
             evaluar = new Evaluar(service);
+            subscripciones = new Subscripciones(service);
         }
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
@@ -63,6 +65,11 @@ namespace UPVTube.GUI
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             service.LogOut();
+        }
+
+        private void buttonSubscription_Click(object sender, EventArgs e)
+        {
+            subscripciones.ShowDialog();
         }
     }
 }
