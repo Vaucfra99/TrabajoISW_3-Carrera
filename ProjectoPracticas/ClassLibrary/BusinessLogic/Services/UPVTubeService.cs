@@ -67,12 +67,11 @@ namespace UPVTube.Services
             c1.Subjects.Add(s1);
             c1.Subjects.Add(s3);
             dal.Insert(c1);
-            Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now.AddDays(-500), m2);
+            Content c2 = new Content("práctica", "Práctica 2 ISW", true, "ISW Práctica 2 Contenidos", DateTime.Now, m2);
             c2.Authorized = Authorized.Pending;
             c2.Subjects.Add(s4);
             dal.Insert(c2);
             Content c3 = new Content("teoría 1", "Teoría 1 ISW", false, "ISW Teoría 1 Contenidos", DateTime.Now, m3);
-            c3.Authorized = Authorized.Pending;
             c3.Subjects.Add(s1);
             c3.Subjects.Add(s4);
             c3.Subjects.Add(s3);
@@ -85,6 +84,7 @@ namespace UPVTube.Services
 
             Comment comment = new Comment("hola", DateTime.Now, c1, m3);
             dal.Insert(comment);
+
             dal.Commit();
         }
 
@@ -183,7 +183,7 @@ namespace UPVTube.Services
         public List<Content> Search(String title, String creatorNick, Subject subject, DateTime earliest, DateTime latest)
         {
             
-            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => c.Authorized == Authorized.Yes).ToList();
+            List<Content> cList = (List<Content>)dal.GetWhere<Content>(c => (c.Authorized == Authorized.Yes) || (c.Authorized == Authorized.Pending)).ToList();
 
             //Si no hay fecha inicial se pone por defecto una que asumimos mas antigua que el contenido mas antiguo
             if (earliest == null)
@@ -214,9 +214,7 @@ namespace UPVTube.Services
             {
                cList = (List<Content>)cList.Where<Content>(c => c.Title.Contains(title)).ToList();
             }
-            cList.OrderBy(c => c.UploadDate);
             return cList;
-
         }
 
         public Content Watch(int id)
@@ -236,16 +234,22 @@ namespace UPVTube.Services
                     pending = pending.Append<Content>(c);
                 }
             }
-            pending.OrderBy(c => c.UploadDate);
             return pending;
         }
 
 
-        public IEnumerable<Comment> GetComments() { 
+        public List<Comment> GetComments(Content content) { 
 
-            IEnumerable<Comment> comments = dal.GetAll<Comment>();
-            comments=comments.OrderBy(c => c.WritingDate);
-            return comments;
+            List<Comment> comments = dal.GetAll<Comment>().ToList();
+            List<Comment> red = new List<Comment>();
+            foreach(Comment c in comments)
+            {
+                if(c.Content.Id == content.Id)
+                {
+                    red.Add(c);
+                }
+            }
+            return red;
         
         }
 

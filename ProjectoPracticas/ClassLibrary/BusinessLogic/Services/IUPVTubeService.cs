@@ -35,7 +35,7 @@ namespace UPVTube.Services
         List<Member> getSubscribedTo();
         void EvaluarContent(Evaluation evaluation, Authorized aut);
         IEnumerable<Content> GetPendingContents();
-        IEnumerable<Comment> GetComments();
+        List<Comment> GetComments(Content c);
 
         void CrearComentario(Comment c);
     }

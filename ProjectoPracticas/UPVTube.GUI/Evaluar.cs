@@ -43,6 +43,7 @@ namespace UPVTube.GUI
                     String acceso = "Privado";
                     if (c.IsPublic) { acceso = "Público"; }
                     GridPending.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate.ToShortDateString(), sub, c.Id);
+                    GridPending.Sort(GridPending.Columns[4], ListSortDirection.Ascending);
                     check = true;
                 }
 

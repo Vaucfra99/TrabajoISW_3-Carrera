@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using UPVTube.Entities;
@@ -38,6 +39,7 @@ namespace UPVTube.GUI
                     String acceso = "Privado";
                     if (c.IsPublic) { acceso = "Público"; }
                     GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
+                    GridContents.Sort(GridContents.Columns[4], ListSortDirection.Ascending);
                 }
             }
             catch (ServiceException ex)
@@ -49,7 +51,10 @@ namespace UPVTube.GUI
 
         private void Searcher_Load(object sender, EventArgs e)
         {
-
+            DateTime early = new DateTime(1999, 1, 1);
+            DateTime late = new DateTime(2199, 1, 1);
+            dateTimePickerEarly.Value = early;
+            dateTimePickerLate.Value = late;
             GridContents.Enabled = false;
 
             List<Subject> subjects = new List<Subject>(service.getSubjects());
