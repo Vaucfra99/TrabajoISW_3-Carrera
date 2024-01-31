@@ -65,8 +65,8 @@ namespace UPVTube.GUI
                 String id = listViewNotSubscribed.SelectedItems[0].Text;
                 Member SelectedMember = service.getMember(id);
 
-                service.AddSubscribedToUser(SelectedMember);
-                service.AddSubscriptorUser(SelectedMember);
+                user.SubscribedTo.Add(SelectedMember);
+                SelectedMember.Subscriptors.Add(user);
 
                 listViewSubscribed.Items.Clear();
                 listViewSubscribed.SelectedItems.Clear();
@@ -89,8 +89,8 @@ namespace UPVTube.GUI
                 String id = listViewSubscribed.SelectedItems[0].Text;
                 Member SelectedMember = service.getMember(id);
 
-                service.RemoveSubscriptionFromUser(SelectedMember);
-                service.RemoveSubscriberFromSelectedMember(SelectedMember);
+                user.SubscribedTo.Remove(SelectedMember);
+                SelectedMember.Subscriptors.Remove(user);
 
                 listViewSubscribed.Items.Clear();
                 listViewSubscribed.SelectedItems.Clear();

@@ -252,27 +252,17 @@ namespace UPVTube.Services
         
         public List<Member> getNotSubscribedTo() 
         { 
-            List<Member> all = new List<Member>();
-            all = dal.GetAll<Member>().ToList();
+            List<Member> subscribedTo = Logged.SubscribedTo.ToList();
+            List<Member> notSubscribed = dal.GetAll<Member>().ToList();
 
-            List<Member> subscribedTo = new List<Member>();
-            subscribedTo = Logged.SubscribedTo.ToList();
-
-            List<Member> notSubscribed = new List<Member>();
-            
-            if (subscribedTo.Count() == 0)
+            if (subscribedTo.Count() != 0)
             {
-                notSubscribed = all;
-            }
-            else
-            {
-                notSubscribed = all;
-                foreach(Member m in subscribedTo)
+                foreach (Member m in subscribedTo)
                 {
                     notSubscribed.Remove(m);
                 }
-                
             }
+            
             notSubscribed.Remove(Logged);
             return notSubscribed;
         }
@@ -285,30 +275,6 @@ namespace UPVTube.Services
         {
             return dal.GetById<Member>(id);
         }
-
-        public void AddSubscribedToUser(Member m)
-        {
-            Logged.SubscribedTo.Add(m);
-            dal.Commit();
-        }
-        public void AddSubscriptorUser(Member m)
-        {
-            m.Subscriptors.Add(Logged);
-            dal.Commit();
-        }
-
-        public void RemoveSubscriptionFromUser(Member m)
-        {
-            Logged.SubscribedTo.Remove(m);
-            dal.Commit();
-        }
-
-        public void RemoveSubscriberFromSelectedMember(Member m)
-        {
-            m.Subscriptors.Remove(Logged);
-            dal.Commit();
-        }
-
 
         public void EvaluarContent(Evaluation ev, Authorized a) 
         {

@@ -33,10 +33,6 @@ namespace UPVTube.Services
         Member getMember(String id);
         List<Member> getNotSubscribedTo();
         List<Member> getSubscribedTo();
-        void AddSubscribedToUser(Member m);
-        void AddSubscriptorUser(Member m);
-        void RemoveSubscriptionFromUser(Member m);
-        void RemoveSubscriberFromSelectedMember(Member m);
         void EvaluarContent(Evaluation evaluation, Authorized aut);
         IEnumerable<Content> GetPendingContents();
     }
