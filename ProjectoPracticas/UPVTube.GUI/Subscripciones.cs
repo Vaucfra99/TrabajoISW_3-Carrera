@@ -17,7 +17,7 @@ namespace UPVTube.GUI
        
     {
         private IUPVTubeService service;
-        private Member logged;
+        private Member user;
         public Subscripciones(IUPVTubeService service)
         {
             InitializeComponent();
@@ -26,39 +26,84 @@ namespace UPVTube.GUI
 
         private void Subscripciones_FormClosing(object sender, FormClosingEventArgs e)
         {
+            listViewSubscribed.Items.Clear();
+            listViewSubscribed.SelectedItems.Clear();
+            listViewNotSubscribed.Items.Clear();
+            listViewNotSubscribed.SelectedItems.Clear();
+        }
 
+        private void ListSubscribers()
+        {
+            List<Member> subscribedTo = service.getSubscribedTo();
+            foreach (Member m in subscribedTo)
+            {
+                listViewSubscribed.Items.Add(m.Nick);
+            }
+        }
+
+        private void ListNotSubscribers()
+        {
+            List<Member> notSubscribedTo = service.getNotSubscribedTo();
+            foreach (Member m in notSubscribedTo)
+            {
+                listViewNotSubscribed.Items.Add(m.Nick);
+            }
         }
 
         private void Subscripciones_Load(object sender, EventArgs e)
         {
-            logged = service.ReturnLoggedMember();
+            user = service.ReturnLoggedMember();
 
-            IEnumerable<Member> subscribedTo = service.getSubscribedTo();
-            foreach (Member m in subscribedTo)
-            {
-                GridViewSubscribedTo.Rows.Add(m.Nick);
-            }
-
-            List<Member> nonSubscribedTo = service.getNotSubscribedTo();
-            foreach (Member m in nonSubscribedTo)
-            {
-                GridViewNonSubscribedTo.Rows.Add(m.Nick);
-            }
+            ListSubscribers();
+            ListNotSubscribers();
         }
-
-        private void buttonSuscribed_Click(object sender, EventArgs e)
-        {
             
+        private void buttonSuscribe_Click(object sender, EventArgs e)/// el que hace desde la derecha hacia la izquierda
+        {
+            if(listViewNotSubscribed.SelectedItems.Count > 0)
+            {
+                String id = listViewNotSubscribed.SelectedItems[0].Text;
+                Member SelectedMember = service.getMember(id);
+
+                service.AddSubscribedToUser(SelectedMember);
+                service.AddSubscriptorUser(SelectedMember);
+
+                listViewSubscribed.Items.Clear();
+                listViewSubscribed.SelectedItems.Clear();
+                ListSubscribers();
+
+                listViewNotSubscribed.Items.Clear();
+                listViewNotSubscribed.SelectedItems.Clear();
+                ListNotSubscribers();
+            }
+            else
+            {
+                MessageBox.Show(this, "Selecciona un miembro de la lista de los miembros a los que no estas suscrito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
-        private void buttonNonSubscribed_Click(object sender, EventArgs e)
+        private void buttonUnSubscribe_Click(object sender, EventArgs e)/// el que hace desde la izquierda hasta la izquierda
         {
+            if(listViewSubscribed.SelectedItems.Count > 0)
+            {
+                String id = listViewSubscribed.SelectedItems[0].Text;
+                Member SelectedMember = service.getMember(id);
 
-        }
+                service.RemoveSubscriptionFromUser(SelectedMember);
+                service.RemoveSubscriberFromSelectedMember(SelectedMember);
 
-        private void buttonShowContents_Click(object sender, EventArgs e)
-        {
+                listViewSubscribed.Items.Clear();
+                listViewSubscribed.SelectedItems.Clear();
+                ListSubscribers();
 
+                listViewNotSubscribed.Items.Clear();
+                listViewNotSubscribed.SelectedItems.Clear();
+                ListNotSubscribers();
+            }
+            else
+            {
+                MessageBox.Show(this, "Selecciona un miembro de la lista de los miembros a los que estas suscrito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

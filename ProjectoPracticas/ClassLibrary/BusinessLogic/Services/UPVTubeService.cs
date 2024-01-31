@@ -52,7 +52,11 @@ namespace UPVTube.Services
             AddMember(m2);
             Member m3 = new Member("fjaen@dsic.upv.es", "Javier Jaen", DateTime.Now, "fjaen", "pitufo");
             AddMember(m3);
-           
+            Member m4 = new Member("prueba@dsic.upv.es", "prueba", DateTime.Now, "prueba", "a");
+            m4.SubscribedTo.Add(m1);
+            m4.SubscribedTo.Add(m2);
+            AddMember(m4);
+
 
 
             // Añadir los 4 contenidos
@@ -245,45 +249,66 @@ namespace UPVTube.Services
         {
             return dal.GetAll<Member>();
         }
-
-        public Content getContent(int id) 
-        {
-            return dal.GetById<Content>(id);
-        }
         
         public List<Member> getNotSubscribedTo() 
         { 
-            IEnumerable<Member> all = dal.GetAll<Member>();
-            List<Member> listAll = all.ToList();
-            IEnumerable<Member> subscribedTo = Logged.SubscribedTo;
-            List<Member> listSubscribedTo = subscribedTo.ToList();
-            List<Member> notSubscribed = new List<Member>();
+            List<Member> all = new List<Member>();
+            all = dal.GetAll<Member>().ToList();
 
-            if (listSubscribedTo.Count() == 0)
+            List<Member> subscribedTo = new List<Member>();
+            subscribedTo = Logged.SubscribedTo.ToList();
+
+            List<Member> notSubscribed = new List<Member>();
+            
+            if (subscribedTo.Count() == 0)
             {
-                return listAll;
+                notSubscribed = all;
             }
             else
             {
-                foreach (Member m1 in listAll)
+                notSubscribed = all;
+                foreach(Member m in subscribedTo)
                 {
-                    foreach (Member m2 in listSubscribedTo)
-                    {
-                        if (m1.Equals(m2) == false && m1 != Logged)
-                        {
-                            notSubscribed.Add(m1);
-                        }
-                    }
+                    notSubscribed.Remove(m);
                 }
+                
             }
-
-            
+            notSubscribed.Remove(Logged);
             return notSubscribed;
         }
-        public IEnumerable<Member> getSubscribedTo()
+        public List<Member> getSubscribedTo()
         {
-            return Logged.SubscribedTo;
+            return Logged.SubscribedTo.ToList();
         }
+
+        public Member getMember(String id)
+        {
+            return dal.GetById<Member>(id);
+        }
+
+        public void AddSubscribedToUser(Member m)
+        {
+            Logged.SubscribedTo.Add(m);
+            dal.Commit();
+        }
+        public void AddSubscriptorUser(Member m)
+        {
+            m.Subscriptors.Add(Logged);
+            dal.Commit();
+        }
+
+        public void RemoveSubscriptionFromUser(Member m)
+        {
+            Logged.SubscribedTo.Remove(m);
+            dal.Commit();
+        }
+
+        public void RemoveSubscriberFromSelectedMember(Member m)
+        {
+            m.Subscriptors.Remove(Logged);
+            dal.Commit();
+        }
+
 
         public void EvaluarContent(Evaluation ev, Authorized a) 
         {

@@ -33,7 +33,7 @@ namespace UPVTube.GUI
         {
             if (TextBoxTitulo.Text == string.Empty || TextBoxDescripcion.Text == string.Empty || TextBoxURI.Text == string.Empty)
             {
-                DialogResult error = MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TextBoxTitulo.Clear();
                 TextBoxDescripcion.Clear();
                 TextBoxURI.Clear();
@@ -57,7 +57,7 @@ namespace UPVTube.GUI
                     c.Subjects = lSub;
                     service.Upload(c);
                     
-                    DialogResult subido = MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     TextBoxDescripcion.Clear();
                     TextBoxTitulo.Clear();
@@ -71,11 +71,7 @@ namespace UPVTube.GUI
                 }
                 catch (ServiceException ex)
                 {
-                    DialogResult answer = MessageBox.Show(this, // Owner
-                    ex.Message, // Message
-                    "Error de Servicio", // Title
-                    MessageBoxButtons.OK, // Buttons included
-                    MessageBoxIcon.Exclamation); // Icon
+                    MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
                 }
 
             }

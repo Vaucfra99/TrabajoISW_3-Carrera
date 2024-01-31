@@ -28,7 +28,7 @@ namespace UPVTube.GUI
         {
             if (TextBoxEmail.Text == string.Empty || TextBoxFullName.Text == string.Empty || TextBoxNick.Text == string.Empty || TextBoxPassword.Text == string.Empty) 
             {
-                DialogResult error = MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TextBoxEmail.Clear();
                 TextBoxFullName.Clear();
                 TextBoxNick.Clear();
@@ -48,11 +48,7 @@ namespace UPVTube.GUI
                     this.Close();
                 }
                 catch (ServiceException ex) {
-                    DialogResult answer = MessageBox.Show(this, // Owner
-                    ex.Message, // Message
-                    "Error de Servicio", // Title
-                    MessageBoxButtons.OK, // Buttons included
-                    MessageBoxIcon.Exclamation); // Icon
+                    MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
                 }
             }
         }

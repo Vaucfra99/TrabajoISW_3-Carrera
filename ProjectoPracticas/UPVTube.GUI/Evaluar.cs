@@ -49,11 +49,7 @@ namespace UPVTube.GUI
             }
             catch (ServiceException ex)
             {
-                DialogResult answer = MessageBox.Show(this, // Owner
-                ex.Message, // Message
-                "Error de Servicio", // Title
-                MessageBoxButtons.OK, // Buttons included
-                MessageBoxIcon.Exclamation); // Icon
+                MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
             }
         }
 
@@ -61,26 +57,26 @@ namespace UPVTube.GUI
         {
             if (GridPending.SelectedRows == null)
             {
-                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 try
                 {
                     int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
-                    Content c = service.getContent(id);
+                    Content c = service.Watch(id);
                     c.Authorized = Authorized.Yes;
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.Yes);
                     
                     String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
-                    DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
                     textBoxMotivo.Clear();
                 }
                 catch (ServiceException ex)
                 {
-                    DialogResult error = MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -90,27 +86,27 @@ namespace UPVTube.GUI
         {
             if (GridPending.SelectedRows == null)
             {
-                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 try
                 {
                     int id = (int) GridPending.SelectedRows[0].Cells[6].Value;
-                    Content c = service.getContent(id);
+                    Content c = service.Watch(id);
                     c.Authorized = Authorized.No;
                   
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.No);
 
                     String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
-                    DialogResult per = MessageBox.Show(this, msgEmail, "Contenido Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, msgEmail, "Contenido Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
                     textBoxMotivo.Clear();
                 }
                 catch (ServiceException ex)
                 {
-                    DialogResult error = MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -137,13 +133,13 @@ namespace UPVTube.GUI
             if (GridPending.Enabled == true && GridPending.SelectedRows != null)
             {
                 int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
-                Content c = service.getContent(id);
+                Content c = service.Watch(id);
                 watcher = new Watcher(service, c);
                 watcher.ShowDialog();
             }
             else
             {
-                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

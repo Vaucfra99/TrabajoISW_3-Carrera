@@ -43,11 +43,7 @@ namespace UPVTube.GUI
             }
             catch (ServiceException ex)
             {
-                DialogResult answer = MessageBox.Show(this, // Owner
-                ex.Message, // Message
-                "Error de Servicio", // Title
-                MessageBoxButtons.OK, // Buttons included
-                MessageBoxIcon.Exclamation); // Icon
+                MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
             }
         }
 
@@ -80,13 +76,13 @@ namespace UPVTube.GUI
             if (GridContents.Enabled == true && GridContents.SelectedRows != null)
             {
                 int id = (int)GridContents.SelectedRows[0].Cells[7].Value;
-                Content c = service.getContent(id);
+                Content c = service.Watch(id);
                 watcher = new Watcher(service, c);
                 watcher.ShowDialog();
             }
             else
             {
-                DialogResult error = MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
