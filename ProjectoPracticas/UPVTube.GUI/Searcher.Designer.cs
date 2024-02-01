@@ -49,8 +49,8 @@
             this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.comboBoxMember = new System.Windows.Forms.ComboBox();
-            this.buttonVerCont = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonVerCont = new UPVTube.GUI.custom.Botones();
+            this.buttonSearch = new UPVTube.GUI.custom.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.GridContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,72 +58,74 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(31, 38);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTitle.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelTitle.Location = new System.Drawing.Point(29, 75);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(47, 16);
+            this.labelTitle.Size = new System.Drawing.Size(73, 22);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Título:";
             // 
             // labelUplNick
             // 
             this.labelUplNick.AutoSize = true;
-            this.labelUplNick.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelUplNick.Location = new System.Drawing.Point(31, 77);
-            this.labelUplNick.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUplNick.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUplNick.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelUplNick.Location = new System.Drawing.Point(29, 130);
             this.labelUplNick.Name = "labelUplNick";
-            this.labelUplNick.Size = new System.Drawing.Size(106, 16);
+            this.labelUplNick.Size = new System.Drawing.Size(174, 22);
             this.labelUplNick.TabIndex = 1;
             this.labelUplNick.Text = "Nick del creador:";
             // 
             // labelSubject
             // 
             this.labelSubject.AutoSize = true;
-            this.labelSubject.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelSubject.Location = new System.Drawing.Point(31, 110);
-            this.labelSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSubject.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubject.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelSubject.Location = new System.Drawing.Point(29, 184);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(77, 16);
+            this.labelSubject.Size = new System.Drawing.Size(120, 22);
             this.labelSubject.TabIndex = 2;
             this.labelSubject.Text = "Asignatura:";
             // 
             // labelEarly
             // 
             this.labelEarly.AutoSize = true;
-            this.labelEarly.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelEarly.Location = new System.Drawing.Point(31, 176);
-            this.labelEarly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEarly.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEarly.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelEarly.Location = new System.Drawing.Point(35, 283);
             this.labelEarly.Name = "labelEarly";
-            this.labelEarly.Size = new System.Drawing.Size(143, 16);
+            this.labelEarly.Size = new System.Drawing.Size(236, 22);
             this.labelEarly.TabIndex = 6;
             this.labelEarly.Text = "Fecha de subida inicial:";
             // 
             // labelLate
             // 
             this.labelLate.AutoSize = true;
-            this.labelLate.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.labelLate.Location = new System.Drawing.Point(31, 241);
-            this.labelLate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLate.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelLate.Location = new System.Drawing.Point(35, 383);
             this.labelLate.Name = "labelLate";
-            this.labelLate.Size = new System.Drawing.Size(134, 16);
+            this.labelLate.Size = new System.Drawing.Size(222, 22);
             this.labelLate.TabIndex = 7;
             this.labelLate.Text = "Fecha de subida final:";
             // 
             // dateTimePickerEarly
             // 
-            this.dateTimePickerEarly.Location = new System.Drawing.Point(33, 201);
-            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dateTimePickerEarly.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerEarly.Location = new System.Drawing.Point(39, 307);
+            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerEarly.Name = "dateTimePickerEarly";
-            this.dateTimePickerEarly.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePickerEarly.Size = new System.Drawing.Size(394, 32);
             this.dateTimePickerEarly.TabIndex = 8;
             // 
             // dateTimePickerLate
             // 
-            this.dateTimePickerLate.Location = new System.Drawing.Point(33, 265);
-            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dateTimePickerLate.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerLate.Location = new System.Drawing.Point(39, 407);
+            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerLate.Name = "dateTimePickerLate";
-            this.dateTimePickerLate.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePickerLate.Size = new System.Drawing.Size(394, 32);
             this.dateTimePickerLate.TabIndex = 9;
             // 
             // GridContents
@@ -142,75 +144,95 @@
             this.Asignaturas,
             this.UltimoAcceso,
             this.ID});
-            this.GridContents.Location = new System.Drawing.Point(338, 39);
+            this.GridContents.Location = new System.Drawing.Point(507, 60);
+            this.GridContents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridContents.MultiSelect = false;
             this.GridContents.Name = "GridContents";
+            this.GridContents.RowHeadersWidth = 62;
             this.GridContents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridContents.Size = new System.Drawing.Size(734, 309);
+            this.GridContents.Size = new System.Drawing.Size(1103, 488);
             this.GridContents.TabIndex = 14;
             // 
             // Titulo
             // 
             this.Titulo.Frozen = true;
             this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 8;
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
+            this.Titulo.Width = 150;
             // 
             // Propietario
             // 
             this.Propietario.Frozen = true;
             this.Propietario.HeaderText = "Propietario";
+            this.Propietario.MinimumWidth = 8;
             this.Propietario.Name = "Propietario";
             this.Propietario.ReadOnly = true;
+            this.Propietario.Width = 150;
             // 
             // Descripcion
             // 
             this.Descripcion.Frozen = true;
             this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 8;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
             // 
             // Acceso
             // 
             this.Acceso.Frozen = true;
             this.Acceso.HeaderText = "Acceso";
+            this.Acceso.MinimumWidth = 8;
             this.Acceso.Name = "Acceso";
             this.Acceso.ReadOnly = true;
+            this.Acceso.Width = 150;
             // 
             // FechaSubida
             // 
             this.FechaSubida.Frozen = true;
             this.FechaSubida.HeaderText = "FechaSubida";
+            this.FechaSubida.MinimumWidth = 8;
             this.FechaSubida.Name = "FechaSubida";
             this.FechaSubida.ReadOnly = true;
+            this.FechaSubida.Width = 150;
             // 
             // Asignaturas
             // 
             this.Asignaturas.Frozen = true;
             this.Asignaturas.HeaderText = "Asignaturas";
+            this.Asignaturas.MinimumWidth = 8;
             this.Asignaturas.Name = "Asignaturas";
             this.Asignaturas.ReadOnly = true;
+            this.Asignaturas.Width = 150;
             // 
             // UltimoAcceso
             // 
             this.UltimoAcceso.Frozen = true;
             this.UltimoAcceso.HeaderText = "UltimoAcceso";
+            this.UltimoAcceso.MinimumWidth = 8;
             this.UltimoAcceso.Name = "UltimoAcceso";
             this.UltimoAcceso.ReadOnly = true;
+            this.UltimoAcceso.Width = 150;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
+            this.ID.Width = 150;
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.Location = new System.Drawing.Point(135, 114);
+            this.comboBoxSubject.Location = new System.Drawing.Point(210, 182);
+            this.comboBoxSubject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxSubject.Size = new System.Drawing.Size(241, 28);
             this.comboBoxSubject.TabIndex = 15;
             // 
             // contentBindingSource
@@ -219,48 +241,71 @@
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.Location = new System.Drawing.Point(135, 38);
-            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.textBoxTitle.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitle.Location = new System.Drawing.Point(209, 73);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(163, 20);
+            this.textBoxTitle.Size = new System.Drawing.Size(242, 32);
             this.textBoxTitle.TabIndex = 3;
             // 
             // comboBoxMember
             // 
+            this.comboBoxMember.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMember.FormattingEnabled = true;
-            this.comboBoxMember.Location = new System.Drawing.Point(136, 79);
+            this.comboBoxMember.Location = new System.Drawing.Point(210, 130);
+            this.comboBoxMember.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxMember.Name = "comboBoxMember";
-            this.comboBoxMember.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxMember.Size = new System.Drawing.Size(241, 28);
             this.comboBoxMember.TabIndex = 16;
             // 
             // buttonVerCont
             // 
-            this.buttonVerCont.Location = new System.Drawing.Point(34, 320);
+            this.buttonVerCont.BackColor = System.Drawing.Color.Navy;
+            this.buttonVerCont.BackgroundColor = System.Drawing.Color.Navy;
+            this.buttonVerCont.BorderColor = System.Drawing.Color.White;
+            this.buttonVerCont.BorderRadius = 20;
+            this.buttonVerCont.BorderSize = 0;
+            this.buttonVerCont.FlatAppearance.BorderSize = 0;
+            this.buttonVerCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerCont.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVerCont.ForeColor = System.Drawing.Color.White;
+            this.buttonVerCont.Location = new System.Drawing.Point(39, 499);
             this.buttonVerCont.Name = "buttonVerCont";
-            this.buttonVerCont.Size = new System.Drawing.Size(88, 28);
-            this.buttonVerCont.TabIndex = 17;
+            this.buttonVerCont.Size = new System.Drawing.Size(164, 64);
+            this.buttonVerCont.TabIndex = 20;
             this.buttonVerCont.Text = "Ver Contenido";
-            this.buttonVerCont.UseVisualStyleBackColor = true;
+            this.buttonVerCont.TextColor = System.Drawing.Color.White;
+            this.buttonVerCont.UseVisualStyleBackColor = false;
             this.buttonVerCont.Click += new System.EventHandler(this.buttonVerCont_Click);
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(218, 322);
+            this.buttonSearch.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonSearch.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonSearch.BorderColor = System.Drawing.Color.White;
+            this.buttonSearch.BorderRadius = 20;
+            this.buttonSearch.BorderSize = 0;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(266, 499);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(80, 26);
-            this.buttonSearch.TabIndex = 18;
+            this.buttonSearch.Size = new System.Drawing.Size(167, 64);
+            this.buttonSearch.TabIndex = 19;
             this.buttonSearch.Text = "Buscar";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.TextColor = System.Drawing.Color.White;
+            this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // Searcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1099, 365);
-            this.Controls.Add(this.buttonSearch);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1712, 632);
             this.Controls.Add(this.buttonVerCont);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.comboBoxMember);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.GridContents);
@@ -273,7 +318,7 @@
             this.Controls.Add(this.labelUplNick);
             this.Controls.Add(this.labelTitle);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Searcher";
             this.Text = "Search";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Searcher_FormClosing);
@@ -306,8 +351,8 @@
         private System.Windows.Forms.ComboBox comboBoxSubject;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.ComboBox comboBoxMember;
-        private System.Windows.Forms.Button buttonVerCont;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.Button buttonSearch;
+        private custom.Botones buttonSearch;
+        private custom.Botones buttonVerCont;
     }
 }
