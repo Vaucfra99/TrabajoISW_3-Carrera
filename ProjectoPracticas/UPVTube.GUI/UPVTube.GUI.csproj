@@ -62,6 +62,9 @@
     <Compile Include="Comentar.Designer.cs">
       <DependentUpon>Comentar.cs</DependentUpon>
     </Compile>
+    <Compile Include="custom\Botones.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Evaluar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -177,6 +181,12 @@
       <Project>{8abf76a8-2820-45af-ba16-3dabd58664ca}</Project>
       <Name>UpvTubeLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\627b95375a3e2ac874a75745.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3259396_media_social_youtube_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
