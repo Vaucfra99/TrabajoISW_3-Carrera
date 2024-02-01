@@ -33,94 +33,107 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TextBoxUser = new System.Windows.Forms.TextBox();
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
-            this.BtnAceptar = new System.Windows.Forms.Button();
-            this.BtnClear = new System.Windows.Forms.Button();
+            this.BtnClear = new UPVTube.GUI.custom.Botones();
+            this.BtnAceptar = new UPVTube.GUI.custom.Botones();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(56, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(61, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(194, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Sesión";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(14, 72);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(22, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(8, 132);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(12, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
             // TextBoxUser
             // 
+            this.TextBoxUser.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TextBoxUser.Location = new System.Drawing.Point(88, 72);
-            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxUser.Location = new System.Drawing.Point(132, 122);
             this.TextBoxUser.Name = "TextBoxUser";
-            this.TextBoxUser.Size = new System.Drawing.Size(105, 20);
+            this.TextBoxUser.Size = new System.Drawing.Size(156, 32);
             this.TextBoxUser.TabIndex = 3;
             // 
             // TextBoxPassword
             // 
-            this.TextBoxPassword.Location = new System.Drawing.Point(88, 130);
-            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxPassword.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxPassword.Location = new System.Drawing.Point(132, 203);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.PasswordChar = '*';
-            this.TextBoxPassword.Size = new System.Drawing.Size(105, 20);
+            this.TextBoxPassword.Size = new System.Drawing.Size(156, 32);
             this.TextBoxPassword.TabIndex = 4;
-            // 
-            // BtnAceptar
-            // 
-            this.BtnAceptar.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnAceptar.Location = new System.Drawing.Point(136, 173);
-            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(56, 32);
-            this.BtnAceptar.TabIndex = 5;
-            this.BtnAceptar.Text = "Aceptar";
-            this.BtnAceptar.UseVisualStyleBackColor = true;
-            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // BtnClear
             // 
-            this.BtnClear.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
-            this.BtnClear.Location = new System.Drawing.Point(15, 173);
-            this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnClear.BackColor = System.Drawing.Color.Navy;
+            this.BtnClear.BackgroundColor = System.Drawing.Color.Navy;
+            this.BtnClear.BorderColor = System.Drawing.Color.White;
+            this.BtnClear.BorderRadius = 20;
+            this.BtnClear.BorderSize = 0;
+            this.BtnClear.FlatAppearance.BorderSize = 0;
+            this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClear.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClear.ForeColor = System.Drawing.Color.White;
+            this.BtnClear.Location = new System.Drawing.Point(26, 298);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(57, 32);
-            this.BtnClear.TabIndex = 6;
+            this.BtnClear.Size = new System.Drawing.Size(117, 55);
+            this.BtnClear.TabIndex = 8;
             this.BtnClear.Text = "Borrar";
-            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.TextColor = System.Drawing.Color.White;
+            this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnAceptar.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnAceptar.BorderColor = System.Drawing.Color.White;
+            this.BtnAceptar.BorderRadius = 20;
+            this.BtnAceptar.BorderSize = 0;
+            this.BtnAceptar.FlatAppearance.BorderSize = 0;
+            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAceptar.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAceptar.ForeColor = System.Drawing.Color.White;
+            this.BtnAceptar.Location = new System.Drawing.Point(171, 298);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(117, 55);
+            this.BtnAceptar.TabIndex = 7;
+            this.BtnAceptar.Text = "Aceptar";
+            this.BtnAceptar.TextColor = System.Drawing.Color.White;
+            this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(210, 288);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(315, 443);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.TextBoxPassword);
@@ -128,7 +141,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
@@ -144,7 +156,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TextBoxUser;
         private System.Windows.Forms.TextBox TextBoxPassword;
-        private System.Windows.Forms.Button BtnAceptar;
-        private System.Windows.Forms.Button BtnClear;
+        private custom.Botones BtnAceptar;
+        private custom.Botones BtnClear;
     }
 }

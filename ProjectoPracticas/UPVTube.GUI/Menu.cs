@@ -75,11 +75,11 @@ namespace UPVTube.GUI
         private void Menu_Load(object sender, EventArgs e)
         {
             member = service.ReturnLoggedMember();
-            ButtonEvaluate.Enabled = false;
+            this.ButtonEvaluate.Enabled = false;
             ButtonSubir.Enabled = false;
             if (member.IsTeacher())
             {
-                ButtonEvaluate.Enabled = true;
+                this.ButtonEvaluate.Enabled = true;
                 ButtonSubir.Enabled = true;
             }
             if (member.IsStudent())

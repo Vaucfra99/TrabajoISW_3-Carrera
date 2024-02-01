@@ -63,7 +63,7 @@
             this.BtnRegister.ForeColor = System.Drawing.Color.White;
             this.BtnRegister.Location = new System.Drawing.Point(545, 290);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(177, 64);
+            this.BtnRegister.Size = new System.Drawing.Size(177, 68);
             this.BtnRegister.TabIndex = 6;
             this.BtnRegister.Text = "Registrarse";
             this.BtnRegister.TextColor = System.Drawing.Color.White;
@@ -98,9 +98,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(260, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 34);
+            this.label1.Size = new System.Drawing.Size(343, 34);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Bienvenido a UPVTube";
+            this.label1.Text = "Bienvenid@ a UPVTube";
             // 
             // buttonBD
             // 

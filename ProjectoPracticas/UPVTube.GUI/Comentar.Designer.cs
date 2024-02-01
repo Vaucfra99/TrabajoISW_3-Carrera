@@ -30,12 +30,12 @@
         {
             this.textBoxComentar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonComentar = new System.Windows.Forms.Button();
+            this.buttonComentar = new UPVTube.GUI.custom.Botones();
             this.SuspendLayout();
             // 
             // textBoxComentar
             // 
-            this.textBoxComentar.Location = new System.Drawing.Point(89, 83);
+            this.textBoxComentar.Location = new System.Drawing.Point(89, 78);
             this.textBoxComentar.Multiline = true;
             this.textBoxComentar.Name = "textBoxComentar";
             this.textBoxComentar.Size = new System.Drawing.Size(361, 222);
@@ -45,26 +45,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 38);
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(85, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 20);
+            this.label1.Size = new System.Drawing.Size(275, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Escribe aquí tu comentario:";
             // 
             // buttonComentar
             // 
-            this.buttonComentar.Location = new System.Drawing.Point(354, 332);
+            this.buttonComentar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonComentar.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonComentar.BorderColor = System.Drawing.Color.White;
+            this.buttonComentar.BorderRadius = 20;
+            this.buttonComentar.BorderSize = 0;
+            this.buttonComentar.FlatAppearance.BorderSize = 0;
+            this.buttonComentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComentar.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonComentar.ForeColor = System.Drawing.Color.White;
+            this.buttonComentar.Location = new System.Drawing.Point(294, 319);
             this.buttonComentar.Name = "buttonComentar";
-            this.buttonComentar.Size = new System.Drawing.Size(96, 32);
-            this.buttonComentar.TabIndex = 2;
+            this.buttonComentar.Size = new System.Drawing.Size(156, 51);
+            this.buttonComentar.TabIndex = 3;
             this.buttonComentar.Text = "Comentar";
-            this.buttonComentar.UseVisualStyleBackColor = true;
+            this.buttonComentar.TextColor = System.Drawing.Color.White;
+            this.buttonComentar.UseVisualStyleBackColor = false;
             this.buttonComentar.Click += new System.EventHandler(this.buttonComentar_Click);
             // 
             // Comentar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(547, 404);
             this.Controls.Add(this.buttonComentar);
             this.Controls.Add(this.label1);
@@ -82,6 +95,6 @@
 
         private System.Windows.Forms.TextBox textBoxComentar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonComentar;
+        private custom.Botones buttonComentar;
     }
 }
