@@ -23,11 +23,18 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void CheckBoxPublico_CheckedChanged(object sender, EventArgs e)
         {
             if (isPublic == true) { isPublic = false; }
             else { isPublic = true; }
         }
+        /// <summary>
+        /// 
+        /// </summary>
 
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
@@ -48,7 +55,7 @@ namespace UPVTube.GUI
             {
                 try
                 {
-                    List<Subject> lSub= new List<Subject>();
+                    List<Subject> lSub = new List<Subject>();
                     foreach (object item in checkedListBoxSubjects.CheckedItems)
                     {
                         lSub.Add((Subject)item);
@@ -62,9 +69,9 @@ namespace UPVTube.GUI
                     Content c = new Content(TextBoxURI.Text, TextBoxDescripcion.Text, pub, TextBoxTitulo.Text, DateTime.Now, logged);
                     c.Subjects = lSub;
                     service.Upload(c);
-                    
+
                     MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
                     TextBoxDescripcion.Clear();
                     TextBoxTitulo.Clear();
                     TextBoxURI.Clear();
@@ -77,7 +84,7 @@ namespace UPVTube.GUI
                 }
                 catch (ServiceException ex)
                 {
-                    MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                    MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
             }

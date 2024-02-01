@@ -145,7 +145,7 @@
             this.checkedListBoxSubjects.Location = new System.Drawing.Point(137, 263);
             this.checkedListBoxSubjects.Margin = new System.Windows.Forms.Padding(5);
             this.checkedListBoxSubjects.Name = "checkedListBoxSubjects";
-            this.checkedListBoxSubjects.Size = new System.Drawing.Size(50, 64);
+            this.checkedListBoxSubjects.Size = new System.Drawing.Size(50, 79);
             this.checkedListBoxSubjects.TabIndex = 11;
             // 
             // Upload

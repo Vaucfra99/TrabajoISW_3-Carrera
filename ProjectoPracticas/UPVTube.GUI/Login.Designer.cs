@@ -81,7 +81,6 @@
             this.TextBoxUser.Name = "TextBoxUser";
             this.TextBoxUser.Size = new System.Drawing.Size(105, 20);
             this.TextBoxUser.TabIndex = 3;
-            this.TextBoxUser.TextChanged += new System.EventHandler(this.TextBoxUser_TextChanged);
             // 
             // TextBoxPassword
             // 
@@ -91,7 +90,6 @@
             this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.Size = new System.Drawing.Size(105, 20);
             this.TextBoxPassword.TabIndex = 4;
-            this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // BtnAceptar
             // 

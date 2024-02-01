@@ -14,7 +14,7 @@ using UPVTube.Services;
 namespace UPVTube.GUI
 {
     public partial class Subscripciones : Form
-       
+
     {
         private IUPVTubeService service;
         private Member user;
@@ -23,7 +23,9 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Subscripciones_FormClosing(object sender, FormClosingEventArgs e)
         {
             listViewSubscribed.Items.Clear();
@@ -31,7 +33,9 @@ namespace UPVTube.GUI
             listViewNotSubscribed.Items.Clear();
             listViewNotSubscribed.SelectedItems.Clear();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void ListSubscribers()
         {
             List<Member> subscribedTo = service.getSubscribedTo();
@@ -40,7 +44,9 @@ namespace UPVTube.GUI
                 listViewSubscribed.Items.Add(m.Nick);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void ListNotSubscribers()
         {
             List<Member> notSubscribedTo = service.getNotSubscribedTo();
@@ -49,7 +55,9 @@ namespace UPVTube.GUI
                 listViewNotSubscribed.Items.Add(m.Nick);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Subscripciones_Load(object sender, EventArgs e)
         {
             user = service.ReturnLoggedMember();
@@ -57,10 +65,12 @@ namespace UPVTube.GUI
             ListSubscribers();
             ListNotSubscribers();
         }
-            
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonSuscribe_Click(object sender, EventArgs e)/// el que hace desde la derecha hacia la izquierda
         {
-            if(listViewNotSubscribed.SelectedItems.Count > 0)
+            if (listViewNotSubscribed.SelectedItems.Count > 0)
             {
                 String id = listViewNotSubscribed.SelectedItems[0].Text;
                 Member SelectedMember = service.getMember(id);
@@ -81,10 +91,12 @@ namespace UPVTube.GUI
                 MessageBox.Show(this, "Selecciona un miembro de la lista de los miembros a los que no estas suscrito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonUnSubscribe_Click(object sender, EventArgs e)/// el que hace desde la izquierda hasta la izquierda
         {
-            if(listViewSubscribed.SelectedItems.Count > 0)
+            if (listViewSubscribed.SelectedItems.Count > 0)
             {
                 String id = listViewSubscribed.SelectedItems[0].Text;
                 Member SelectedMember = service.getMember(id);

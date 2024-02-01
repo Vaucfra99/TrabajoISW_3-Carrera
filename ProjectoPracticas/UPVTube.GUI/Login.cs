@@ -24,38 +24,30 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
-            
         }
 
-        private void TextBoxUser_TextChanged(object sender, EventArgs e)
-        {
-            nick = TextBoxUser.Text;
-        }
 
-        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-            password = TextBoxPassword.Text;
-        }
+        /// <summary>
+        /// Método para iniciar sesión en la aplicación al pulsar en el botón correspondiente. En caso de que alguna caja de texto esté vacía mostrará un mensaje de error.
+        /// En caso contrario, iniciará sesión en la aplicacion teniendo en cuenta los datos introducidos en las cajas de texto, vaciará las cajas de texto y mostrará
+        /// el formulario Menu. En el caso en el que los datos introducidos no sean correctos se mostrará un mensaje de error y se vaciarán las cajas de texto
+        /// </summary>
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            if(TextBoxPassword.Text == string.Empty || TextBoxUser.Text == string.Empty) {
+            if (TextBoxPassword.Text == string.Empty || TextBoxUser.Text == string.Empty)
+            {
                 MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TextBoxUser.Clear();
-                TextBoxPassword.Clear();
             }
             else
             {
                 try
                 {
-                    service.LogIn(nick, password);
+                    service.LogIn(TextBoxUser.Text, TextBoxPassword.Text);
                     TextBoxPassword.Clear();
                     TextBoxUser.Clear();
-                    this.Hide();
                     menu = new Menu(service);
                     menu.ShowDialog();
-                    this.Close();
-
                 }
                 catch (ServiceException ex)
                 {
@@ -66,12 +58,20 @@ namespace UPVTube.GUI
             }
         }
 
+
+        /// <summary>
+        /// Método para que se vacíen las cajas de texto al pulsar el botón correspondiente
+        /// </summary>
         private void BtnClear_Click(object sender, EventArgs e)
         {
             TextBoxPassword.Clear();
             TextBoxUser.Clear();
         }
-
+        
+        
+        /// <summary>
+        /// Método para que al cerrar se vacíen las cajas de texto
+        /// </summary>
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             TextBoxPassword.Clear();

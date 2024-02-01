@@ -24,21 +24,36 @@ namespace UPVTube.GUI
             register = new Register(service);
         }
 
+        /// <summary>
+        /// Método para abrir el formulario Loginal pulsar el botón correspondiente
+        /// </summary>
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             login.ShowDialog();
         }
 
+
+        /// <summary>
+        /// Método para abrir el formulario Register al pulsar el botón correspondiente
+        /// </summary>
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             register.ShowDialog();
         }
-
+        
+        
+        /// <summary>
+        ///  Método para reiniciar la Base de Datos al pulsar el botón correspondiente
+        /// </summary>
         private void buttonBD_Click(object sender, EventArgs e)
         {
             service.DBInitialization();
         }
-
+        
+        
+        /// <summary>
+        /// Método que al cerrar el formulario detendrá la aplicación
+        /// </summary>
         private void UPVTubeApp_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

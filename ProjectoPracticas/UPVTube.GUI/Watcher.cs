@@ -26,9 +26,14 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
             this.content = content;
-           
-          
+
+
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+
         private void Watcher_Load(object sender, EventArgs e)
         {
 
@@ -50,12 +55,11 @@ namespace UPVTube.GUI
 
         }
 
-       
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-
-
 
             this.comment = new Comentar(service, content);
             comment.ShowDialog();
@@ -68,19 +72,18 @@ namespace UPVTube.GUI
 
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void RellenarGrid()
         {
-
+            ///
             List<Comment> commentList = service.GetComments(content);
             foreach (Comment c in commentList)
             {
-
-                GridViewComentarios.Rows.Add(c.Writer.Nick,c.Text, c.WritingDate);
+                GridViewComentarios.Rows.Add(c.Writer.Nick, c.Text, c.WritingDate);
                 GridViewComentarios.Sort(GridViewComentarios.Columns[2], ListSortDirection.Ascending);
             }
-
-
         }
     }
 }

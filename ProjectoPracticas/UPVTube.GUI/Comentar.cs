@@ -24,24 +24,30 @@ namespace UPVTube.GUI
             this.content = content;
         }
 
-
-       
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Comentar_Load(object sender, EventArgs e)
         {
-           buttonComentar.Enabled = true;
+            buttonComentar.Enabled = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Comentar_FormClosing(object sender, FormClosingEventArgs e)
         {
             textBoxComentar.Clear();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void textBoxComentar_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonComentar_Click(object sender, EventArgs e)
         {
             if (textBoxComentar.Text == string.Empty)
@@ -51,14 +57,15 @@ namespace UPVTube.GUI
 
             }
 
-            else {
+            else
+            {
 
 
                 Member autor = service.ReturnLoggedMember();
-                Comment creado = new Comment(textBoxComentar.Text, DateTime.Now, content , autor);
+                Comment creado = new Comment(textBoxComentar.Text, DateTime.Now, content, autor);
                 service.CrearComentario(creado);
 
-             
+
                 MessageBox.Show(this, "Tu comentario ha sido enviado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxComentar.Clear();
 

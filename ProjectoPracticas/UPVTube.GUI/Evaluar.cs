@@ -24,12 +24,13 @@ namespace UPVTube.GUI
         {
             InitializeComponent();
             this.service = service;
-            
-        }
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private void CargarDatosEnGridView()
         {
-
             try
             {
                 IEnumerable<Content> cList = service.GetPendingContents();
@@ -38,7 +39,7 @@ namespace UPVTube.GUI
                     String sub = "";
                     foreach (Subject s in c.Subjects)
                     {
-                        sub += s.Name + ", "; 
+                        sub += s.Name + ", ";
                     }
                     String acceso = "Privado";
                     if (c.IsPublic) { acceso = "Público"; }
@@ -50,10 +51,12 @@ namespace UPVTube.GUI
             }
             catch (ServiceException ex)
             {
-                MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void BotonPer_Click(object sender, EventArgs e)
         {
             if (GridPending.SelectedRows == null)
@@ -69,7 +72,7 @@ namespace UPVTube.GUI
                     c.Authorized = Authorized.Yes;
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.Yes);
-                    
+
                     String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
                     MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
@@ -82,7 +85,9 @@ namespace UPVTube.GUI
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void BotonRec_Click(object sender, EventArgs e)
         {
             if (GridPending.SelectedRows == null)
@@ -93,10 +98,10 @@ namespace UPVTube.GUI
             {
                 try
                 {
-                    int id = (int) GridPending.SelectedRows[0].Cells[6].Value;
+                    int id = (int)GridPending.SelectedRows[0].Cells[6].Value;
                     Content c = service.Watch(id);
                     c.Authorized = Authorized.No;
-                  
+
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.No);
 
@@ -111,7 +116,9 @@ namespace UPVTube.GUI
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonShowPending_Click(object sender, EventArgs e)
         {
             GridPending.Enabled = true;
@@ -122,13 +129,17 @@ namespace UPVTube.GUI
             CargarDatosEnGridView();
             buttonShowPending.Enabled = false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Evaluar_Load(object sender, EventArgs e)
         {
             GridPending.Enabled = false;
             buttonShowPending.Enabled = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
             if (GridPending.Enabled == true && GridPending.SelectedRows != null)
@@ -144,7 +155,9 @@ namespace UPVTube.GUI
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Evaluar_FormClosing(object sender, FormClosingEventArgs e)
         {
             GridPending.Rows.Clear();
