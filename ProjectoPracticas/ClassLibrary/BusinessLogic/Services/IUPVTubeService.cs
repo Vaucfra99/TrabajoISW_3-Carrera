@@ -29,7 +29,7 @@ namespace UPVTube.Services
         Content Watch(int id);
         Member ReturnLoggedMember();
         IEnumerable<Subject> getSubjects();
-        IEnumerable<Member> getMembers();
+        List<Member> getMembers();
         Member getMember(String id);
         List<Member> getNotSubscribedTo();
         List<Member> getSubscribedTo();

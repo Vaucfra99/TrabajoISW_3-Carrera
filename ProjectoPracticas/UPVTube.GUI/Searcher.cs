@@ -66,7 +66,7 @@ namespace UPVTube.GUI
             comboBoxSubject.ValueMember = "Code";
 
 
-            IList<Member> members = new List<Member>(service.getMembers());
+            List<Member> members = new List<Member>(service.getMembers());
             Member noMember = new Member("xxx@xxx.xxx", "     ", DateTime.Now, "     ", "0000");
             members.Add(noMember);
             comboBoxMember.DataSource = members;

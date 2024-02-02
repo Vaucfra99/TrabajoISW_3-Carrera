@@ -279,6 +279,7 @@ namespace UPVTube.Services
         public void Upload(Content c)
         {
             if (Logged == null) { throw new ServiceException("El usuario no ha iniciado sesión"); }
+            else if (dal.GetWhere<Content>(cont => cont.ContentURI == c.ContentURI).Any()) { throw new ServiceException("Ya existe un contenido con esa URI"); }
             else
             {
                 dal.Insert<Content>(c);
@@ -380,9 +381,17 @@ namespace UPVTube.Services
             return dal.GetAll<Subject>();
         }
 
-        public IEnumerable<Member> getMembers()
+        public List<Member> getMembers()
         {
-            return dal.GetAll<Member>();
+            List<Member> all = dal.GetAll<Member>().ToList();
+            List<Member> res = new List<Member>();
+            foreach (Member m in all)
+            {
+                if(m.IsStudent() || m.IsTeacher()){
+                    res.Add(m);
+                }
+            }
+            return res;
         }
 
         public List<Member> getNotSubscribedTo()

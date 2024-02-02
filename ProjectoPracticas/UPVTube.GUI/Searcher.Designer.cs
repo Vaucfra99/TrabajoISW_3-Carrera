@@ -60,9 +60,10 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTitle.Location = new System.Drawing.Point(29, 75);
+            this.labelTitle.Location = new System.Drawing.Point(19, 49);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(73, 22);
+            this.labelTitle.Size = new System.Drawing.Size(50, 16);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Título:";
             // 
@@ -71,9 +72,10 @@
             this.labelUplNick.AutoSize = true;
             this.labelUplNick.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUplNick.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelUplNick.Location = new System.Drawing.Point(29, 130);
+            this.labelUplNick.Location = new System.Drawing.Point(19, 84);
+            this.labelUplNick.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUplNick.Name = "labelUplNick";
-            this.labelUplNick.Size = new System.Drawing.Size(174, 22);
+            this.labelUplNick.Size = new System.Drawing.Size(124, 16);
             this.labelUplNick.TabIndex = 1;
             this.labelUplNick.Text = "Nick del creador:";
             // 
@@ -82,9 +84,10 @@
             this.labelSubject.AutoSize = true;
             this.labelSubject.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubject.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelSubject.Location = new System.Drawing.Point(29, 184);
+            this.labelSubject.Location = new System.Drawing.Point(19, 120);
+            this.labelSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(120, 22);
+            this.labelSubject.Size = new System.Drawing.Size(83, 16);
             this.labelSubject.TabIndex = 2;
             this.labelSubject.Text = "Asignatura:";
             // 
@@ -93,9 +96,10 @@
             this.labelEarly.AutoSize = true;
             this.labelEarly.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEarly.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelEarly.Location = new System.Drawing.Point(35, 283);
+            this.labelEarly.Location = new System.Drawing.Point(23, 184);
+            this.labelEarly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEarly.Name = "labelEarly";
-            this.labelEarly.Size = new System.Drawing.Size(236, 22);
+            this.labelEarly.Size = new System.Drawing.Size(166, 16);
             this.labelEarly.TabIndex = 6;
             this.labelEarly.Text = "Fecha de subida inicial:";
             // 
@@ -104,28 +108,29 @@
             this.labelLate.AutoSize = true;
             this.labelLate.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelLate.Location = new System.Drawing.Point(35, 383);
+            this.labelLate.Location = new System.Drawing.Point(23, 249);
+            this.labelLate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLate.Name = "labelLate";
-            this.labelLate.Size = new System.Drawing.Size(222, 22);
+            this.labelLate.Size = new System.Drawing.Size(156, 16);
             this.labelLate.TabIndex = 7;
             this.labelLate.Text = "Fecha de subida final:";
             // 
             // dateTimePickerEarly
             // 
             this.dateTimePickerEarly.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerEarly.Location = new System.Drawing.Point(39, 307);
-            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerEarly.Location = new System.Drawing.Point(26, 200);
+            this.dateTimePickerEarly.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerEarly.Name = "dateTimePickerEarly";
-            this.dateTimePickerEarly.Size = new System.Drawing.Size(394, 32);
+            this.dateTimePickerEarly.Size = new System.Drawing.Size(264, 24);
             this.dateTimePickerEarly.TabIndex = 8;
             // 
             // dateTimePickerLate
             // 
             this.dateTimePickerLate.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerLate.Location = new System.Drawing.Point(39, 407);
-            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerLate.Location = new System.Drawing.Point(26, 265);
+            this.dateTimePickerLate.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePickerLate.Name = "dateTimePickerLate";
-            this.dateTimePickerLate.Size = new System.Drawing.Size(394, 32);
+            this.dateTimePickerLate.Size = new System.Drawing.Size(264, 24);
             this.dateTimePickerLate.TabIndex = 9;
             // 
             // GridContents
@@ -144,13 +149,12 @@
             this.Asignaturas,
             this.UltimoAcceso,
             this.ID});
-            this.GridContents.Location = new System.Drawing.Point(507, 60);
-            this.GridContents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GridContents.Location = new System.Drawing.Point(338, 39);
             this.GridContents.MultiSelect = false;
             this.GridContents.Name = "GridContents";
             this.GridContents.RowHeadersWidth = 62;
             this.GridContents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridContents.Size = new System.Drawing.Size(1103, 488);
+            this.GridContents.Size = new System.Drawing.Size(735, 317);
             this.GridContents.TabIndex = 14;
             // 
             // Titulo
@@ -227,12 +231,12 @@
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.Location = new System.Drawing.Point(210, 182);
-            this.comboBoxSubject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxSubject.Location = new System.Drawing.Point(140, 118);
             this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(241, 28);
+            this.comboBoxSubject.Size = new System.Drawing.Size(162, 23);
             this.comboBoxSubject.TabIndex = 15;
             // 
             // contentBindingSource
@@ -242,20 +246,20 @@
             // textBoxTitle
             // 
             this.textBoxTitle.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(209, 73);
-            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxTitle.Location = new System.Drawing.Point(139, 47);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(242, 32);
+            this.textBoxTitle.Size = new System.Drawing.Size(163, 24);
             this.textBoxTitle.TabIndex = 3;
             // 
             // comboBoxMember
             // 
+            this.comboBoxMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMember.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMember.FormattingEnabled = true;
-            this.comboBoxMember.Location = new System.Drawing.Point(210, 130);
-            this.comboBoxMember.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxMember.Location = new System.Drawing.Point(140, 84);
             this.comboBoxMember.Name = "comboBoxMember";
-            this.comboBoxMember.Size = new System.Drawing.Size(241, 28);
+            this.comboBoxMember.Size = new System.Drawing.Size(162, 23);
             this.comboBoxMember.TabIndex = 16;
             // 
             // buttonVerCont
@@ -269,9 +273,10 @@
             this.buttonVerCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVerCont.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVerCont.ForeColor = System.Drawing.Color.White;
-            this.buttonVerCont.Location = new System.Drawing.Point(39, 499);
+            this.buttonVerCont.Location = new System.Drawing.Point(26, 324);
+            this.buttonVerCont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonVerCont.Name = "buttonVerCont";
-            this.buttonVerCont.Size = new System.Drawing.Size(164, 64);
+            this.buttonVerCont.Size = new System.Drawing.Size(109, 42);
             this.buttonVerCont.TabIndex = 20;
             this.buttonVerCont.Text = "Ver Contenido";
             this.buttonVerCont.TextColor = System.Drawing.Color.White;
@@ -289,9 +294,10 @@
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(266, 499);
+            this.buttonSearch.Location = new System.Drawing.Point(177, 324);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(167, 64);
+            this.buttonSearch.Size = new System.Drawing.Size(111, 42);
             this.buttonSearch.TabIndex = 19;
             this.buttonSearch.Text = "Buscar";
             this.buttonSearch.TextColor = System.Drawing.Color.White;
@@ -300,10 +306,10 @@
             // 
             // Searcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1712, 632);
+            this.ClientSize = new System.Drawing.Size(1141, 411);
             this.Controls.Add(this.buttonVerCont);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.comboBoxMember);
@@ -318,7 +324,7 @@
             this.Controls.Add(this.labelUplNick);
             this.Controls.Add(this.labelTitle);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Searcher";
             this.Text = "Search";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Searcher_FormClosing);
