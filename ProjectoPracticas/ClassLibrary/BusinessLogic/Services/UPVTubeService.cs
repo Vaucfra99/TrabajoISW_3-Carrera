@@ -81,7 +81,7 @@ namespace UPVTube.Services
             Comment com1 = new Comment("Javier Jaen nos salva la vida", DateTime.Now, c2, m1);
             Comment com2 = new Comment("Javier Jaen nos salva la vida", DateTime.Now, c2, m2);
             Comment com3 = new Comment("Que monos los gatos", DateTime.Now, c3, m4);
-            Comment com4 = new Comment("A mi tampoco me cae bien Platón", DateTime.Now, c5, m3);
+            Comment com4 = new Comment("A mi también me cae mal Platón", DateTime.Now, c5, m3);
             Comment com5 = new Comment("Que asco tocar un piano con los pies", DateTime.Now, c4, m1);
 
             //Añadir los comentarios a la Base de Datos
@@ -111,6 +111,7 @@ namespace UPVTube.Services
             dal.Insert(v6);
             dal.Insert(v7);
             dal.Insert(v8);
+
 
 
             //Añadir los contenidos a cada Asignatura(Subject)
@@ -438,6 +439,7 @@ namespace UPVTube.Services
                 }
             }
             dal.Insert<Evaluation>(ev);
+            Logged.Evaluations.Add(ev);
             dal.Commit();
         }
     }

@@ -39,16 +39,22 @@ namespace UPVTube.GUI
 
             textBoxDate.Text = content.UploadDate.ToString();
             textBoxDate.Enabled = false;
+
             textBoxDescripcion.Text = content.Description;
             textBoxDescripcion.Enabled = false;
+
             textBoxUri.Text = content.ContentURI;
             textBoxUri.Enabled = false;
+            
             textBoxTitle.Text = content.Title;
             textBoxTitle.Enabled = false;
+            
             textBoxPropietario.Text = content.Owner.FullName;
             textBoxPropietario.Enabled = false;
+            
             Visualization v = new Visualization(DateTime.Now, content, content.Owner);
             content.Visualizations.Add(v);
+            
             GridViewComentarios.Rows.Clear();
             RellenarGrid();
             GridViewComentarios.Refresh();
@@ -63,11 +69,10 @@ namespace UPVTube.GUI
 
             this.comment = new Comentar(service, content);
             comment.ShowDialog();
+
             GridViewComentarios.Rows.Clear();
             RellenarGrid();
             GridViewComentarios.Refresh();
-
-
         }
 
 

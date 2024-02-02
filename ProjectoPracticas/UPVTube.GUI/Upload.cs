@@ -40,16 +40,7 @@ namespace UPVTube.GUI
         {
             if (TextBoxTitulo.Text == string.Empty || TextBoxDescripcion.Text == string.Empty || TextBoxURI.Text == string.Empty)
             {
-                MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TextBoxTitulo.Clear();
-                TextBoxDescripcion.Clear();
-                TextBoxURI.Clear();
-                CheckBoxPublico.Checked = false;
-                for (int i = 0; i < checkedListBoxSubjects.Items.Count; i++)
-                {
-                    checkedListBoxSubjects.SetSelected(i, false);
-                    checkedListBoxSubjects.SetItemChecked(i, false);
-                }
+                MessageBox.Show(this, "Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);        
             }
             else
             {
@@ -69,6 +60,11 @@ namespace UPVTube.GUI
                     Content c = new Content(TextBoxURI.Text, TextBoxDescripcion.Text, pub, TextBoxTitulo.Text, DateTime.Now, logged);
                     c.Subjects = lSub;
                     service.Upload(c);
+                    logged.AddContent(c);
+                    foreach (Subject s in lSub)
+                    {
+                        s.Contents.Add(c);
+                    }
 
                     MessageBox.Show(this, "¡El contenido se ha subido correctamente!", "Contenido Subido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -86,7 +82,6 @@ namespace UPVTube.GUI
                 {
                     MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
             }
         }
 

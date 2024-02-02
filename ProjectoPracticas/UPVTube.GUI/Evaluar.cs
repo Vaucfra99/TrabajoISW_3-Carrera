@@ -54,6 +54,7 @@ namespace UPVTube.GUI
                 MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -75,6 +76,7 @@ namespace UPVTube.GUI
 
                     String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
                     MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
                     textBoxMotivo.Clear();
                 }
@@ -83,8 +85,8 @@ namespace UPVTube.GUI
                     MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -132,7 +134,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// chocho moreno
         /// </summary>
         private void buttonVerCont_Click(object sender, EventArgs e)
         {

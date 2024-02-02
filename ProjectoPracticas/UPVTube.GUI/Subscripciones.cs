@@ -23,6 +23,7 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -33,6 +34,7 @@ namespace UPVTube.GUI
             listViewNotSubscribed.Items.Clear();
             listViewNotSubscribed.SelectedItems.Clear();
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -44,6 +46,7 @@ namespace UPVTube.GUI
                 listViewSubscribed.Items.Add(m.Nick);
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -55,6 +58,7 @@ namespace UPVTube.GUI
                 listViewNotSubscribed.Items.Add(m.Nick);
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -65,10 +69,11 @@ namespace UPVTube.GUI
             ListSubscribers();
             ListNotSubscribers();
         }
+
         /// <summary>
         /// 
         /// </summary>
-        private void buttonSuscribe_Click(object sender, EventArgs e)/// el que hace desde la derecha hacia la izquierda
+        private void buttonSuscribe_Click(object sender, EventArgs e)
         {
             if (listViewNotSubscribed.SelectedItems.Count > 0)
             {
@@ -91,10 +96,11 @@ namespace UPVTube.GUI
                 MessageBox.Show(this, "Selecciona un miembro de la lista de los miembros a los que no estas suscrito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
-        private void buttonUnSubscribe_Click(object sender, EventArgs e)/// el que hace desde la izquierda hasta la izquierda
+        private void buttonUnSubscribe_Click(object sender, EventArgs e)
         {
             if (listViewSubscribed.SelectedItems.Count > 0)
             {

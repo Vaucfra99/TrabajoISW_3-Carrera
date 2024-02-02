@@ -42,13 +42,13 @@ namespace UPVTube.GUI
                 {
                     service.Register(TextBoxEmail.Text, TextBoxFullName.Text, TextBoxNick.Text, TextBoxPassword.Text);
                     menu = new Menu(service);
+
                     TextBoxEmail.Clear();
                     TextBoxFullName.Clear();
                     TextBoxNick.Clear();
                     TextBoxPassword.Clear();
-                    this.Hide();
+                    
                     menu.ShowDialog();
-                    this.Close();
                 }
                 catch (ServiceException ex)
                 {

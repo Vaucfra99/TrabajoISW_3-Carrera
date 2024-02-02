@@ -32,7 +32,6 @@ namespace UPVTube.GUI
             login.ShowDialog();
         }
 
-
         /// <summary>
         /// Método para abrir el formulario Register al pulsar el botón correspondiente
         /// </summary>
@@ -41,7 +40,6 @@ namespace UPVTube.GUI
             register.ShowDialog();
         }
         
-        
         /// <summary>
         ///  Método para reiniciar la Base de Datos al pulsar el botón correspondiente
         /// </summary>
@@ -49,8 +47,7 @@ namespace UPVTube.GUI
         {
             service.DBInitialization();
         }
-        
-        
+
         /// <summary>
         /// Método que al cerrar el formulario detendrá la aplicación
         /// </summary>
@@ -58,7 +55,5 @@ namespace UPVTube.GUI
         {
             Application.Exit();
         }
-
-       
     }
 }

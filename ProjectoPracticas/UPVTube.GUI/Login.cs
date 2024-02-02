@@ -17,13 +17,13 @@ namespace UPVTube.GUI
     public partial class Login : Form
     {
         private IUPVTubeService service;
-        private String nick;
-        private String password;
         private Menu menu;
         public Login(IUPVTubeService service)
         {
             InitializeComponent();
             this.service = service;
+            menu = new Menu(service);
+
         }
 
 
@@ -44,14 +44,16 @@ namespace UPVTube.GUI
                 try
                 {
                     service.LogIn(TextBoxUser.Text, TextBoxPassword.Text);
+
                     TextBoxPassword.Clear();
                     TextBoxUser.Clear();
-                    menu = new Menu(service);
+
                     menu.ShowDialog();
                 }
                 catch (ServiceException ex)
                 {
                     MessageBox.Show(this, ex.Message, "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
                     TextBoxUser.Clear();
                     TextBoxPassword.Clear();
                 }
