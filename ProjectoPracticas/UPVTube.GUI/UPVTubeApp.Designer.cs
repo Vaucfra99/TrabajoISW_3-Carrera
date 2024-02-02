@@ -32,10 +32,10 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.BtnRegister = new UPVTube.GUI.custom.Botones();
-            this.BtnLogin = new UPVTube.GUI.custom.Botones();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonBD = new UPVTube.GUI.custom.Botones();
+            this.BtnLogin = new UPVTube.GUI.custom.Botones();
+            this.BtnRegister = new UPVTube.GUI.custom.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -49,46 +49,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // BtnRegister
-            // 
-            this.BtnRegister.BackColor = System.Drawing.Color.Navy;
-            this.BtnRegister.BackgroundColor = System.Drawing.Color.Navy;
-            this.BtnRegister.BorderColor = System.Drawing.Color.White;
-            this.BtnRegister.BorderRadius = 20;
-            this.BtnRegister.BorderSize = 0;
-            this.BtnRegister.FlatAppearance.BorderSize = 0;
-            this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRegister.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegister.ForeColor = System.Drawing.Color.White;
-            this.BtnRegister.Location = new System.Drawing.Point(545, 290);
-            this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(177, 68);
-            this.BtnRegister.TabIndex = 6;
-            this.BtnRegister.Text = "Registrarse";
-            this.BtnRegister.TextColor = System.Drawing.Color.White;
-            this.BtnRegister.UseVisualStyleBackColor = false;
-            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
-            // 
-            // BtnLogin
-            // 
-            this.BtnLogin.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnLogin.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnLogin.BorderColor = System.Drawing.Color.White;
-            this.BtnLogin.BorderRadius = 20;
-            this.BtnLogin.BorderSize = 0;
-            this.BtnLogin.FlatAppearance.BorderSize = 0;
-            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogin.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogin.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnLogin.Location = new System.Drawing.Point(545, 182);
-            this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(177, 67);
-            this.BtnLogin.TabIndex = 7;
-            this.BtnLogin.Text = "Iniciar Sesión";
-            this.BtnLogin.TextColor = System.Drawing.Color.Transparent;
-            this.BtnLogin.UseVisualStyleBackColor = false;
-            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // label1
             // 
@@ -121,6 +81,46 @@
             this.buttonBD.TextColor = System.Drawing.Color.White;
             this.buttonBD.UseVisualStyleBackColor = false;
             this.buttonBD.Click += new System.EventHandler(this.buttonBD_Click);
+            // 
+            // BtnLogin
+            // 
+            this.BtnLogin.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnLogin.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnLogin.BorderColor = System.Drawing.Color.White;
+            this.BtnLogin.BorderRadius = 20;
+            this.BtnLogin.BorderSize = 0;
+            this.BtnLogin.FlatAppearance.BorderSize = 0;
+            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogin.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnLogin.Location = new System.Drawing.Point(545, 182);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(177, 67);
+            this.BtnLogin.TabIndex = 7;
+            this.BtnLogin.Text = "Iniciar Sesión";
+            this.BtnLogin.TextColor = System.Drawing.Color.Transparent;
+            this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // BtnRegister
+            // 
+            this.BtnRegister.BackColor = System.Drawing.Color.Navy;
+            this.BtnRegister.BackgroundColor = System.Drawing.Color.Navy;
+            this.BtnRegister.BorderColor = System.Drawing.Color.White;
+            this.BtnRegister.BorderRadius = 20;
+            this.BtnRegister.BorderSize = 0;
+            this.BtnRegister.FlatAppearance.BorderSize = 0;
+            this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegister.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegister.ForeColor = System.Drawing.Color.White;
+            this.BtnRegister.Location = new System.Drawing.Point(545, 290);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(177, 68);
+            this.BtnRegister.TabIndex = 6;
+            this.BtnRegister.Text = "Registrarse";
+            this.BtnRegister.TextColor = System.Drawing.Color.White;
+            this.BtnRegister.UseVisualStyleBackColor = false;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // UPVTubeApp
             // 

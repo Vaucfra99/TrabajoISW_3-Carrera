@@ -55,8 +55,8 @@
             // 
             // buttonComentar
             // 
-            this.buttonComentar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonComentar.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonComentar.BackColor = System.Drawing.Color.Navy;
+            this.buttonComentar.BackgroundColor = System.Drawing.Color.Navy;
             this.buttonComentar.BorderColor = System.Drawing.Color.White;
             this.buttonComentar.BorderRadius = 20;
             this.buttonComentar.BorderSize = 0;
