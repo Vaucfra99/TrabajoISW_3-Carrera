@@ -44,7 +44,6 @@
             this.BotonRec = new UPVTube.GUI.custom.Botones();
             this.BotonPer = new UPVTube.GUI.custom.Botones();
             this.buttonVerCont = new UPVTube.GUI.custom.Botones();
-            this.buttonShowPending = new UPVTube.GUI.custom.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPending)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +52,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(374, 50);
+            this.label1.Location = new System.Drawing.Point(249, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 42);
+            this.label1.Size = new System.Drawing.Size(291, 27);
             this.label1.TabIndex = 4;
             this.label1.Text = "Evaluar Contenido";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,20 +68,20 @@
             // 
             this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(384, 488);
+            this.label2.Location = new System.Drawing.Point(256, 317);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(409, 38);
+            this.label2.Size = new System.Drawing.Size(273, 25);
             this.label2.TabIndex = 19;
             this.label2.Text = "Motivo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxMotivo
             // 
-            this.textBoxMotivo.Location = new System.Drawing.Point(68, 542);
-            this.textBoxMotivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxMotivo.Location = new System.Drawing.Point(45, 352);
             this.textBoxMotivo.Multiline = true;
             this.textBoxMotivo.Name = "textBoxMotivo";
-            this.textBoxMotivo.Size = new System.Drawing.Size(1036, 193);
+            this.textBoxMotivo.Size = new System.Drawing.Size(692, 127);
             this.textBoxMotivo.TabIndex = 20;
             // 
             // GridPending
@@ -96,13 +96,12 @@
             this.Asignaturas,
             this.Id});
             this.GridPending.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.GridPending.Location = new System.Drawing.Point(64, 97);
-            this.GridPending.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GridPending.Location = new System.Drawing.Point(43, 63);
             this.GridPending.MultiSelect = false;
             this.GridPending.Name = "GridPending";
             this.GridPending.RowHeadersWidth = 62;
             this.GridPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPending.Size = new System.Drawing.Size(1040, 329);
+            this.GridPending.Size = new System.Drawing.Size(693, 214);
             this.GridPending.TabIndex = 21;
             // 
             // Titulo
@@ -166,9 +165,10 @@
             this.BotonRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonRec.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.BotonRec.ForeColor = System.Drawing.Color.White;
-            this.BotonRec.Location = new System.Drawing.Point(904, 790);
+            this.BotonRec.Location = new System.Drawing.Point(603, 514);
+            this.BotonRec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BotonRec.Name = "BotonRec";
-            this.BotonRec.Size = new System.Drawing.Size(200, 57);
+            this.BotonRec.Size = new System.Drawing.Size(133, 37);
             this.BotonRec.TabIndex = 25;
             this.BotonRec.Text = "Rechazar";
             this.BotonRec.TextColor = System.Drawing.Color.White;
@@ -186,9 +186,10 @@
             this.BotonPer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonPer.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.BotonPer.ForeColor = System.Drawing.Color.White;
-            this.BotonPer.Location = new System.Drawing.Point(635, 790);
+            this.BotonPer.Location = new System.Drawing.Point(323, 514);
+            this.BotonPer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BotonPer.Name = "BotonPer";
-            this.BotonPer.Size = new System.Drawing.Size(200, 57);
+            this.BotonPer.Size = new System.Drawing.Size(133, 37);
             this.BotonPer.TabIndex = 24;
             this.BotonPer.Text = "Autorizar";
             this.BotonPer.TextColor = System.Drawing.Color.White;
@@ -206,51 +207,31 @@
             this.buttonVerCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVerCont.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.buttonVerCont.ForeColor = System.Drawing.Color.White;
-            this.buttonVerCont.Location = new System.Drawing.Point(363, 790);
+            this.buttonVerCont.Location = new System.Drawing.Point(45, 514);
+            this.buttonVerCont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonVerCont.Name = "buttonVerCont";
-            this.buttonVerCont.Size = new System.Drawing.Size(200, 57);
+            this.buttonVerCont.Size = new System.Drawing.Size(133, 37);
             this.buttonVerCont.TabIndex = 23;
             this.buttonVerCont.Text = "Ver Contenido";
             this.buttonVerCont.TextColor = System.Drawing.Color.White;
             this.buttonVerCont.UseVisualStyleBackColor = false;
             this.buttonVerCont.Click += new System.EventHandler(this.buttonVerCont_Click);
             // 
-            // buttonShowPending
-            // 
-            this.buttonShowPending.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonShowPending.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonShowPending.BorderColor = System.Drawing.Color.White;
-            this.buttonShowPending.BorderRadius = 20;
-            this.buttonShowPending.BorderSize = 0;
-            this.buttonShowPending.FlatAppearance.BorderSize = 0;
-            this.buttonShowPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowPending.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
-            this.buttonShowPending.ForeColor = System.Drawing.Color.White;
-            this.buttonShowPending.Location = new System.Drawing.Point(68, 790);
-            this.buttonShowPending.Name = "buttonShowPending";
-            this.buttonShowPending.Size = new System.Drawing.Size(224, 57);
-            this.buttonShowPending.TabIndex = 22;
-            this.buttonShowPending.Text = "Mostrar Pendientes";
-            this.buttonShowPending.TextColor = System.Drawing.Color.White;
-            this.buttonShowPending.UseVisualStyleBackColor = false;
-            this.buttonShowPending.Click += new System.EventHandler(this.buttonShowPending_Click);
-            // 
             // Evaluar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1162, 894);
+            this.ClientSize = new System.Drawing.Size(775, 581);
             this.Controls.Add(this.BotonRec);
             this.Controls.Add(this.BotonPer);
             this.Controls.Add(this.buttonVerCont);
-            this.Controls.Add(this.buttonShowPending);
             this.Controls.Add(this.GridPending);
             this.Controls.Add(this.textBoxMotivo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Evaluar";
             this.Text = "Evaluar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Evaluar_FormClosing);
@@ -275,7 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaSubida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asignaturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private custom.Botones buttonShowPending;
         private custom.Botones buttonVerCont;
         private custom.Botones BotonPer;
         private custom.Botones BotonRec;

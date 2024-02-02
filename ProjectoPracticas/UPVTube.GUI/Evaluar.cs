@@ -116,27 +116,21 @@ namespace UPVTube.GUI
                 }
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void buttonShowPending_Click(object sender, EventArgs e)
-        {
-            GridPending.Enabled = true;
-            if (check)
-            {
-                GridPending.Rows.Clear();
-            }
-            CargarDatosEnGridView();
-            buttonShowPending.Enabled = false;
-        }
+
         /// <summary>
         /// 
         /// </summary>
         private void Evaluar_Load(object sender, EventArgs e)
         {
             GridPending.Enabled = false;
-            buttonShowPending.Enabled = true;
+            GridPending.Enabled = true;
+            if (check)
+            {
+                GridPending.Rows.Clear();
+            }
+            CargarDatosEnGridView();
         }
+
         /// <summary>
         /// 
         /// </summary>
