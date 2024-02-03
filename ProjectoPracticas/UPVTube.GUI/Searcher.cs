@@ -19,6 +19,9 @@ namespace UPVTube.GUI
             this.service = service;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void CargarDatosEnGridView()
         {
             try
@@ -29,17 +32,24 @@ namespace UPVTube.GUI
                 if (selectedSubject.Code == 0000) { selectedSubject = null; }
 
                 List<Content> cList = service.Search(textBoxTitle.Text, selectedMember, selectedSubject, dateTimePickerEarly.Value.Date, dateTimePickerLate.Value.Date);
-                foreach (Content c in cList)
+                if(cList.Count > 0)
                 {
-                    String sub = "";
-                    foreach (Subject s in c.Subjects)
+                    foreach (Content c in cList)
                     {
-                        sub += s.Name + ", ";
+                        String sub = "";
+                        foreach (Subject s in c.Subjects)
+                        {
+                            sub += s.Name + ", ";
+                        }
+                        String acceso = "Privado";
+                        if (c.IsPublic) { acceso = "Público"; }
+                        GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
+                        GridContents.Sort(GridContents.Columns[4], ListSortDirection.Ascending);
                     }
-                    String acceso = "Privado";
-                    if (c.IsPublic) { acceso = "Público"; }
-                    GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
-                    GridContents.Sort(GridContents.Columns[4], ListSortDirection.Ascending);
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se ha encontrado ningún contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (ServiceException ex)
@@ -48,7 +58,9 @@ namespace UPVTube.GUI
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void Searcher_Load(object sender, EventArgs e)
         {
             DateTime early = new DateTime(1999, 1, 1);
@@ -75,6 +87,9 @@ namespace UPVTube.GUI
             comboBoxMember.ValueMember = "Nick";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
             if (GridContents.Enabled == true && GridContents.SelectedRows != null)
@@ -90,6 +105,9 @@ namespace UPVTube.GUI
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             GridContents.Enabled = true;
@@ -98,6 +116,9 @@ namespace UPVTube.GUI
             CargarDatosEnGridView();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void Searcher_FormClosing(object sender, FormClosingEventArgs e)
         {
             GridContents.Rows.Clear();

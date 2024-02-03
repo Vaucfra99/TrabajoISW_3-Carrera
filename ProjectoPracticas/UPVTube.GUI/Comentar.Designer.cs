@@ -40,7 +40,6 @@
             this.textBoxComentar.Name = "textBoxComentar";
             this.textBoxComentar.Size = new System.Drawing.Size(361, 222);
             this.textBoxComentar.TabIndex = 0;
-            this.textBoxComentar.TextChanged += new System.EventHandler(this.textBoxComentar_TextChanged);
             // 
             // label1
             // 
@@ -85,7 +84,6 @@
             this.Name = "Comentar";
             this.Text = "Comentar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Comentar_FormClosing);
-            this.Load += new System.EventHandler(this.Comentar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

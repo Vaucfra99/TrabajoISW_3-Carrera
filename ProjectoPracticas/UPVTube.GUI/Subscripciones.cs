@@ -25,7 +25,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al cerrar el formulario vacía las listas y quita la seleccion de los elementos
         /// </summary>
         private void Subscripciones_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -36,7 +36,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que añade los miembros a los que esta suscrito el usuario a su lista correspondiente
         /// </summary>
         private void ListSubscribers()
         {
@@ -48,7 +48,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que añade los suscriptores del usuario a su lista correspondiente
         /// </summary>
         private void ListNotSubscribers()
         {
@@ -60,7 +60,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al abrirse el formulario obtiene el usuario y carga ejecuta los método que cargan las listas
         /// </summary>
         private void Subscripciones_Load(object sender, EventArgs e)
         {
@@ -71,7 +71,9 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al pulsar el botón correspondiente, si se ha seleccionado un miembro en la lista de miembros a los q no estas suscrito lo cambia a la lista 
+        /// de miembros a los q estas suscrito, actualizando los valores correspondientes y recargangando las listas. En caso de pulsar y no haber elegido 
+        /// un miembro muestra un error
         /// </summary>
         private void buttonSuscribe_Click(object sender, EventArgs e)
         {
@@ -98,7 +100,9 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al pulsar el botón correspondiente, si se ha seleccionado un miembro en la lista de miembros a los q estas suscrito lo cambia a la lista 
+        /// de miembros a los que no estas suscrito, actualizando los valores correspondientes y recargangando las listas. En caso de pulsar y no haber elegido 
+        /// un miembro muestra un error
         /// </summary>
         private void buttonUnSubscribe_Click(object sender, EventArgs e)
         {

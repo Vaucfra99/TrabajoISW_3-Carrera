@@ -26,12 +26,10 @@ namespace UPVTube.GUI
             InitializeComponent();
             this.service = service;
             this.content = content;
-
-
         }
 
         /// <summary>
-        /// 
+        /// Método que al abrir el formulario rellena las cajas de texto, las desabilita para que no se pueda modificar nada, crea una visualización, la guarda y rellena la tabla
         /// </summary>
 
         private void Watcher_Load(object sender, EventArgs e)
@@ -62,9 +60,9 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que abre el formualrio para crear un comentario y recarga la tabla
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonShow_Click(object sender, EventArgs e)
         {
 
             this.comment = new Comentar(service, content);
@@ -75,10 +73,8 @@ namespace UPVTube.GUI
             GridViewComentarios.Refresh();
         }
 
-
-
         /// <summary>
-        /// 
+        /// Método que rellena la tabla
         /// </summary>
         public void RellenarGrid()
         {

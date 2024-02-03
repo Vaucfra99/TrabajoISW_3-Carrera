@@ -15,7 +15,6 @@ namespace UPVTube.GUI
     public partial class Comentar : Form
     {
         private IUPVTubeService service;
-        private Watcher watcher;
         private Content content;
         public Comentar(IUPVTubeService service, Content content)
         {
@@ -25,53 +24,33 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        private void Comentar_Load(object sender, EventArgs e)
-        {
-            buttonComentar.Enabled = true;
-        }
-        /// <summary>
-        /// 
+        /// Método que vacia la caja de tecto de comentar al cerrarel formulario
         /// </summary>
         private void Comentar_FormClosing(object sender, FormClosingEventArgs e)
         {
             textBoxComentar.Clear();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void textBoxComentar_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         /// <summary>
-        /// 
+        /// Método que al pulsar el botón guarda el comentario escrito en la caja de texto y muestra un mensaje de confirmación. En caso de error muestra
+        /// un mensaje de error
         /// </summary>
         private void buttonComentar_Click(object sender, EventArgs e)
         {
             if (textBoxComentar.Text == string.Empty)
             {
-
                 MessageBox.Show(this, "Debes escribir un comentario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             }
 
             else
             {
-
-
                 Member autor = service.ReturnLoggedMember();
                 Comment creado = new Comment(textBoxComentar.Text, DateTime.Now, content, autor);
                 service.CrearComentario(creado);
 
-
                 MessageBox.Show(this, "Tu comentario ha sido enviado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxComentar.Clear();
-
-
             }
-
         }
     }
 }

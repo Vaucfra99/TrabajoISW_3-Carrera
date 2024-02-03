@@ -32,10 +32,10 @@ namespace UPVTube.GUI
             if (isPublic == true) { isPublic = false; }
             else { isPublic = true; }
         }
+        
         /// <summary>
         /// 
         /// </summary>
-
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
             if (TextBoxTitulo.Text == string.Empty || TextBoxDescripcion.Text == string.Empty || TextBoxURI.Text == string.Empty)
@@ -85,6 +85,9 @@ namespace UPVTube.GUI
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void Upload_Load(object sender, EventArgs e)
         {
             List<Subject> subs = new List<Subject>(service.getSubjects());
@@ -93,6 +96,9 @@ namespace UPVTube.GUI
             checkedListBoxSubjects.DisplayMember = "Name";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void Upload_FormClosing(object sender, FormClosingEventArgs e)
         {
             TextBoxTitulo.Clear();

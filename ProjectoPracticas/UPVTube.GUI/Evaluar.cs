@@ -27,7 +27,7 @@ namespace UPVTube.GUI
 
         }
         /// <summary>
-        /// 
+        /// Método que carga los datos en la tabla y muestra un mensaje de error en caso de que ocurra alguno
         /// </summary>
         private void CargarDatosEnGridView()
         {
@@ -56,7 +56,8 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que rechaza un contenido al pulsar el botón correspondiente, actualiza los datos correspondientes y muestra un mensaje de error en caso 
+        /// de que ocurra uno 
         /// </summary>
         private void BotonPer_Click(object sender, EventArgs e)
         {
@@ -74,7 +75,8 @@ namespace UPVTube.GUI
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.Yes);
 
-                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + 
+                        "Valoración: Aprobado\n" + "Información adicional: " + textBoxMotivo.Text;
                     MessageBox.Show(this, msgEmail, "Contenido Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
@@ -88,7 +90,8 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que rechaza un contenido al pulsar el botón correspondiente, actualiza los datos correspondientes y muestra un mensaje de error en caso 
+        /// de que ocurra uno o en caso de que no se haya escrito una razón de rechazo
         /// </summary>
         private void BotonRec_Click(object sender, EventArgs e)
         {
@@ -107,7 +110,8 @@ namespace UPVTube.GUI
                     Evaluation ev = new Evaluation(DateTime.Now, textBoxMotivo.Text, service.ReturnLoggedMember(), c);
                     service.EvaluarContent(ev, Authorized.No);
 
-                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" + "Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
+                    String msgEmail = "Email: " + c.Owner.Email + "\n" + "Asunto: Evaluación del contenido: " + c.Title + "\n" 
+                        + "Valoración: Rechazado\n" + "Motivo: " + textBoxMotivo.Text;
                     MessageBox.Show(this, msgEmail, "Contenido Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GridPending.Rows.RemoveAt(GridPending.SelectedRows[0].Index);
                     textBoxMotivo.Clear();
@@ -120,12 +124,10 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al abrir el formulario carga los datos en la tabla, y si antes ya ha generado la tabla la vacia previamente a volver a generarla
         /// </summary>
         private void Evaluar_Load(object sender, EventArgs e)
         {
-            GridPending.Enabled = false;
-            GridPending.Enabled = true;
             if (check)
             {
                 GridPending.Rows.Clear();
@@ -134,7 +136,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// chocho moreno
+        /// Método que muestra un contenido al pulsar el botón correspondiente siempre que hayas seleccionado uno
         /// </summary>
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
@@ -152,7 +154,7 @@ namespace UPVTube.GUI
 
         }
         /// <summary>
-        /// 
+        /// Método que al cerrar el formulario vacía la tabla, la recarga y la desabilita
         /// </summary>
         private void Evaluar_FormClosing(object sender, FormClosingEventArgs e)
         {
