@@ -20,7 +20,9 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que rellena la tabla. Primero comprueba si se ha seleccionado un miembro y asignatura diferente del que está por defecto y, en caso afirmativo establece esos valores
+        /// a nulo. Posteriormente, obtiene una lista con los contenidos que coinciden con los datos proporcionados y la muestra en la tabla. En caso de que ocurra algún error mustra
+        /// el mensaje de error correspondiente
         /// </summary>
         private void CargarDatosEnGridView()
         {
@@ -49,7 +51,7 @@ namespace UPVTube.GUI
                 }
                 else
                 {
-                    MessageBox.Show(this, "No se ha encontrado ningún contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(this, "No se ha encontrado ningún contenido que coincida con los datos introducidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (ServiceException ex)
@@ -59,7 +61,8 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que, al abrir el formulario, establece unas fechas por defecto, obtiene las listas con los miembros y asignaturas que hay y rellena las cajas de elección con ellos, añadiendo 
+        /// un miembro y una asignatura 'vacio'
         /// </summary>
         private void Searcher_Load(object sender, EventArgs e)
         {
@@ -87,8 +90,8 @@ namespace UPVTube.GUI
             comboBoxMember.ValueMember = "Nick";
         }
 
-        /// <summary>
-        /// 
+        /// <summmary>
+        /// Método que, al pulsar el botón correspondiente, muestra el contenido seleccionado. En caso de no haber seleccionado ninguno muestra un mensaje de error
         /// </summary>
         private void buttonVerCont_Click(object sender, EventArgs e)
         {
@@ -101,12 +104,12 @@ namespace UPVTube.GUI
             }
             else
             {
-                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         /// <summary>
-        /// 
+        /// Método que, al pulsar el botón correspondiente, vacía la tabla para evitar repeticiones y ejecuta el método para rellenar la tabla
         /// </summary>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
@@ -117,7 +120,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al cerrar el formulario vacía la tabla y la desactiva
         /// </summary>
         private void Searcher_FormClosing(object sender, FormClosingEventArgs e)
         {

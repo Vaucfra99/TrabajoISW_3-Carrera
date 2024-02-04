@@ -63,7 +63,7 @@ namespace UPVTube.GUI
         {
             if (GridPending.SelectedRows == null)
             {
-                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -84,7 +84,7 @@ namespace UPVTube.GUI
                 }
                 catch (ServiceException ex)
                 {
-                    MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, ex.Message, "Error de servicio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -149,7 +149,7 @@ namespace UPVTube.GUI
             }
             else
             {
-                MessageBox.Show(this, "Selecciona un contenido", "Error de Servicio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "Selecciona un contenido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

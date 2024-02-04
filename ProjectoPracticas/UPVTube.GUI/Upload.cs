@@ -24,17 +24,11 @@ namespace UPVTube.GUI
             this.service = service;
         }
 
+
         /// <summary>
-        /// 
-        /// </summary>
-        private void CheckBoxPublico_CheckedChanged(object sender, EventArgs e)
-        {
-            if (isPublic == true) { isPublic = false; }
-            else { isPublic = true; }
-        }
-        
-        /// <summary>
-        /// 
+        /// Método que, al pulsar el boton correspondiente, añade un contenido a la Base de Datos. En el caso de que falte algún elemento por rellenar, muestra un mensaje de error. En caso contrario
+        /// obtiene todos los datos necesarios(Subjects, Owner...) y añade el método junto con todos los datos obtenidos, muestra un mensaje de confirmación y vacía todas las cajas de introducción
+        /// de información para una introducción posterior. En caso de error muestra el mensaje correspondiente.
         /// </summary>
         private void ButtonSubir_Click(object sender, EventArgs e)
         {
@@ -86,7 +80,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al abrir el formulario crea una lista con las asignaturas que existen y rellena la caja de selección de asiganturas con todas ellas
         /// </summary>
         private void Upload_Load(object sender, EventArgs e)
         {
@@ -97,7 +91,7 @@ namespace UPVTube.GUI
         }
 
         /// <summary>
-        /// 
+        /// Método que al cerrar el formulario vacía las cajas de texto y las selecciones de la caja de seleccion de asiganturas y pone por defecto el conteido a falso.
         /// </summary>
         private void Upload_FormClosing(object sender, FormClosingEventArgs e)
         {

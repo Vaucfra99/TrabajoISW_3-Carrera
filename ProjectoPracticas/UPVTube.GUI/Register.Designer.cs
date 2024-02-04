@@ -48,9 +48,10 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(49, 441);
+            this.label2.Location = new System.Drawing.Point(25, 287);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario:";
             // 
@@ -59,9 +60,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(48, 556);
+            this.label3.Location = new System.Drawing.Point(25, 362);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 24);
+            this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
@@ -70,9 +72,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(38, 114);
+            this.label4.Location = new System.Drawing.Point(26, 70);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 24);
+            this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nombre Completo:";
             // 
@@ -81,42 +84,47 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Small", 8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(40, 234);
+            this.label5.Location = new System.Drawing.Point(25, 152);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 24);
+            this.label5.Size = new System.Drawing.Size(121, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo Electrónico:";
             // 
             // TextBoxNick
             // 
             this.TextBoxNick.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxNick.Location = new System.Drawing.Point(53, 483);
+            this.TextBoxNick.Location = new System.Drawing.Point(28, 305);
+            this.TextBoxNick.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxNick.Name = "TextBoxNick";
-            this.TextBoxNick.Size = new System.Drawing.Size(379, 32);
+            this.TextBoxNick.Size = new System.Drawing.Size(254, 24);
             this.TextBoxNick.TabIndex = 5;
             // 
             // TextBoxPassword
             // 
             this.TextBoxPassword.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxPassword.Location = new System.Drawing.Point(52, 598);
+            this.TextBoxPassword.Location = new System.Drawing.Point(28, 389);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxPassword.Name = "TextBoxPassword";
-            this.TextBoxPassword.Size = new System.Drawing.Size(379, 32);
+            this.TextBoxPassword.Size = new System.Drawing.Size(254, 24);
             this.TextBoxPassword.TabIndex = 6;
             // 
             // TextBoxFullName
             // 
             this.TextBoxFullName.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxFullName.Location = new System.Drawing.Point(44, 154);
+            this.TextBoxFullName.Location = new System.Drawing.Point(29, 100);
+            this.TextBoxFullName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxFullName.Name = "TextBoxFullName";
-            this.TextBoxFullName.Size = new System.Drawing.Size(388, 32);
+            this.TextBoxFullName.Size = new System.Drawing.Size(253, 24);
             this.TextBoxFullName.TabIndex = 7;
             // 
             // TextBoxEmail
             // 
             this.TextBoxEmail.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxEmail.Location = new System.Drawing.Point(44, 275);
+            this.TextBoxEmail.Location = new System.Drawing.Point(29, 179);
+            this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxEmail.Name = "TextBoxEmail";
-            this.TextBoxEmail.Size = new System.Drawing.Size(388, 32);
+            this.TextBoxEmail.Size = new System.Drawing.Size(253, 24);
             this.TextBoxEmail.TabIndex = 8;
             // 
             // label1
@@ -125,10 +133,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(37, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(25, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 27);
+            this.label1.Size = new System.Drawing.Size(183, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "Información Personal";
             // 
@@ -138,10 +145,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(39, 396);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(26, 252);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(276, 27);
+            this.label6.Size = new System.Drawing.Size(198, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Información de Acceso";
             // 
@@ -156,9 +162,10 @@
             this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClear.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.BtnClear.ForeColor = System.Drawing.Color.White;
-            this.BtnClear.Location = new System.Drawing.Point(52, 686);
+            this.BtnClear.Location = new System.Drawing.Point(35, 446);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(154, 58);
+            this.BtnClear.Size = new System.Drawing.Size(103, 38);
             this.BtnClear.TabIndex = 14;
             this.BtnClear.Text = "Borrar";
             this.BtnClear.TextColor = System.Drawing.Color.White;
@@ -176,9 +183,10 @@
             this.BtnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAccept.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Bold);
             this.BtnAccept.ForeColor = System.Drawing.Color.White;
-            this.BtnAccept.Location = new System.Drawing.Point(275, 686);
+            this.BtnAccept.Location = new System.Drawing.Point(183, 446);
+            this.BtnAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnAccept.Name = "BtnAccept";
-            this.BtnAccept.Size = new System.Drawing.Size(154, 58);
+            this.BtnAccept.Size = new System.Drawing.Size(103, 38);
             this.BtnAccept.TabIndex = 13;
             this.BtnAccept.Text = "Aceptar";
             this.BtnAccept.TextColor = System.Drawing.Color.White;
@@ -187,10 +195,10 @@
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(489, 792);
+            this.ClientSize = new System.Drawing.Size(326, 515);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnAccept);
             this.Controls.Add(this.label6);
@@ -203,6 +211,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Register";
             this.Text = "Register";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);

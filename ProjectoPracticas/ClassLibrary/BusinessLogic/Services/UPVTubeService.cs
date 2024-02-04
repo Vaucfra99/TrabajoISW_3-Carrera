@@ -399,10 +399,19 @@ namespace UPVTube.Services
         {
             List<Member> subscribedTo = Logged.SubscribedTo.ToList();
             List<Member> notSubscribed = dal.GetAll<Member>().ToList();
+            List<Member> all = dal.GetAll<Member>().ToList();
+
 
             if (subscribedTo.Count() != 0)
             {
                 foreach (Member m in subscribedTo)
+                {
+                    notSubscribed.Remove(m);
+                }
+            }
+            foreach (Member m in all)
+            {
+                if(!(m.IsStudent()) && !(m.IsTeacher()))
                 {
                     notSubscribed.Remove(m);
                 }
