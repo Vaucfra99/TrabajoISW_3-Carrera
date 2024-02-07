@@ -109,7 +109,7 @@
             this.CheckBoxPublico.AutoSize = true;
             this.CheckBoxPublico.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckBoxPublico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CheckBoxPublico.Location = new System.Drawing.Point(31, 353);
+            this.CheckBoxPublico.Location = new System.Drawing.Point(31, 370);
             this.CheckBoxPublico.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CheckBoxPublico.Name = "CheckBoxPublico";
             this.CheckBoxPublico.Size = new System.Drawing.Size(178, 19);
@@ -134,9 +134,9 @@
             this.checkedListBoxSubjects.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxSubjects.FormattingEnabled = true;
             this.checkedListBoxSubjects.Location = new System.Drawing.Point(137, 263);
-            this.checkedListBoxSubjects.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkedListBoxSubjects.Margin = new System.Windows.Forms.Padding(5);
             this.checkedListBoxSubjects.Name = "checkedListBoxSubjects";
-            this.checkedListBoxSubjects.Size = new System.Drawing.Size(68, 61);
+            this.checkedListBoxSubjects.Size = new System.Drawing.Size(68, 99);
             this.checkedListBoxSubjects.TabIndex = 11;
             // 
             // ButtonSubir
@@ -151,7 +151,7 @@
             this.ButtonSubir.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonSubir.ForeColor = System.Drawing.Color.White;
             this.ButtonSubir.Location = new System.Drawing.Point(124, 407);
-            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSubir.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSubir.Name = "ButtonSubir";
             this.ButtonSubir.Size = new System.Drawing.Size(103, 38);
             this.ButtonSubir.TabIndex = 12;

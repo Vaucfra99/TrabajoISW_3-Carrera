@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using UPVTube.Entities;
 using UPVTube.Services;
@@ -13,6 +14,7 @@ namespace UPVTube.GUI
     {
         private IUPVTubeService service;
         private Watcher watcher;
+        private Member user;
         public Searcher(IUPVTubeService service)
         {
             InitializeComponent();
@@ -45,7 +47,30 @@ namespace UPVTube.GUI
                         }
                         String acceso = "Privado";
                         if (c.IsPublic) { acceso = "Público"; }
-                        GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, c.UploadDate.ToShortDateString(), c.Id);
+
+
+                        Boolean visto = false;
+                        DateTime date;
+                        
+                        List<Visualization> vList = user.Visualizations.ToList();
+
+                        vList = vList.OrderByDescending(vi => vi.VisualizationDate).ToList();
+                        foreach (Visualization v in vList)
+                        {
+                            if (v.Content.Id == c.Id)
+                            {
+                                date = v.VisualizationDate;
+                                GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, date, c.Id);
+                                visto = true;
+                                break;
+                            }
+                        }
+                        if (!visto)
+                        {
+                            GridContents.Rows.Add(c.Title, c.Owner.Nick, c.Description, acceso, c.UploadDate, sub, "Contenido no visualizado", c.Id);
+                        }
+
+
                         GridContents.Sort(GridContents.Columns[4], ListSortDirection.Ascending);
                     }
                 }
@@ -66,6 +91,7 @@ namespace UPVTube.GUI
         /// </summary>
         private void Searcher_Load(object sender, EventArgs e)
         {
+            user = service.ReturnLoggedMember();
             DateTime early = new DateTime(1999, 1, 1);
             DateTime late = new DateTime(2199, 1, 1);
             dateTimePickerEarly.Value = early;
@@ -101,6 +127,12 @@ namespace UPVTube.GUI
                 Content c = service.Watch(id);
                 watcher = new Watcher(service, c);
                 watcher.ShowDialog();
+
+                
+                
+                GridContents.Rows.Clear();
+                GridContents.Refresh();
+                CargarDatosEnGridView();
             }
             else
             {

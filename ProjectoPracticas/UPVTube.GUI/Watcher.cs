@@ -49,10 +49,12 @@ namespace UPVTube.GUI
             
             textBoxPropietario.Text = content.Owner.FullName;
             textBoxPropietario.Enabled = false;
-            
-            Visualization v = new Visualization(DateTime.Now, content, content.Owner);
+
+            Member user = service.ReturnLoggedMember();
+            Visualization v = new Visualization(DateTime.Now, content, user);
             content.Visualizations.Add(v);
-            
+            user.Visualizations.Add(v);
+
             GridViewComentarios.Rows.Clear();
             RellenarGrid();
             GridViewComentarios.Refresh();

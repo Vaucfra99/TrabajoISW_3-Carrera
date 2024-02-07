@@ -16,7 +16,6 @@ namespace UPVTube.GUI
     public partial class Upload : Form
     {
         private IUPVTubeService service;
-        private Boolean isPublic = false;
 
         public Upload(IUPVTubeService service)
         {
